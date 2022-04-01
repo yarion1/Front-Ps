@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
 import './Login.css';
-import curvatopTop from './images/curvatop.png'
-import curvaBottom from './images/curvabottom.png'
-import retangulobtn from './images/retangulobtn.png'
+import curvatopTop from '../../assets/img/curvatop.png'
+import curvaBottom from '../../assets/img/curvabottom.png'
 import {Form, FormGroup,Input,Label,Button} from 'reactstrap';
 import {AiOutlineMail} from 'react-icons/ai';
 import {RiLockPasswordFill} from 'react-icons/ri';
 
-import { useNavigate} from 'react-router-dom'
+import { Link} from 'react-router-dom'
 
 /**
  * 
@@ -64,7 +63,7 @@ function SendLogueo(Email,Password){
                  <div className='botaoLogin'><button className='buttonLogin'>Login</button></div>
                  <div className='curvaButtontop'><img src={curvatopTop} /></div>
                  <div className='curvaButtonbottom'><img src={curvaBottom}></img></div>      
-                 <div className='botaoSign'><button className='buttonSign' >Sign in</button></div>
+                 <div className='botaoSign'><button className='buttonSign' ><Link style={{textDecoration:"inherit", color:'inherit'}} to={"/register"}>Sign in</Link></button></div>
              </div>
              <div className='divright'>
 
