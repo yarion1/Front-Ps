@@ -9,32 +9,14 @@ height: 100vh;
 .divleft{
     background: #080436;
     min-width: 40%;
+    background-image: url('../../assets//img/logintela.png');
+    background-size: 850px;
 }
 
 .divright{
-    background: #ffffff;
     min-width: 60%;
 }
-/*
-.colunaTop{
-    position: absolute;
-    width: 100.47px;
-    height: 30em;
-    left: 130.58px;
-    top: -8em;
-    background: linear-gradient(0deg, rgba(254, 124, 168, 0.2), rgba(254, 124, 168, 0.2)), #FFACC3;
-    opacity: 0.6;
-    box-shadow: 30px 50px 100px #FC7885, inset 40px -5px 80px #F85D71;
-    transform: rotate(-130.3deg);
-}
 
-.corte img{
-  position: absolute;
-  min-width: 500px;
-  margin-left: 3px;
-  top: 7em;
-}
-*/
 .botaoLogin{
     position: absolute;
     width: 170px;
@@ -49,6 +31,7 @@ height: 100vh;
     position: absolute;
     z-index: 10;
     background-color: #080436;
+
     margin-top: 10px;
     border-radius: 80px;
     padding-left: 10px;
@@ -142,6 +125,7 @@ height: 100vh;
       top: 15em;
       right: 28%;
   }
+
   .formlogin input{
 
       border-top: #ffffff;
@@ -164,7 +148,7 @@ height: 100vh;
   .divbtn{
     position: absolute;
     top: 16em;
-    right: -99%;
+    right: -5%;
   }
  Label{
      color:#929FA7;
@@ -179,6 +163,7 @@ height: 100vh;
     top: 22.7em;
     right: 43%;
   }
+
     @media screen and (max-width: 1200px ){
     .curvaButtontop{
         left: 34%;
@@ -197,20 +182,24 @@ height: 100vh;
     }
     @media screen and (max-width: 800px ) {
         .divleft,.divright{
+            width: 100vh;
             display: flex;
             flex-direction: row;
         }
-
+        .divrightcenter{
+           text-align: center;
+           flex-direction: center;
+        }
         .divleft{
             height: 20em;
           }
-       
         .colunaTop, .botaoLogin,.buttonLogin,.curvaButtonbottom,.curvaButtontop,.corte{
             display: none;
         }
         .titleLog{
+            position:fixed;
             top: 8em;
-            left: 38%;
+            left: 28%;
         }
         .formlogin{
             top: 32em;
@@ -228,6 +217,7 @@ height: 100vh;
             right: 82%;
           }
           .buttonSign{
+              position:fixed;
               top: 12em;
               right: 10%;
               width:105.5px ;
@@ -236,3 +226,4 @@ height: 100vh;
               padding-top: 10px;
           }
     }
+
