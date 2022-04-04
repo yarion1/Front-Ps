@@ -6,7 +6,6 @@ import retangulobtn from '../../assets/retangulobtn.png'
 import {Form, FormGroup,Input,Label,Button} from 'reactstrap';
 import {AiOutlineMail} from 'react-icons/ai';
 import {RiLockPasswordFill} from 'react-icons/ri';
-
 import { useNavigate} from 'react-router-dom'
 
 /**
@@ -61,13 +60,12 @@ function SendLogueo(Email,Password){
         return(
             <>
              <div className='divleft'> 
-                 <div className='botaoLogin'><button className='buttonLogin'>Login</button></div>
+                 <div className='botaoLogin'><button className='buttonLogin'>Login</button></div> 
                  <div className='curvaButtontop'><img src={curvatopTop} /></div>
-                 <div className='curvaButtonbottom'><img src={curvaBottom}></img></div>      
+                 <div className='curvaButtonbottom'><img src={curvaBottom}></img></div> 
                  <div className='botaoSign'><button className='buttonSign' >Sign in</button></div>
              </div>
-             <div className='divright'>
-
+             <div className='divright'>            
              <div className='iconemail'><AiOutlineMail/></div>
              <div className='iconpassword'><RiLockPasswordFill/></div>
              <h2 className='titleLog'>Login</h2>

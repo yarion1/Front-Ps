@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+/* divisao da pagina em 2 lados*/
+body{
+    margin: 0;
+}
+.divleft, .divright{
+display: inline-block;
+height: 100vh;
+}
+.divleft{
+    background: #080436;
+    min-width: 40%;
+}
+
+.divright{
+    background: #ffffff;
+    min-width: 60%;
+}
+
+/* Botões */
+.botaoSign2{
+    position: absolute;
+    width: 170px;
+    height: 90px;
+    right: 56%;
+    top: 195px;
+    background: #FFFFFF;
+    border-radius: 80px;
+}
+
+.buttonSign2{
+    position: absolute;
+    z-index: 10;
+    background-color: #ffffff;
+    margin-top: 10px;
+    border-radius: 80px;
+    padding-left: 10px;
+    margin-left: 10px;
+    text-align: center;
+    width: 60%;
+    height: 70px;
+    font-size: 25px;
+    font-family: 'Roboto';
+    font-style: normal;
+    color: #626C6D;
+    border-bottom: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.buttonSign2:hover {
+    transition: all ease 0.3s;
+    transform: scale(1.1);
+    color: #080436;
+}
+
+.buttonLogin2{
+    position: absolute;
+    z-index: 10;
+    background-color: #080436;
+    margin-top: 10px;
+    border-radius: 80px;
+    padding-left: 10px;
+    margin-left: 10px;
+    text-align: center;
+    width: 95px;
+    height: 50px;
+    right: 60.4%;
+    top: 106px;
+    font-size: 24px;
+    font-family: 'Roboto';
+    font-style: normal;
+    color: #ffffff;
+    border-bottom: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.buttonLogin2:hover {
+    transition: all ease 0.3s;
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+
+/* titulo do formulario */   
+.titleLog{
+    position: absolute;
+    right: 22%;
+    width: 222px;
+    height: 53px;
+    top: 2em;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 59px;
+    text-align: center;
+    color: #080436;
+    mix-blend-mode: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* icones */
+.iconemailSign{
+    position: absolute;
+    top: 16em;
+    right: 43%;
+    }
+.iconpasswordSign{
+    position: absolute;
+    top: 22.7em;
+    right: 43%;
+}
+.iconconfirmpasswordSign{
+    position: absolute;
+    top: 29.4em;
+    right: 43%;
+}       
+  

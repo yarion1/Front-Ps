@@ -101,24 +101,7 @@ height: 100vh;
     transform: scale(1.1);
     color: #080436;
 }
-.curvaButtontop{
-    position: absolute;
-    width: 106.28px;
-    height: 143.92px;
-    right: 58.5%;
-    top: 5px;
-    transform: rotate(5deg);
-    border: 100%;
-    }
-    .curvaButtonbottom{
-    position: absolute;
-    max-width: 11.1%;
-    height: 143.92px;
-    right: 54.8%;
-    top: 150px;
-    transform: rotate(2deg);
-    border: 100%;
-    }
+
     .titleLog{
         position: absolute;
         right: 22%;
@@ -236,3 +219,22 @@ height: 100vh;
               padding-top: 10px;
           }
     }
+
+.curvaButtontop{
+        position: absolute;
+        width: 106.28px;
+        height: 143.92px;
+        right: 58.5%;
+        top: 5px;
+        transform: rotate(5deg);
+        border: 100%;
+        }
+.curvaButtonbottom{
+        position: absolute;
+        max-width: 11.1%;
+        height: 143.92px;
+        right: 54.8%;
+        top: 150px;
+        transform: rotate(2deg);
+        border: 100%;
+        }
