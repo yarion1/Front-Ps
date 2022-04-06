@@ -4,13 +4,10 @@ import Login from "./pages/Login/Login";
 import Home from './pages/Home/Home';
 import updateDataEmail from './store/user/action.js';
 import {connect} from 'react-redux';
-import GetCookie from './components/GetCookie.js';
 import Sign_up from './pages/Sign_up/sign_up.js';
+import GetCookie from './components/auth/GetCookie';
 
 function EmailLogued(){
-  /**
-   * Para colocar una pantalla de carga
-   */
   this.loading = true;
 
   this.EmailData = {}
@@ -52,9 +49,9 @@ function App({updateDataEmail}) {
         <Route path="/login" element = {<Login/>}/>
       )}
       {logueado && (
-     <Route path="/" element = {<Home/>}/>
+       <Route path="/" element = {<Home/>}/>
       )}
-         <Route path="/Sign_up" element = {<Sign_up/>}/>
+         <Route path="/register" element = {<Sign_up/>}/>
         </Routes>
       </Router>
       

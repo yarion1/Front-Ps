@@ -1,31 +1,54 @@
 import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
-import curvatopTop from '../../assets/curvatop.png'
-import curvaBottom from '../../assets/curvabottom.png'
-import retangulobtn from '../../assets/retangulobtn.png'
 import {Form, FormGroup,Input,Label,Button} from 'reactstrap';
 import {AiOutlineMail} from 'react-icons/ai';
 import {RiLockPasswordFill} from 'react-icons/ri';
+import { useNavigate} from 'react-router-dom';
 import '../..';
-import Sign_up_form from '../../components/sign_up_form/sign_up_form.js';
-import '../Sign_up/sign_up.css'
+import styled, {
+  Globalpage,
+  Divleft,
+  Divright,
+  TitleLog,
+  Iconemail,
+  Iconpassword,
 
+} from  '../../assets/styles/auth/authstyled';
+
+import {
+  ButtonLogin2, 
+  ButtonSign2,
+  Botaosign2,
+  IconconfirmpasswordSign,
+} from './styled.js';
+
+import Sign_up_form from '../../components/sign_up_form/sign_up_form.js';
  function Sign_up () {
+    let navigate = useNavigate();
+
+    function handleClicklogin(){
+        navigate('/login');
+    }
+
+    function handleClickregister(){
+        navigate('/register');
+    }
+  
     return(
-        <div>
-             <div className='divleft'> 
-                 <div className='botaoLogin2'><button className='buttonLogin2'>Login</button></div>
-                 <div className='botaoSign2'><button className='buttonSign2' >Sign up</button></div>
-             </div>
-             <div className='divright'> 
-             <div className='iconemailSign'><AiOutlineMail/></div>
-             <div className='iconpasswordSign'><RiLockPasswordFill/></div>
-             <div className='iconconfirmpasswordSign'><RiLockPasswordFill/></div>
-             <h2 className='titleLog'>Sign up</h2>
+        <Globalpage>
+             <Divleft> 
+                 <div className='botaoLogin2'><ButtonLogin2  onClick={handleClicklogin}>Login</ButtonLogin2></div>
+                 <Botaosign2> <ButtonSign2  onClick={handleClickregister}>Sign up</ButtonSign2></Botaosign2>
+             </Divleft>
+             <Divright> 
+             <TitleLog>Sign up</TitleLog>
+             <Iconemail><AiOutlineMail/></Iconemail>
+             <Iconpassword><RiLockPasswordFill/></Iconpassword>
+             <IconconfirmpasswordSign><RiLockPasswordFill/></IconconfirmpasswordSign>
              <Sign_up_form/>
-        </div>
-        </div>        
-    ) 
+            </Divright>
+        </Globalpage>        
+    )  
   }
 
 export default Sign_up;

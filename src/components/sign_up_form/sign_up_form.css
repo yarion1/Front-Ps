@@ -11,26 +11,26 @@
 }
 
 .buttonSign_up {
-position: absolute;
-z-index: 10;
-background-color: #ffffff;
-margin-top: 10px;
-border-radius: 80px;
-padding-left: 10px;
-margin-left: 10px;
-text-align: center;
-width: 60%;
-height: 70px;
-font-size: 25px;
-font-family: 'Roboto';
-font-style: normal;
-color: #626C6D;
-border-bottom: 0;
-border-top: 0;
-border-left: 0;
-border-right: 0;
-cursor: pointer;
-overflow: hidden;
+    position: absolute;
+    z-index: 10;
+    background-color: #ffffff;
+    margin-top: 10px;
+    border-radius: 80px;
+    padding-left: 10px;
+    margin-left: 10px;
+    text-align: center;
+    width: 60%;
+    height: 70px;
+    font-size: 25px;
+    font-family: 'Roboto';
+    font-style: normal;
+    color: #626C6D;
+    border-bottom: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    cursor: pointer;
+    overflow: hidden;
 }
 
 .btn:hover{
