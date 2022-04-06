@@ -19,7 +19,6 @@ import styled, {
 import { FormGroup} from 'reactstrap';
 import {AiOutlineMail} from 'react-icons/ai';
 import {RiLockPasswordFill} from 'react-icons/ri';
-
 import { useNavigate} from 'react-router-dom'
 
 /**
@@ -71,16 +70,20 @@ function SendLogueo(Email,Password){
     const [Password, setPassword] = useState("");
     let navigate = useNavigate();
 
-    function handleClick(){
+    function handleClicklogin(){
+        navigate('/login');
+    }
+
+    function handleClickregister(){
         navigate('/register');
     }
- 
+    
         return(
             <>
              <Globalpage>
                  <Divleft>
-                     <BotaoLogin><ButtonLogin>Login</ButtonLogin></BotaoLogin>
-                     <div> <ButtonSign onClick={handleClick}>Sign in</ButtonSign> </div>
+                     <BotaoLogin><ButtonLogin onClick={handleClicklogin}>Login</ButtonLogin></BotaoLogin>
+                     <div> <ButtonSign onClick={handleClickregister}>Sign in</ButtonSign> </div>
                  </Divleft>
                  <Divright>
                      <Iconemail><AiOutlineMail/></Iconemail>
