@@ -2,6 +2,7 @@ import React, {useState}from "react";
 import {BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 import Login from "./pages/Login/Login";
 import Home from './pages/Home/Home';
+import UserProfile from './pages/UserProfile/UserProfile'
 import updateDataEmail from './store/user/action.js';
 import {connect} from 'react-redux';
 import Sign_up from './pages/Sign_up/sign_up.js';
@@ -52,6 +53,7 @@ function App({updateDataEmail}) {
        <Route path="/" element = {<Home/>}/>
       )}
          <Route path="/register" element = {<Sign_up/>}/>
+         <Route path="/userprofile" element = {<UserProfile/>}/>
         </Routes>
       </Router>
       
