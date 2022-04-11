@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {Form, Input, Button, Label} from 'reactstrap';
 import '../fonts/index.css';
 
+
 export const Globalpage = styled.body `
  margin:0;
 `;
@@ -131,7 +132,7 @@ export const ButtonLogin = styled.div `
 `;
 
 
-export const TitleLog = styled.h2`
+export const TitleLog = styled.h2 `
     position: absolute;
     right: 22%;
     width: 222px;
@@ -240,3 +241,4 @@ export const Iconpassword = styled.div `
             right: 82%;
     }
 `;
+
