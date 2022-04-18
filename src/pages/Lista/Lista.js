@@ -1,17 +1,25 @@
 import React, {useEffect, useState} from 'react';
+import Pagination  from './Pagination';
 import './style.css';
-
-const LIMIT = 12
 
 function App() {
   const [nutri, setNutri] = useState([])
   const []= useState([])
-  const[input, setInput]= useState([''])
+  const[input]= useState([''])
+
+  const itensPerPage = 2
+  const [ currentPage, setCurrentPage ]= useState (0)
+
+  const pages = Math.ceil ( nutri.length / itensPerPage )
+  const startIndex = currentPage * itensPerPage
+  const endIndex = startIndex + itensPerPage
+  const currentItens = nutri.slice (startIndex, endIndex)
 
   useEffect(()=>{
-    function loadApi(){
+
+    const loadApi = async ()=> {
       let url = 'https://sujeitoprogramador.com/rn-api/?api=posts';
-      fetch(url)
+      await fetch(url)
       .then((r)=>r.json())
       .then((json)=>{
         console.log(json);
@@ -22,25 +30,25 @@ function App() {
   },[]);
 
   return (
-    <div className="container">
-        <input className='input' type="text" value={input}/>
-            {nutri.map((item) =>{
-              return(
-                <a href='google.com'>
-                <article key={item.id} className="post">
-                  <img src={item.capa} alt="item.titulo" className= "capa"/>
-                  <div className='conteudo'>
-                    <strong className="titulo">{item.titulo}</strong> 
-                    <strong className="preco">307,00</strong>
-                    <p className="subtitulo">
-                    {item.subtitulo}
-                    </p>
-                  </div>          
-                </article>
-                </a>
-              )
-            })}
-    </div>
+      <div className="container">
+          <input className='input' type="text" placeholder='NUTRI' value={input} disabled/>
+              {currentItens.map((item) =>{
+                return(
+                  <a href=''>
+                  <article key={item.id} className="post">
+                      <img src={item.capa} alt="item.titulo" className= "capa"/>
+                      <strong className="titulo">{item.titulo}</strong> 
+                      <strong className="preco">307,00</strong>
+                      <p className="subtitulo">
+                      {item.subtitulo}
+                      </p>          
+                  </article>
+                  </a>
+                )
+              })}
+         <Pagination itensPerPage={itensPerPage} currentItens={currentItens} currentPage={currentPage} pages = {pages} setCurrentPage = {setCurrentPage} />
+      </div>
+
   );
 }
 
