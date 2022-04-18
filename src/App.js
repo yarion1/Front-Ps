@@ -6,7 +6,6 @@ import updateDataEmail from './store/user/action.js';
 import {connect} from 'react-redux';
 import Sign_up from './pages/Sign_up/sign_up.js';
 import GetCookie from './components/auth/GetCookie';
-import Lista from './pages/Lista/Lista.js';
 
 function EmailLogued(){
   this.loading = true;
@@ -53,7 +52,6 @@ function App({updateDataEmail}) {
        <Route path="/" element = {<Home/>}/>
       )}
          <Route path="/register" element = {<Sign_up/>}/>
-         <Route path="/Lista" element = {<Lista/>}/>
         </Routes>
       </Router>
       
