@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import updateDataEmail from './store/user/action.js';
 import {connect} from 'react-redux';
 import Sign_up from './pages/Sign_up/sign_up.js';
+import User_profile from './pages/User_profile/user_profile.js';
 import GetCookie from './components/auth/GetCookie';
 
 function EmailLogued(){
@@ -52,6 +53,7 @@ function App({updateDataEmail}) {
        <Route path="/" element = {<Home/>}/>
       )}
          <Route path="/register" element = {<Sign_up/>}/>
+         <Route path="/User_profile" element = {<User_profile/>}/>
         </Routes>
       </Router>
       
