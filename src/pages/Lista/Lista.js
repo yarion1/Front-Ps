@@ -7,7 +7,7 @@ function App() {
   const []= useState([])
   const[input]= useState([''])
 
-  const itensPerPage = 2
+  const itensPerPage = 1
   const [ currentPage, setCurrentPage ]= useState (0)
 
   const pages = Math.ceil ( nutri.length / itensPerPage )
