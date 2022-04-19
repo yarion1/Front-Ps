@@ -6,7 +6,7 @@ import updateDataEmail from './store/user/action.js';
 import {connect} from 'react-redux';
 import Sign_up from './pages/Sign_up/sign_up.js';
 import GetCookie from './components/auth/GetCookie';
-import Lista from './pages/Lista/Lista.js';
+import ProductInspect from './components/ProductInspect/ProductInspect';
 
 function EmailLogued(){
   this.loading = true;
@@ -17,14 +17,14 @@ function EmailLogued(){
     let Token = GetCookie();
     if(Token !== undefined){
       fetch(`http://localhost:3000/?Token=${Token}`)
-      .then(response=>response.json())
-      .then(({data})=>{
+      .then(response => response.json())
+      .then(({data}) => {
         let {loggued} = data;
         this.loading = false;
         updateDataEmail(data);
         setLogueado(loggued);
       })
-      .catch(err=>{
+      .catch(err => {
         console.log(err);
         this.loading = false;
         setLogueado(false);
@@ -50,10 +50,10 @@ function App({updateDataEmail}) {
         <Route path="/login" element = {<Login/>}/>
       )}
       {logueado && (
-       <Route path="/" element = {<Home/>}/>
+        <Route path="/" element = {<Home/>}/>
       )}
-         <Route path="/register" element = {<Sign_up/>}/>
-         <Route path="/Lista" element = {<Lista/>}/>
+          <Route path="/register" element = {<Sign_up/>}/>
+          <Route path="product-inspect/*"  element = {<ProductInspect />}/>
         </Routes>
       </Router>
       
