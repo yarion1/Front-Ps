@@ -1,0 +1,21 @@
+.pagination{
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin: 0.8%;
+}
+
+.pagination li+li{
+    margin-left: 1rem;
+}
+
+.pagination__item--active{
+    background: none;
+    font-weight: bold;
+    border: none;
+}
+
+.pagination button{
+    border-radius: 3px;
+}

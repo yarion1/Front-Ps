@@ -1,19 +1,23 @@
 import React, {useEffect, useState} from 'react';
-import Pagination  from './Pagination';
-import './style.css';
+import Pagination  from '../Pagination/Pagination';
+
+import {Container,
+        Input,
+        Post,
+        Capa,
+        Titulo,
+        Preco,
+        Subtitulo} from './styleLista';
 
 function App() {
   const [nutri, setNutri] = useState([])
   const []= useState([])
   const[input]= useState([''])
 
-  const itensPerPage = 1
-  const [ currentPage, setCurrentPage ]= useState (0)
-
-  const pages = Math.ceil ( nutri.length / itensPerPage )
-  const startIndex = currentPage * itensPerPage
-  const endIndex = startIndex + itensPerPage
-  const currentItens = nutri.slice (startIndex, endIndex)
+  const itensPerPage = 2
+  const [offset, setOffset] = useState (0)
+  const endIndex = offset + itensPerPage
+  const currentItens = nutri.slice (offset, endIndex)
 
   useEffect(()=>{
 
@@ -30,24 +34,22 @@ function App() {
   },[]);
 
   return (
-      <div className="container">
-          <input className='input' type="text" placeholder='NUTRI' value={input} disabled/>
+      <Container>
+          <Input type="text" placeholder='NUTRI' value={input} disabled/>
               {currentItens.map((item) =>{
                 return(
-                  <a href=''>
-                  <article key={item.id} className="post">
-                      <img src={item.capa} alt="item.titulo" className= "capa"/>
-                      <strong className="titulo">{item.titulo}</strong> 
-                      <strong className="preco">307,00</strong>
-                      <p className="subtitulo">
+                  <Post key={item.id} onClick="location.href = ">
+                      <Capa src={item.capa} alt="item.titulo" className= "capa"/>
+                      <Titulo>{item.titulo}</Titulo> 
+                      <Preco>307,00</Preco>
+                      <Subtitulo>
                       {item.subtitulo}
-                      </p>          
-                  </article>
-                  </a>
+                      </Subtitulo>          
+                  </Post>
                 )
               })}
-         <Pagination itensPerPage={itensPerPage} currentItens={currentItens} currentPage={currentPage} pages = {pages} setCurrentPage = {setCurrentPage} />
-      </div>
+         <Pagination limit={itensPerPage} total={nutri.length} offset={offset} setOffset={setOffset}/>
+      </Container>
 
   );
 }

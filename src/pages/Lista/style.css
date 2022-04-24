@@ -51,7 +51,6 @@
         text-align: right;
         float: right;
         color: #000000;
-
     }
 
     .subtitulo{
@@ -61,30 +60,7 @@
         font-weight: 400;
         font-size: 18px;
         color: #858585;
-        margin-top: 0.8%;
-        float: left;        
-    }
-
-    .pagination{
-        width: 100%;
-        display: flex;
-        list-style: none;
-        justify-content: center;
-        margin: 0.8%;
-    }
-    
-    .pagination li+li{
-        margin-left: 1rem;
-    }
-
-    .pagination__item--active{
-        background: none;
-        font-weight: bold;
-        border: none ;
-    }
-
-    .pagination button{
-        border-radius: 3px;
+        float: left;     
     }
 
 }
@@ -163,26 +139,5 @@
         text-align: left;        
         color: #858585;
         float: left;
-    }
-
-    .pagination{
-        width: 100%;
-        display: flex;
-        list-style: none;
-        justify-content: center;
-        margin-bottom: 5%;
-    }
-    .pagination li+li{
-        margin-left: 1rem;
-    }
-
-    .pagination__item--active{
-        background: none;
-        font-weight: bold;
-        border: none ;
-    }
-
-    .pagination button{
-        border-radius: 3px;
     }
 }
