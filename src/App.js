@@ -50,7 +50,7 @@ function App({updateDataEmail}) {
         {!logueado && (
         <Route path="/login" element = {<Login/>}/>
       )}
-      {logueado && (
+      {!logueado && (
         <Route path="/" element = {<Home/>}/>
       )}
 

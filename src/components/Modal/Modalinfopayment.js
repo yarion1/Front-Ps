@@ -8,6 +8,7 @@ import {
 } from 'reactstrap';
 
 import PropTypes from 'prop-types';
+import {Buttonconfirmbuy } from '../../pages/Equipment/EquipmentDetail/StyledEquipmentDetail';
 
 const Modalinfopayment = ({show, toggleShow}) => {
     
@@ -18,7 +19,10 @@ const Modalinfopayment = ({show, toggleShow}) => {
                     Meios de Pagamento
                 </ModalHeader>
                 <ModalBody>
-                  Aqui estará contida todas as formas de pagamento pro usuário
+                  <Buttonconfirmbuy>Dinheiro</Buttonconfirmbuy>
+                  <Buttonconfirmbuy>Pix</Buttonconfirmbuy>
+                  <Buttonconfirmbuy>Cartão</Buttonconfirmbuy>
+
                 </ModalBody>
                 <ModalFooter>
                     {' '}

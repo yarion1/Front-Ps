@@ -1,13 +1,18 @@
 import React from 'react';
+import{
+  Valor
+} from './StyledModal'
 import {
   Modal,
   ModalBody,
   ModalFooter,
   Button,
-  ModalHeader
+  ModalHeader,
+  CardBody
 } from 'reactstrap';
 
 import PropTypes from 'prop-types';
+import { CardAviso } from '../../pages/Equipment/EquipmentDetail/StyledEquipmentDetail';
 
 const ModalPayment = ({show, toggleShow}) => {
     
@@ -18,7 +23,16 @@ const ModalPayment = ({show, toggleShow}) => {
                     Confirmar Aluguel
                 </ModalHeader>
                 <ModalBody>
-                   Aqui mostrará a confirmação do aluguel/contrato.
+                   <CardBody>
+                    <Valor>R$ 307 por dia</Valor>
+                    <br/>
+                    <div>
+                      <form>
+                      Por quantos dias deseja alugar esse equipamento?
+                      <input type="number" class="form-control" ></input>
+                      </form>
+                    </div>
+                   </CardBody>
                 </ModalBody>
                 <ModalFooter>
                     <Button

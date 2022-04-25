@@ -188,6 +188,28 @@ export const Buttonconfirm = styled.button `
     }
 `;
 
+export const Buttonconfirmbuy = styled.button `
+    position: relative;
+    width: 20%;
+    height: 30px;
+    margin: 0 30px;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-size: 15px;
+    border-color: #080436;
+    background: #080436;
+    border-radius: 10px;
+    transition: 0.3s;
+
+    :hover{
+        background: #52AFCC;
+        border:none;
+        color: #080436;
+    }
+`;
+
+
+
 export const Imagemprincipal = styled.div `
     width: 400px;
     margin-left: 40px;

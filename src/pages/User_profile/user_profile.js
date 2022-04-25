@@ -12,6 +12,7 @@ import styled, {
 } from './styleduser_profile';
 import '../..';
 import User_profile_infos from '../../components/user_profile_infos/user_profile_infos.js';
+import ModalPayment from '../../components/Modal/Modalpayment';
 
 
 
