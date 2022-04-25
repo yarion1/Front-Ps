@@ -1,54 +1,55 @@
 import React from "react";
 import styled, {
-    Navbar, 
-    Searchform,
-    Buttonsearch,
-    UlItens,
-    Linha,
-    IconCart,
-    Titlecart,
-
-} from '../../assets/styles/Navbar/stylednavbar';
-import {Input} from 'reactstrap';
+  Navbar,
+  Searchform,
+  IconCart,
+  Titlecart,
+  Iconuser,
+} from "../../assets/styles/Navbar/stylednavbar";
+import { Input } from "reactstrap";
 
 const NavbarPage = () => {
-    return (
-        <>
-         <div>
-             <Navbar style={{alignItems: 'center', justifyContent:'center'}}>
-                <div>
-                    <Searchform style={{display: 'flex', flexDirection: 'row'}}>
-                        <Input
-                            style={{width: '80%', marginRight: '-10%'}}
-                            name="search"
-                            placeholder="Pesquisar produtos..."
-                            type="search"
-                        />
-                        <Buttonsearch style={{pddingTop: '20px'}}></Buttonsearch>
-                    </Searchform>
-                  
+  return (
+    <>
+      <div>
+        <Navbar style={{ alignItems: "center", justifyContent: "right" }}>
+          <div>
+            <Searchform style={{ display: "flex", flexDirection: "row" }}>
+              <Input
+                style={{ width: "80%", marginRight: "-10%" }}
+                name="search"
+                placeholder="Pesquisar produtos..."
+                type="search"
+              />
+            </Searchform>
+            <div
+              style={{
+                color: "#fff",
+                fontSize: "50px",
+                alignItems: "center",
+                marginLeft: "-1100px",
+                marginTop: "-50px",
+                display: "flex",
+              }}
+            >
+              Useit
+              <div
+            
+              >
+                <ul  style={{ display: "flex", margin: "3rem", marginTop: "65px" }}>
+
+                  <Titlecart><li style={{ listStyle: "none", fontSize:"20px" }}>Meus Alugueis</li></Titlecart>
+                  <Titlecart><li style={{ listStyle: "none", fontSize:"20px" }}>Ofertas</li></Titlecart>
+                  <Titlecart><li style={{ listStyle: "none", fontSize:"20px" }}>Parceiros</li></Titlecart>
+                  <Titlecart><li style={{ listStyle: "none", fontSize:"20px" }}>Perfil</li></Titlecart>
+                </ul>
               </div>
-            <div>
-                <div style={{textAlign: 'center'}}>
-                    <IconCart/>
-                    <Titlecart>Suas compras</Titlecart>
-                </div>
             </div>
+          </div>
         </Navbar>
-        <Linha style={{alignItems: 'center', justifyContent:'center'}}>
-            <UlItens>
-                <li><a href="*">Home</a></li>
-                <li><a href="/pedidos">Mais pedidos</a></li>
-                <li><a href="/categorias">Categorias</a></li>
-                <li><a href="/ferramentas">Ferramentas</a></li>
-                <li><a href="/equipamento">Equipamentos</a></li>
-                <li><a href="/empresas">Empresas</a></li>
-            </UlItens>
-        </Linha>
-        </div>
-     
-        </>
-    );
+      </div>
+    </>
+  );
 };
 
 export default NavbarPage;
