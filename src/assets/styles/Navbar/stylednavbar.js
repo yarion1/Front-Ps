@@ -9,22 +9,20 @@ export const Navbar = styled.nav`
   background: #2166c1;
   height: 90px;
   width: 100%;
-  
-
-  @media (max-width: 869px) {
-    width: 100vh;
-  }
+  padding-left: 5%;
+  align-items: center;
+  justify-items: space-evenly;
+  color: white;
+  fontSize: "50px",
+  alignItems: "center",
 `;
 
 export const Searchform = styled(Form)`
   display: flex;
   position: relative;
-  width: 350px;
+  width: 30%;
   height: 40px;
-  top: 54px;
-  right:40px;
-  margin-left: 300px;
-  `;
+`;
 
 export const Titlecart = styled.h2`
   color: #fff;
@@ -34,7 +32,7 @@ export const Titlecart = styled.h2`
   font-size: 15px;
   line-height: 25px;
   z-index: 10;
-  background-color:#2166c1;
+  background-color: #2166c1;
   margin-top: 10px;
   padding-left: 5px;
   margin-left: 5px;
@@ -49,13 +47,26 @@ export const Titlecart = styled.h2`
   cursor: pointer;
   overflow: hidden;
 
-  :hover{
+  :hover {
     transition: all ease 0.3s;
     transform: scale(1.1);
   }
-  
-  
-  `;
+`;
 
+export const NavItems = styled.ul`
+  padding-top: 15px;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  alig-items: center;
+  justify-items: space-evenly;
+  color: "white;
+  alignItems: "center";
+`;
 
-
+export const Logo = styled.img`
+  max-heigth: 5px;
+  min-width:5px;
+  heigth:auto;
+  width:auto;
+`;
