@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Pagination  from '../Pagination/Pagination';
+import Pagination  from '../../components/Pagination/Pagination';
 
 import {Container,
         Input,
