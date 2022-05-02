@@ -34,7 +34,9 @@ function App() {
   },[]);
 
   return (
-      <Container>
+    <>
+      <NavbarPage/>
+      <Container>          
           <Input type="text" placeholder='NUTRI' value={input} disabled/>
               {currentItens.map((item) =>{
                 return(
@@ -50,7 +52,7 @@ function App() {
               })}
          <Pagination limit={itensPerPage} total={nutri.length} offset={offset} setOffset={setOffset}/>
       </Container>
-
+    </>
   );
 }
 
