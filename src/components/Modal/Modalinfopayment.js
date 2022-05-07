@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Modal,
   ModalBody,
@@ -9,18 +9,30 @@ import {
 
 import PropTypes from 'prop-types';
 import {Buttonconfirmbuy } from '../../pages/Equipment/EquipmentDetail/StyledEquipmentDetail';
+import Modalmoney from './Modalmoney';
+import Modalpix from './Modalpix';
 
 const Modalinfopayment = ({show, toggleShow}) => {
-    
-    return(
+  
+  const [showModalmoney, setShowModalmoney]= useState(false);
+  const togglemoney = () => setShowModalmoney(!showModalmoney);
+
+  const [showModalpix, setShowModalpix]= useState(false);
+  const togglepix = () => setShowModalpix(!showModalmoney);
+
+  const [openModalcartao, setOpenModalcartao] = useState(false)
+
+  return(
+    <>
         <div>
             <Modal isOpen={show} toggle={() => {toggleShow()}}>
                 <ModalHeader toggle={() => {toggleShow()}}>
                     Meios de Pagamento
                 </ModalHeader>
                 <ModalBody>
-                  <Buttonconfirmbuy>Dinheiro</Buttonconfirmbuy>
-                  <Buttonconfirmbuy>Pix</Buttonconfirmbuy>
+                  <Buttonconfirmbuy onClick={()=>{togglemoney()}}>Dinheiro</Buttonconfirmbuy>
+                  <Buttonconfirmbuy onClick={()=>{togglepix()}}>Pix</Buttonconfirmbuy>
+                  <Modalpix show={showModalpix} toggleShow={() => {togglepix()}}></Modalpix>
                   <Buttonconfirmbuy>Cartão</Buttonconfirmbuy>
 
                 </ModalBody>
@@ -32,6 +44,8 @@ const Modalinfopayment = ({show, toggleShow}) => {
                 </ModalFooter>
             </Modal>
         </div>
+        <Modalmoney show={showModalmoney} toggleShow={() => {togglemoney()}}/>
+      </>
     );
 }
 
