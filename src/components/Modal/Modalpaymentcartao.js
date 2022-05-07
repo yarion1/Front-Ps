@@ -11,7 +11,7 @@ function Modalpaymentcartao ({closeModalpaymentcartao}){
             <Cardbuyinfo>
             Nome do Titular do Cartão:
             <Input 
-            style={{width: '80%', marginRight: '-10%'}}
+            style={{width: '75%', marginRight: '-10%'}}
             name="cardownername"
             placeholder="Ex: Frabrício de Faguntes"
             type="text">
