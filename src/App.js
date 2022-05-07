@@ -9,6 +9,7 @@ import User_profile from './pages/User_profile/user_profile.js';
 import GetCookie from './components/auth/GetCookie';
 import ProductInspect from './components/ProductInspect/ProductInspect';
 import Lista from './pages/Lista/Lista.js';
+import Rent from './pages/rent/listRent';
 function EmailLogued(){
   this.loading = true;
 
@@ -58,6 +59,7 @@ function App({updateDataEmail}) {
          <Route path="product-inspect/*"  element = {<ProductInspect />}/>
          <Route path="/User_profile" element = {<User_profile/>}/>
          <Route path="/Lista" element = {<Lista/>}/>
+         <Route path="/Rent" element = {<Rent/>}/>
 
         </Routes>
       </Router>

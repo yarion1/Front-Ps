@@ -41,9 +41,10 @@ function App() {
                       <strong className="preco">307,00</strong>
                       <p className="subtitulo">
                       {item.subtitulo}
-                      </p>          
+                      </p>     
                   </article>
                   </a>
+
                 )
               })}
          <Pagination itensPerPage={itensPerPage} currentItens={currentItens} currentPage={currentPage} pages = {pages} setCurrentPage = {setCurrentPage} />
