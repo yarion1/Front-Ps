@@ -17,6 +17,7 @@ export const Navbar = styled.nav`
   alignItems: "center",
 `;
 
+
 export const Searchform = styled(Form)`
   display: flex;
   position: relative;
