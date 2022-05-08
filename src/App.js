@@ -53,7 +53,8 @@ function App({updateDataEmail}) {
       {logueado && (
         <Route path="/" element = {<PreLoader/>}/>
       )}
-          <Route path="/" element = {<PreLoader/>}/>
+
+         <Route path="/" element = {<PreLoader/>}/>
          <Route path="/register" element = {<Sign_up/>}/>
          <Route path="product-inspect/*"  element = {<ProductInspect />}/>
          <Route path="/User_profile" element = {<User_profile/>}/>
