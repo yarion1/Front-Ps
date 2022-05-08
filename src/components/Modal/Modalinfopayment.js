@@ -10,6 +10,7 @@ import {
   Infopaymentoption
 } from "./Styledmodalinfopayment"
 
+
 import PropTypes from 'prop-types';
 
 const Modalinfopayment = ({show, toggleShow}) => {

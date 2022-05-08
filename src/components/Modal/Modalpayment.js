@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import {Input} from 'reactstrap';
 import {
@@ -7,6 +8,7 @@ import {
   Button,
   ModalHeader
 } from 'reactstrap';
+
 
 import Modalmoney from './Modalmoney';
 import Modalpix from './Modalpix';
@@ -59,6 +61,7 @@ const ModalPayment = ({show, toggleShow}) => {
                     <Button
                       style={{background:'#080436', border:'#080436', color:'#fff'}}
                       onClick={() => {toggleShow()}}>
+
                      Alugar
                     </Button>
                     {' '}
