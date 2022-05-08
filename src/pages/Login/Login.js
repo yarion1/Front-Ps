@@ -1,25 +1,28 @@
 import React, {useState} from 'react';
 import styled, {
     Globalpage,
-    Divleft,
-    Divright,
-    Divbtn,
-    BotaoLogin,
-    ButtonSign,
-    ButtonLogin,
-    TitleLog,
-    Iconemail,
-    Iconpassword,
-    Formlogin,
-    InputLogin,
-    Buttonlogin,
-    Labell,
+    Cardpage,
+    Cardlogin,
+    Imageconstructor,
+    Textinfo,
+    Imagelogo,
+    Titlelog,
+    Formlog,
+    Labelog,
+    Buttonlog,
+    Inputlog,
+    FormGrouplog,
+    Divbutton,
+    H3,
+    DivBtn,
+    Divregister
 
 } from  '../../assets/styles/auth/authstyled';
-import { FormGroup} from 'reactstrap';
 import {AiOutlineMail} from 'react-icons/ai';
 import {RiLockPasswordFill} from 'react-icons/ri';
 import { useNavigate} from 'react-router-dom'
+import constructor from '../../assets/img/constructor.png';
+import logo from '../../assets/img/logo.jpeg';
 
 /**
  * 
@@ -70,10 +73,6 @@ function SendLogueo(Email,Password){
     const [Password, setPassword] = useState("");
     let navigate = useNavigate();
 
-    function handleClicklogin(){
-        navigate('/login');
-    }
-
     function handleClickregister(){
         navigate('/register');
     }
@@ -81,50 +80,69 @@ function SendLogueo(Email,Password){
         return(
             <>
              <Globalpage>
-                 <Divleft>
-                     <BotaoLogin><ButtonLogin onClick={handleClicklogin}>Login</ButtonLogin></BotaoLogin>
-                     <div> <ButtonSign onClick={handleClickregister}>Sign in</ButtonSign> </div>
-                 </Divleft>
-                 <Divright>
-                     <Iconemail><AiOutlineMail/></Iconemail>
-                     <Iconpassword><RiLockPasswordFill/></Iconpassword>
-                     <TitleLog>Login</TitleLog>
-                     <Formlogin inline onSubmit={(e)=>{e.preventDefault();  SendLogueo(Email,Password)}} >
-                             <FormGroup floating >
-                             <InputLogin
-                                 placeholder="Email"
-                                 type="Email"
-                                 onChange={({target})=>{setEmail(target.value)}}
-                             />
-                             <Labell for="exampleEmail">
-                                 Email
-                             </Labell>
-                             </FormGroup>
-                             {' '}
-                             <FormGroup floating>
-                             <InputLogin
-                                 placeholder="Password"
-                                 type="Password"
-                                 onChange={({target})=>{setPassword(target.value)}}
-                       />
-                             <Labell for="examplePassword">
-                                 Password
-                             </Labell>
-                             </FormGroup>
-                             {' '}
-                             <Divbtn>
-                                 <Buttonlogin type='submit' style={{background:'#080436',color:'white',
-                                 borderColor:'#080436',
-                                 borderRadius:'35px',
-                                 width: '100px',
-                                 height:"50px",
-                                 fontSize: '20px',
-                                 fontFamily:"Roboto",
-                                 }}>Login</Buttonlogin>
-                             </Divbtn>
-                         </Formlogin>
-              
-                    </Divright>
+                <Cardpage>
+                       <Imagelogo>
+                         <img src={logo}/>
+                       </Imagelogo>
+                   <Cardlogin>
+                        <Titlelog>
+                            LOGIN
+                        </Titlelog>
+                        <Formlog inline>
+                         <H3>Email</H3>
+                            <FormGrouplog floating>
+                            <Inputlog
+                                style={{borderRadius: '15px', height: '50px'}}
+                                id="exampleEmail"
+                                name="email"
+                                placeholder="Email"
+                                type="email"
+                            />
+                            <Labelog for="exampleEmail">
+                                Email
+                            </Labelog>
+                            </FormGrouplog>
+                            {' '}
+                            <H3>Senha</H3>
+                            <FormGrouplog floating>
+                            <Inputlog 
+                                style={{borderRadius: '15px', height: '20%'}}
+                                id="examplePassword"
+                                name="password"
+                                placeholder="Senha"
+                                type="password"
+                            />
+                            <Labelog for="examplePassword">
+                                Password
+                            </Labelog>
+                            </FormGrouplog>
+                            {' '}
+                              <DivBtn>
+                                  <button>Esqueceu sua senha?</button>
+                              </DivBtn>
+                            <Divbutton>
+                                <Buttonlog style={{background:'#2166C1',
+                                    color:'white',
+                                     borderColor:'#2166C1',
+                                     borderRadius:'15px',
+                                     height:"55px",
+                                     fontSize: '20px',
+                                     fontFamily:"Roboto",
+                                     }}>
+                                    LOGIN
+                                </Buttonlog>
+                            </Divbutton>
+                            <Divregister> 
+                                <h2>Ainda não tem cadastro? </h2>
+                                <button onClick={handleClickregister}>Registre-se aqui.</button>  
+                            </Divregister>
+                        </Formlog>
+                    </Cardlogin>
+                    <Textinfo><h2>Alugue equipamentos, máquinas e ferramentas para o seu trabalho</h2></Textinfo>
+                    <Imageconstructor>
+                        <img src={constructor} alt='constructor'/>
+                    </Imageconstructor>
+                </Cardpage>
              </Globalpage>
             </>
         );
