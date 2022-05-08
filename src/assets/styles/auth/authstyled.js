@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {Form, Input, Button, Label, FormGroup} from 'reactstrap';
 import '../fonts/index.css';
 
-
 export const Globalpage = styled.body `
     margin: 0 auto;
     width: 100vw;
@@ -127,6 +126,7 @@ export const Textinfo = styled.div `
     }
 
 `;
+
 
 export const Titlelog = styled.h2 `
     color: #FFFFFF;
