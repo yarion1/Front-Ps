@@ -1,4 +1,6 @@
-import React from 'react';
+
+import React, { useState } from 'react';
+import {Input} from 'reactstrap';
 import {
   Modal,
   ModalBody,
@@ -6,6 +8,17 @@ import {
   Button,
   ModalHeader
 } from 'reactstrap';
+
+
+import Modalmoney from './Modalmoney';
+import Modalpix from './Modalpix';
+import Modalpaymentcartao from './Modalpaymentcartao';
+
+import {
+  Infoprice,
+  Dayrented,
+  Pagamentmode
+} from "./Styledmodalpayment"
 
 import PropTypes from 'prop-types';
 
@@ -23,8 +36,8 @@ const ModalPayment = ({show, toggleShow}) => {
                 <ModalFooter>
                     <Button
                       style={{background:'#080436', border:'#080436', color:'#fff'}}
-                      onClick={() => {console.log("ok")}}
-                    >
+                      onClick={() => {toggleShow()}}>
+
                      Alugar
                     </Button>
                     {' '}

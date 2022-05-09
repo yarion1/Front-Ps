@@ -7,6 +7,7 @@ import {
   ModalHeader
 } from 'reactstrap';
 
+
 import PropTypes from 'prop-types';
 
 const Modalinfopayment = ({show, toggleShow}) => {
