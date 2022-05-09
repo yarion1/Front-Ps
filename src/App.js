@@ -4,11 +4,12 @@ import Login from "./pages/Login/Login";
 import PreLoader from './components/PreLoader/PreLoader'
 import updateDataEmail from './store/user/action.js';
 import {connect} from 'react-redux';
-import Sign_up from './pages/Sign_up/sign_up.js';
+import SignUp from './pages/SignUp/signUp.js';
 import User_profile from './pages/User_profile/user_profile.js';
 import GetCookie from './components/auth/GetCookie';
 import ProductInspect from './components/ProductInspect/ProductInspect';
 import Lista from './pages/Lista/Lista.js';
+import Rent from './pages/rent/listRent';
 function EmailLogued(){
   this.loading = true;
 
@@ -55,10 +56,11 @@ function App({updateDataEmail}) {
       )}
 
          <Route path="/" element = {<PreLoader/>}/>
-         <Route path="/register" element = {<Sign_up/>}/>
+         <Route path="/register" element = {<SignUp/>}/>
          <Route path="product-inspect/*"  element = {<ProductInspect />}/>
          <Route path="/User_profile" element = {<User_profile/>}/>
          <Route path="/Lista" element = {<Lista/>}/>
+         <Route path="/Rent" element = {<Rent/>}/>
 
         </Routes>
       </Router>

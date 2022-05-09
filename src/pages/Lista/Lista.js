@@ -46,8 +46,15 @@ function App() {
                       <Preco>307,00</Preco>
                       <Subtitulo>
                       {item.subtitulo}
+<<<<<<< HEAD
+                      </p>     
+                  </article>
+                  </a>
+
+=======
                       </Subtitulo>          
                   </Post>
+>>>>>>> 7a55663c82654b3568378e25c8ec10861ca5db86
                 )
               })}
          <Pagination limit={itensPerPage} total={nutri.length} offset={offset} setOffset={setOffset}/>

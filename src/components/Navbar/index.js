@@ -10,6 +10,7 @@ import styled, {
 } from "../../assets/styles/Navbar/stylednavbar";
 import { Input } from "reactstrap";
 import logo from "../../assets/img/logo-useit.png";
+import { Link } from "react-router-dom";
 
 const NavbarPage = () => {
   return (
@@ -17,14 +18,18 @@ const NavbarPage = () => {
       <Navbar>
         {/*{<Logo src={logo} /> }*/}
         <div>
-          <img style={{width:"75%", height:"30%"}} src="https://media.discordapp.net/attachments/950791198757511191/969205599336292352/untitled-removebg-preview.png"/>
+          <img
+            style={{ width: "75%", height: "30%" }}
+            src="https://media.discordapp.net/attachments/950791198757511191/969205599336292352/untitled-removebg-preview.png"
+          />
         </div>
         <NavItems>
-          
           <Titlecart>
-            <li style={{ listStyle: "none", fontSize: "20px" }}>
-              Meus Alugueis
-            </li>
+            <Link to="/Rent" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
+              <li>
+                Meus Alugueis
+              </li>
+            </Link>
           </Titlecart>
           <Titlecart>
             <li style={{ listStyle: "none", fontSize: "20px" }}>Ofertas</li>
