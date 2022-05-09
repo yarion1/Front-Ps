@@ -6,6 +6,10 @@ import {
   Button,
   ModalHeader
 } from 'reactstrap';
+import {
+  Infopaymentoption
+} from "./Styledmodalinfopayment"
+
 
 import PropTypes from 'prop-types';
 
@@ -18,7 +22,9 @@ const Modalinfopayment = ({show, toggleShow}) => {
                     Meios de Pagamento
                 </ModalHeader>
                 <ModalBody>
-                  Aqui estará contida todas as formas de pagamento pro usuário
+                  <Infopaymentoption>Dinheiro</Infopaymentoption>
+                  <Infopaymentoption>Pix</Infopaymentoption>
+                  <Infopaymentoption>Cartão</Infopaymentoption>
                 </ModalBody>
                 <ModalFooter>
                     {' '}
