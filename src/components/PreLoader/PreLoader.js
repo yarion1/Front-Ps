@@ -60,12 +60,12 @@ function PreLoader() {
           {!loading ? (
        
             <div>
-             <lottie-player
+              <lottie-player
                 ref={lottiee} 
                 id="fourthLottie"
                 src="https://assets8.lottiefiles.com/packages/lf20_byuzwmds.json"
                 style={{width:'350px'}}
-      ></lottie-player>
+               ></lottie-player>
               <div style={{marginRight:'45px'}} className="loading">
                 <span ></span>
                 <span></span>

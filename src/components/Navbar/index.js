@@ -24,6 +24,13 @@ const NavbarPage = () => {
           />
         </div>
         <NavItems>
+        <Titlecart>
+            <Link to="/" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
+              <li>
+                Home
+              </li>
+            </Link>
+          </Titlecart>
           <Titlecart>
             <Link to="/Rent" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
               <li>
@@ -38,7 +45,11 @@ const NavbarPage = () => {
             <li style={{ listStyle: "none", fontSize: "20px" }}>Parceiros</li>
           </Titlecart>
           <Titlecart>
-            <li style={{ listStyle: "none", fontSize: "20px" }}>Perfil</li>
+            <Link to="/User-profile" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
+              <li>
+                Perfil
+              </li>
+            </Link>
           </Titlecart>
         </NavItems>
         <Searchform
