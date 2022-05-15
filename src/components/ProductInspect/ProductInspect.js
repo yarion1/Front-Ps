@@ -20,34 +20,40 @@ const ProductInspect = () => {
     }, [selectedPage])
     
     return(
+
         <>
-            <NavbarPage/>
-            <Routes>
-                <Route path="/detail" element={<EquipamentDetaiInfo />} />
-                <Route path="/security" element={<EquipmentSecurity />} />
-                <Route path="/tecnical" element={<EquipmentTecnicalDetail />} />
-            </Routes>
-            <div style={{display: 'inline-block', position:'relative', marginTop:'10%', marginLeft:'13.2%', width:'80%'}}>
-            <ButtonDetails 
-                onClick={() => {setSelectedPage('detail')}}
-                className={`${selectedPage === 'detail' 
-                    ? 'selectedPage' 
-                    : ''} `}>
-                        DETALHES
-            </ButtonDetails>
-            <ButtonDetails
-                onClick={() => {setSelectedPage('security')}}
-                className={`${selectedPage === 'security'
-                    ? 'selectedPage'
-                    : ''}`}>SEGURANÇA
-            </ButtonDetails>
-            <ButtonDetails
-                onClick={() => {setSelectedPage('tecnical')}}
-                className={`${selectedPage === 'tecnical'
-                    ? 'selectedPage'
-                    : ''}`}>DETALHES TÉCNICOS
-            </ButtonDetails>
-            </div>
+           <div> 
+            
+                <div>
+                <NavbarPage/>
+                    <Routes>
+                        <Route path="/detail" element={<EquipamentDetaiInfo />} />
+                        <Route path="/security" element={<EquipmentSecurity />} />
+                        <Route path="/tecnical" element={<EquipmentTecnicalDetail />} />
+                    </Routes>
+                    <div style={{display: 'inline-block', position:'relative', marginTop:'10%', marginLeft:'13.2%', width:'80%'}}>
+                    <ButtonDetails 
+                        onClick={() => {setSelectedPage('detail')}}
+                        className={`${selectedPage === 'detail' 
+                            ? 'selectedPage' 
+                            : ''} `}>
+                                DETALHES
+                    </ButtonDetails>
+                    <ButtonDetails
+                        onClick={() => {setSelectedPage('security')}}
+                        className={`${selectedPage === 'security'
+                            ? 'selectedPage'
+                            : ''}`}>SEGURANÇA
+                    </ButtonDetails>
+                    <ButtonDetails
+                        onClick={() => {setSelectedPage('tecnical')}}
+                        className={`${selectedPage === 'tecnical'
+                            ? 'selectedPage'
+                            : ''}`}>DETALHES TÉCNICOS
+                    </ButtonDetails>
+                    </div>
+                </div>
+            </div> 
         </>
     );
 };

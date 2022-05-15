@@ -33,7 +33,6 @@ export const Titlecart = styled.h2`
   font-size: 15px;
   line-height: 25px;
   z-index: 10;
-  background-color: #2166c1;
   margin-top: 10px;
   padding-left: 5px;
   margin-left: 5px;
@@ -51,7 +50,9 @@ export const Titlecart = styled.h2`
   :hover {
     transition: all ease 0.3s;
     transform: scale(1.1);
+    
   }
+  
 `;
 
 export const NavItems = styled.ul`
@@ -59,10 +60,9 @@ export const NavItems = styled.ul`
   width: 60%;
   display: flex;
   flex-direction: row;
-  alig-items: center;
   justify-items: space-evenly;
-  color: "white;
-  alignItems: "center";
+  color: white;
+  
 `;
 
 export const Logo = styled.img`
