@@ -2,10 +2,10 @@ import React, {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 import EquipmentDetail from '../../pages/Equipment/EquipmentDetail/EquipmentDetail';
 import EquipmentSecurity from '../../pages/Equipment/EquipmentSecurity/EquipmentSecurity';
-import EquipmentTecnicalDetail from '../../pages/Equipment/EquipmentTecnicalDetail/EquipmentTecnicalDetail';
 import {ButtonDetails} from './StyledProductInspect';
 import EquipamentDetaiInfo from '../../pages/Equipment/EquipmentDetail/EquipamentDetailInfo';
-import NavbarPage from '../../components/Navbar/index';
+import  Navbar  from '../Navbar/index';
+
 
 const ProductInspect = () => {
 
@@ -21,13 +21,13 @@ const ProductInspect = () => {
     
     return(
         <>
-            <NavbarPage/>
+        <Navbar/>
             <Routes>
                 <Route path="/detail" element={<EquipamentDetaiInfo />} />
                 <Route path="/security" element={<EquipmentSecurity />} />
-                <Route path="/tecnical" element={<EquipmentTecnicalDetail />} />
+
             </Routes>
-            <div style={{display: 'inline-block', position:'relative', marginTop:'10%', marginLeft:'13.2%', width:'80%'}}>
+            <div style={{display: 'inline-block', position:'relative', marginTop:'10%', marginLeft:'15%', width:'100%'}}>
             <ButtonDetails 
                 onClick={() => {setSelectedPage('detail')}}
                 className={`${selectedPage === 'detail' 
@@ -40,12 +40,6 @@ const ProductInspect = () => {
                 className={`${selectedPage === 'security'
                     ? 'selectedPage'
                     : ''}`}>SEGURANÇA
-            </ButtonDetails>
-            <ButtonDetails
-                onClick={() => {setSelectedPage('tecnical')}}
-                className={`${selectedPage === 'tecnical'
-                    ? 'selectedPage'
-                    : ''}`}>DETALHES TÉCNICOS
             </ButtonDetails>
             </div>
         </>

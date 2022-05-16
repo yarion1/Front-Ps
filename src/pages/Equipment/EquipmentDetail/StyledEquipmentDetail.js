@@ -3,6 +3,16 @@ import '../../../assets/styles/fonts/index.css';
 import { Card, CardBody } from 'reactstrap';
 import {GoVerified} from 'react-icons/go';
 
+
+export const Globalpage = styled.body `
+    margin: 0 auto;
+    width: 70vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+`;
 export const Carditens = styled(Card) `
     display: flex;
     margin-left: auto;
@@ -74,7 +84,7 @@ export const Infopreco =  styled.div `
     max-height: 61px;
     top: 125px;
     border-radius: 0px 50px 50px 0px;
-    background: #080436;
+    background: #2166c1;
     text-align: center;
 `;
 
@@ -142,22 +152,6 @@ export const Text2 = styled(Text) `
     color: rgba(5, 5, 5, 0.61);
 `;
 
-export const Info = styled.button `
-    font-family: 'Roboto';
-    font-size: 14px;
-    padding-top: 5px;
-    margin-left: 72px;
-    width: 200px;
-    font-size: 14px;
-    line-height: 16px;
-    color: #080436;
-    border: none;
-    background: none;
-    transition: 0.2s;
-    :hover{
-        color: #52AFCC;
-    }
-`;
 
 export const Iconverified = styled(GoVerified) `
     position: absolute;
@@ -176,15 +170,16 @@ export const Buttonconfirm = styled.button `
     color: #FFFFFF;
     font-family: 'Roboto';
     font-size: 20px;
-    border-color: #080436;
-    background: #080436;
+    border:none;
+    border-color: #2166c1;
+    background: #2166c1;
     border-radius: 10px;
     transition: 0.3s;
 
     :hover{
-        background: #52AFCC;
+        background: #618DCE;
         border:none;
-        color: #080436;
+        color: #fff;
     }
 `;
 
