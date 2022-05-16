@@ -20,10 +20,10 @@ import styled, {
 } from  '../../assets/styles/auth/authstyled';
 import {AiOutlineMail} from 'react-icons/ai';
 import {RiLockPasswordFill} from 'react-icons/ri';
-import { useNavigate} from 'react-router-dom'
 import constructor from '../../assets/img/constructor.png';
+import {BrowserRouter as Router, Routes, Route, useNavigate} from 'react-router-dom';
 import logo from '../../assets/img/logo.jpeg';
-
+import PreLoader from '../../components/PreLoader/PreLoader';
 /**
  * 
  * @param {*} Email 
@@ -68,17 +68,23 @@ function SendLogueo(Email,Password){
  */
 
  function Login () {
-  
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     function handleClickregister(){
         navigate('/register');
     }
+
+    function handleClickLogin(){
+        navigate('/PreLoader');
+    }
+
+  
     
         return(
             <>
+
              <Globalpage>
                 <Cardpage>
                        <Imagelogo>
@@ -121,8 +127,10 @@ function SendLogueo(Email,Password){
                                   <button>Esqueceu sua senha?</button>
                               </DivBtn>
                             <Divbutton>
-                                <Buttonlog style={{background:'#2166C1',
-                                    color:'white',
+                                <Buttonlog
+                                     onClick={handleClickLogin}
+                                     style={{background:'#2166C1',
+                                     color:'white',
                                      borderColor:'#2166C1',
                                      borderRadius:'15px',
                                      height:"55px",

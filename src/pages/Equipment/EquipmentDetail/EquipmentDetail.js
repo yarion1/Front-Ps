@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import style, {Globalpage} from '../../../assets/styles/auth/authstyled';
 import ModalPayment from '../../../components/Modal/Modalpayment';
 import Modalinfopayment from '../../../components/Modal/Modalinfopayment';
+import { useNavigate} from 'react-router-dom';
 import { 
     Carditens, 
     Iitleitem, 
@@ -12,16 +12,16 @@ import {
     CardAviso,
     Text,
     Text2,
-    Info,
     Iconverified,
     Buttonconfirm,
     DivImage,
     Divcoluna,
     Imagemprincipal,
-    ButtonDetails,
+    Globalpage
 } from './StyledEquipmentDetail';
 
 import ReactImageZoom from 'react-image-zoom';
+import EquipmentSecurity from '../EquipmentSecurity/EquipmentSecurity';
 
 function EquipmentDetail (/* {equipament} */) {
     const equipament = {
@@ -40,7 +40,6 @@ function EquipmentDetail (/* {equipament} */) {
 
     const toggle = () => setShowModal(!showModal);
     const toggleinfo = () => setShowModalinfo(!showModalinfo);
-    
 
     return (
      <>
@@ -80,7 +79,6 @@ function EquipmentDetail (/* {equipament} */) {
                             <Iconverified/>
                             <Text>Para segurança</Text>
                             <Text2>Realize pagamentos verificando antecipadamente as informações do produto.</Text2>
-                            <Info>Veja mais informações aqui.</Info>
                         </CardAviso>
                             <Buttonconfirm onClick={() => {toggle()}}>Alugar agora</Buttonconfirm>
                     </Carddetails>

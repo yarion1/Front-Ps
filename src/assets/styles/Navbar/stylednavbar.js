@@ -8,13 +8,14 @@ export const Navbar = styled.nav`
   z-index: 100;
   background: #2166c1;
   height: 90px;
+  margin-bottom: 7%;
   width: 100%;
   padding-left: 5%;
   align-items: center;
   justify-items: space-evenly;
   color: white;
-  fontSize: "50px",
-  alignItems: "center",
+  fontSize: 50px,
+  alignItems: center,
 `;
 
 
@@ -62,7 +63,7 @@ export const NavItems = styled.ul`
   flex-direction: row;
   justify-items: space-evenly;
   color: white;
-  
+  alignItems: center;
 `;
 
 export const Logo = styled.img`
