@@ -11,6 +11,7 @@ import ProductInspect from './components/ProductInspect/ProductInspect';
 import Lista from './pages/Lista/Lista.js';
 import Rent from './pages/rent/listRent';
 import PreLoader from "./components/PreLoader/PreLoader";
+import DadosCadastro from "./pages/SignUp/DadosCadastrais/DadosCadastrais";
 
 function EmailLogued(){
   this.loading = true;
@@ -64,7 +65,7 @@ function App({updateDataEmail}) {
          <Route path="/User-profile" element = {<User_profile/>}/>
          <Route path="/Lista" element = {<Lista/>}/>
          <Route path="/Rent" element = {<Rent/>}/>
-
+         <Route path="/dadoscadastrais" element = {<DadosCadastro/>}/>
         </Routes>
       </Router>
       
