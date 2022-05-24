@@ -30,7 +30,7 @@ function Home () {
     {
     id:'2',
     title: 'Britadeiras',
-    images: ['https://www.alfamaxlocacao.com.br/imagens/informacoes/aluguel-britadeira-osasco-06.jpg'],
+    images: ['https://www.inglesgratuito.com.br/wp-content/uploads/2015/08/FERRAMENTAS-EM-INGL%C3%8AS-02.jpg'],
     },
 
     {
