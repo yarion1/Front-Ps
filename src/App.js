@@ -62,7 +62,7 @@ function App({updateDataEmail}) {
          <Route path="/register" element = {<SignUp/>}/>
          <Route path="/PreLoader" element={<PreLoader/>} />
          <Route path="product-inspect/*"  element = {<ProductInspect />}/>
-         <Route path="/User-profile" element = {<User_profile/>}/>
+         <Route path="/User-profile/*" element = {<User_profile/>}/>
          <Route path="/Lista" element = {<Lista/>}/>
          <Route path="/Rent" element = {<Rent/>}/>
          <Route path="/dadoscadastrais" element = {<DadosCadastro/>}/>

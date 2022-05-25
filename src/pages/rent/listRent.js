@@ -6,7 +6,7 @@ import "./styledrent";
 import './rent.css';
 
 
-function App() {
+function Rent() {
   const [nutri, setNutri] = useState([])
   const []= useState([])
   const[input]= useState([''])
@@ -76,4 +76,4 @@ function App() {
   );
 };
 
-export default App;
+export default Rent;
