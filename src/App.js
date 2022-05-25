@@ -10,6 +10,7 @@ import GetCookie from './components/auth/GetCookie';
 import ProductInspect from './components/ProductInspect/ProductInspect';
 import Lista from './pages/Lista/Lista.js';
 import Rent from './pages/rent/listRent';
+import Worker from './pages/Listworker/Listworker';
 import PreLoader from "./components/PreLoader/PreLoader";
 import DadosCadastro from "./pages/SignUp/DadosCadastrais/DadosCadastrais";
 
@@ -65,7 +66,7 @@ function App({updateDataEmail}) {
          <Route path="/User-profile/*" element = {<User_profile/>}/>
          <Route path="/Lista" element = {<Lista/>}/>
          <Route path="/Rent" element = {<Rent/>}/>
-         <Route path="/dadoscadastrais" element = {<DadosCadastro/>}/>
+         <Route path="/Worker" element = {<Worker/>}/>
         </Routes>
       </Router>
       
