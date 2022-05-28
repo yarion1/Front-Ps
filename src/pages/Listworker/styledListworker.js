@@ -111,4 +111,24 @@ const media = {
         float: left;
       }
       `;
-    
+      export const Label = styled.p`
+      width: 65%;
+      font-family: 'Nunito Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      color: #000;
+      float: right;    
+      
+      ${media.mobile}{
+        width: 100%;
+        font-family: 'Nunito Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: left;        
+        color: #858585;
+        float: left;
+      }
+      `;

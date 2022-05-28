@@ -72,7 +72,8 @@ width: 400px;
 height: 400px;   
 left: 60px;
 top: 90px;
-background: #FFFFFF;
+background: url('https://cdn-icons-png.flaticon.com/512/1946/1946429.png'), #C4C4C4;
+background-size: cover;  
 border-radius: 50%;
 `
 

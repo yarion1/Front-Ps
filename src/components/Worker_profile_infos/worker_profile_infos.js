@@ -10,7 +10,8 @@ import styled, {
     Worker_profile_professionfield,
     Worker_profile_phonenumberfield,
     Worker_profile_descriptionfield,
-    Worker_profile_descriptionlabel, 
+    Worker_profile_descriptionlabel,
+    Worker_profile_button, 
     
   } from './styledworker_profile_infos.js';
 
@@ -18,6 +19,7 @@ import styled, {
 
     render() {
       return (
+
          <Worker_profile_container>
            <Worker_profile_photo></Worker_profile_photo>
           <Worker_profile_namelabel>Nome</Worker_profile_namelabel>
