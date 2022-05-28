@@ -12,6 +12,10 @@ import Lista from './pages/Lista/Lista.js';
 import Rent from './pages/rent/listRent';
 import Worker from './pages/Listworker/Listworker';
 import PreLoader from "./components/PreLoader/PreLoader";
+import Upload from "./pages/upload/up";
+import UpWorker from "./pages/Upworker/UpWorker";
+
+
 
 function EmailLogued(){
   this.loading = true;
@@ -66,6 +70,9 @@ function App({updateDataEmail}) {
          <Route path="/Lista" element = {<Lista/>}/>
          <Route path="/Rent" element = {<Rent/>}/>
          <Route path="/Worker" element = {<Worker/>}/>
+         <Route path="/upload" element = {<Upload/>}/>
+         <Route path="/uploadW" element = {<UpWorker/>}/>
+         
 
         </Routes>
       </Router>
