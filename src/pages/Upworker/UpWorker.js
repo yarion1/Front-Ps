@@ -6,13 +6,12 @@ import styled, {
     Cardpage,
     Cardlogin,
     Imageconstructor,
-    Textinfo,
     Titlelog,
 } from  '../../assets/styles/auth/authstyled';
 import SignUpF from '../upload/up'
 import {DivLogin} from './UpworkStyled.js';
 
- function SignUp () {
+ function SignUpWorker () {
   
     let navigate = useNavigate();
 
@@ -41,4 +40,4 @@ import {DivLogin} from './UpworkStyled.js';
     )  
   }
 
-export default SignUp;
+export default SignUpWorker;

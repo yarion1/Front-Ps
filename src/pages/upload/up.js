@@ -3,7 +3,7 @@ import React,{Component} from 'react';
 import {DivUp, DivUpp, DivUppp} from './UpStyled.js';
 
 
-class App extends Component { 
+class Up extends Component { 
 
     state = { 
   
@@ -88,4 +88,4 @@ class App extends Component {
     } 
   } 
   
-  export default App; 
+  export default Up; 
