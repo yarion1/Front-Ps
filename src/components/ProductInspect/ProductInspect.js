@@ -20,6 +20,7 @@ const ProductInspect = () => {
     }, [selectedPage])
     
     return(
+
         <>
         <Navbar/>
             <Routes>
