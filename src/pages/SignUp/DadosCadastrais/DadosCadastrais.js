@@ -4,7 +4,7 @@ import styled, {
     Globalpage,
 } from  '../../../assets/styles/auth/authstyled';
 import {CardBody,CardHeader, Button,
-Form, FormGroup,Label,Input, Row,Col} from 'reactstrap';
+Form, FormGroup,Label,Input, Row, Col, Select} from 'reactstrap';
 import {CardData, Container, Item} from './StyledDadosCadastrais';
 import  {cpfMask, phoneMask}  from '../../../components/Mask/mask';
 import axios  from "axios";
@@ -12,6 +12,8 @@ import axios  from "axios";
  function DadosCadastro () {
 
     const [values, setValues] = useState({ 
+      email: sessionStorage.getItem('email'),
+      password: sessionStorage.getItem('password'),
       cpf: '' , 
       cep: '', 
       phone_number: '',
@@ -23,7 +25,8 @@ import axios  from "axios";
         {id:3, name:'Outros'},
       ],
       address: '',
-      typeuser: ''
+      type_user: 0,
+      rate:0.0
       })
 
   
@@ -38,29 +41,20 @@ import axios  from "axios";
     }
  
   const [result, setResult] = useState(null);
+  const navigate = useNavigate();
 
   const sendData = event => {
     event.preventDefault();
-
-    axios.post('http://localhost:5000/users', {...values})
+    axios.post('http://localhost:5000/register', {...values})
     .then(response => {
       setResult(response.data);
-      setValues({
-        cpf: '' , 
-        cep: '', 
-        phone_number: '',
-        name: '',
-        birthdate:'',
-        genre: '',
-        address: '',
-        typeuser: ''
-      })
     })
     .catch(() => {
       setResult({
         sucess: false,
       })
     })
+    navigate('/login');
   };
    
   
@@ -80,7 +74,7 @@ import axios  from "axios";
               <FormGroup style={{paddingLeft:'10px'}}>
                 <Label>
                   Nome completo
-                </Label>
+                </Label> 
                 <Input
                   name="name"
                   type="text"
@@ -190,6 +184,7 @@ import axios  from "axios";
                     />
                   </Item>
                   <Item>
+                    
                     <Label>
                       CEP
                     </Label>
@@ -218,23 +213,28 @@ import axios  from "axios";
                     Selecione a sua finalidade
                   </Label>
                   <Input
-                    name="typeuser"
+                    name="type_user"
                     type="select"
-                  >
-                    <option>
-
-                    </option>
-                    <option  
-                      name="typeuser"
-                     onChange={inputChange}
+                    onChange={inputChange}
+                    value = {values}
+                    placeholder="Selecione uma opção"
                     >
-                      Trabalhador anunciante
-                    </option>
-                    <option 
-                      name="typeuser"
-                      onChange={inputChange}>
+                    <option
+                      value={1}
+                    >
                       Cliente
                     </option>
+                    <option
+                      value={2}
+                    >
+                      Anunciante
+                    </option>
+                    {/* <option
+                      name="typeUser"
+                      value={2}
+                      onChange={inputChange}>
+                      
+                    </option> */}
                   </Input>
                 </FormGroup>
               <Button  style={{background:'#2166C1', borderColor: '#2166C1'}}>
