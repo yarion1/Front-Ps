@@ -1,13 +1,14 @@
 import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
-import {Form, FormGroup,Input,Label,Button} from 'reactstrap';
+import {Form, FormGroup,Input,Label,Button, Container} from 'reactstrap';
 import NavbarPage from "../../components/Navbar/index";
 
 import styled, {
   Userpic,
   Username,
   Userprofilecontainer,
-  Botao_editar_perfil
+  Botao_editar_perfil,
+  Caixa,
 
 } from './styleduser_profile';
 import '../..';
@@ -18,16 +19,17 @@ import User_profile_infos from '../../components/user_profile_infos/user_profile
 
  function User_profile () {
     return(
-      <div>
+      <>
         <NavbarPage/>
+        <Caixa>
         <Userpic/>
         <Botao_editar_perfil> Editar </Botao_editar_perfil>
         <Username>Arthur Fernandes</Username>
         <Userprofilecontainer>
           <User_profile_infos/>
         </Userprofilecontainer>
-      </div>
-
+      </Caixa>
+    </>
     ) 
   }
 

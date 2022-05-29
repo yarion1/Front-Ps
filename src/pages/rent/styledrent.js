@@ -6,9 +6,8 @@ const media = {
 }
 
   export const Container = styled.div `
-    max-width: 70%;
-    margin-top: 40px;
-    margin-left: 250px;
+    max-width: 80%;
+    margin: 0 auto;
     display: block;
     
     
@@ -18,7 +17,6 @@ const media = {
       flex-direction: column;
       justify-content: center;
       align-items: center; 
-      
     }
  `;
   
@@ -54,7 +52,7 @@ const media = {
       
 
       ${media.mobile}{
-        Width: 100%;
+        Width: 98%;
         Height: 100%;
         Top: 243px;
         Left: 59px;

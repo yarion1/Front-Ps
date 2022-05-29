@@ -10,7 +10,7 @@ padding-bottom: 2px;
 margin-bottom: 50px;
 font-size: 15px;
 height: 40px;
-width: 200%;
+width: 100%;
 padding-left: 20px;
 border-radius: 0;
 

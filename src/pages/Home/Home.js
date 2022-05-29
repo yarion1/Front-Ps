@@ -7,6 +7,7 @@ import style,{
     CardRowright,
     Infopromo,
     Diagonalbox,
+    Page,
 
 } from './styledhomepage';
 import {
@@ -52,12 +53,7 @@ function Home () {
       <Infopromo>
         
       </Infopromo>
-      <div style={{
-        paddingLeft:' 30px',
-        position: 'absolute',
-        top: '40px'
-        }
-        }> 
+      <Page> 
         <CardRowleft>
           <MdOutlineNavigateBefore style={{fontSize:'40px', color:'#fff'}}/>
         </CardRowleft>
@@ -112,7 +108,7 @@ function Home () {
             </div>
         </Cardcategory>
         ))}
-      </div>  
+      </Page>  
     </>
  );
 }

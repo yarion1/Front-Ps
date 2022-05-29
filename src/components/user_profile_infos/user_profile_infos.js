@@ -11,7 +11,7 @@ class User_profile_infos extends Component {
       return (
           <User_profiles_labels>
               <User_profiles_titles>
-                  Descrição
+                  Descrição:
               </User_profiles_titles>
               <Label for="Descrição">
                   Estudante de Ciência da Computação na Universidade Federal do Tocantins. 
