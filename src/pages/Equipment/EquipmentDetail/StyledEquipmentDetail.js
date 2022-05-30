@@ -103,8 +103,8 @@ export const Meiospag = styled.button `
     position: absolute;
     width: 200px;
     height: 39px;
-    left: 15px;
-    top: 215px;
+    left: 25px;
+    top: 180px;
     font-family: 'Nunito Sans';
     font-style: normal;
     font-size: 14px;
@@ -195,4 +195,15 @@ export const Imagemprincipal = styled.div `
           transition: all 0.3s ease;
       }
     }
+`;
+
+export const Avalie = styled.button `
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    text-align: right;
+    margin: 10px
+    
 `;

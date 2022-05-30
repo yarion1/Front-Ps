@@ -8,7 +8,7 @@ import {Container,
         Titulo,
         Subtitulo} from './styledrent';
 
-function App() {
+function Rent() {
   const [nutri, setNutri] = useState([])
   
   const itensPerPage = 3
@@ -53,4 +53,4 @@ function App() {
   );
 }
 
-export default App;
+export default Rent;

@@ -1,0 +1,64 @@
+#header {
+    position: absolute;
+    width: 220px;
+    top: 90px;
+  }
+  #header .pro-sidebar {
+    height: 89vh;
+  }
+  #header .closemenu {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    right: 10px;
+    z-index: 9999;
+    line-height: 30px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 22px;
+    top: 20px;
+    cursor: pointer;
+  }
+  #header .pro-sidebar {
+    width: 100%;
+    min-width: 100%;
+  }
+  #header .pro-sidebar.collapsed {
+    width: 80px;
+    min-width: 80px;
+  }
+  #header .pro-sidebar-inner {
+    background-color:#130A1D;
+    box-shadow: 0.5px 0.866px 2px 0px rgba(0, 0, 0, 0.15);
+  }
+  #header .pro-sidebar-inner .pro-sidebar-layout {
+    overflow-y: hidden;
+
+  }
+  #header .pro-sidebar-inner .pro-sidebar-layout ul {
+    padding: 0 5px;
+    margin-top: 60px;
+  }
+  #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item {
+    color: rgb(255, 255, 255);
+    margin: 10px 0px;
+    font-weight: bold;
+  }
+  #header .pro-sidebar-inner :hover{
+    color: rgb(212, 212, 212);
+  }
+  #header .pro-sidebar-inner .pro-sidebar-layout ul .pro-inner-item .pro-icon-wrapper {
+    background-color: #5794E5;
+    color: rgb(245, 245, 245);
+    border-radius: 3px;
+  }
+
+  #header .pro-sidebar-inner .pro-sidebar-layout .active {
+    background-image: linear-gradient(0deg, #5794E5 0%, #2166C1 100%);
+  }
+
+  
+  @media only screen and (max-width: 720px) {
+    html {
+      overflow: hidden;
+    }
+  }
