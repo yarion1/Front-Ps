@@ -18,6 +18,7 @@ function SignUp (){
     email: '' , 
     password: '', 
     })
+
   const navigate = useNavigate();
     const inputChange = (e) => {
 
@@ -27,7 +28,11 @@ function SignUp (){
         [name]: value
       })
     }
- 
+
+      return (
+        <div>
+          <Formlog inline>
+
     const [result, setResult] = useState(null);
 
     const sendData = event => {

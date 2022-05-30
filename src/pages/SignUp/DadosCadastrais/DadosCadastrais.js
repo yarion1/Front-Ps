@@ -4,7 +4,7 @@ import styled, {
     Globalpage,
 } from  '../../../assets/styles/auth/authstyled';
 import {CardBody,CardHeader, Button,
-Form, FormGroup,Label,Input, Row, Col, Select} from 'reactstrap';
+Form, FormGroup,Label,Input, Row,Col} from 'reactstrap';
 import {CardData, Container, Item} from './StyledDadosCadastrais';
 import  {cpfMask, phoneMask}  from '../../../components/Mask/mask';
 import axios  from "axios";
@@ -25,6 +25,7 @@ import axios  from "axios";
         {id:3, name:'Outros'},
       ],
       address: '',
+      typeuser: ''
       type_user: 0,
       rate:0.0
       })
@@ -41,6 +42,23 @@ import axios  from "axios";
     }
  
   const [result, setResult] = useState(null);
+
+  const sendData = event => {
+    event.preventDefault();
+
+    axios.post('http://localhost:5000/users', {...values})
+    .then(response => {
+      setResult(response.data);
+      setValues({
+        cpf: '' , 
+        cep: '', 
+        phone_number: '',
+        name: '',
+        birthdate:'',
+        genre: '',
+        address: '',
+        typeuser: ''
+      })
   const navigate = useNavigate();
 
   const sendData = event => {
@@ -48,12 +66,14 @@ import axios  from "axios";
     axios.post('http://localhost:5000/register', {...values})
     .then(response => {
       setResult(response.data);
+
     })
     .catch(() => {
       setResult({
         sucess: false,
       })
     })
+
     navigate('/login');
   };
    
@@ -74,7 +94,8 @@ import axios  from "axios";
               <FormGroup style={{paddingLeft:'10px'}}>
                 <Label>
                   Nome completo
-                </Label> 
+
+                </Label>
                 <Input
                   name="name"
                   type="text"
@@ -184,7 +205,6 @@ import axios  from "axios";
                     />
                   </Item>
                   <Item>
-                    
                     <Label>
                       CEP
                     </Label>
