@@ -12,7 +12,10 @@ import Lista from './pages/Lista/Lista.js';
 import Rent from './pages/rent/listRent';
 import Worker from './pages/Listworker/Listworker';
 import PreLoader from "./components/PreLoader/PreLoader";
+
 import Worker_profile from './pages/WorkerProfile/workerProfile.js';
+import DadosCadastro from "./pages/SignUp/DadosCadastrais/DadosCadastrais";
+
 function EmailLogued(){
   this.loading = true;
 
@@ -62,12 +65,12 @@ function App({updateDataEmail}) {
          <Route path="/register" element = {<SignUp/>}/>
          <Route path="/PreLoader" element={<PreLoader/>} />
          <Route path="product-inspect/*"  element = {<ProductInspect />}/>
-         <Route path="/User-profile" element = {<User_profile/>}/>
+         <Route path="/User-profile/*" element = {<User_profile/>}/>
          <Route path="/Lista" element = {<Lista/>}/>
          <Route path="/Rent" element = {<Rent/>}/>
+         <Route path="/dadoscadastrais" element = {<DadosCadastro/>}/>
          <Route path="/Worker" element = {<Worker/>}/>
          <Route path="/Worker_profile" element = {<Worker_profile/>}/>
-
         </Routes>
       </Router>
       
