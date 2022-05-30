@@ -12,6 +12,8 @@ import axios  from "axios";
  function DadosCadastro () {
 
     const [values, setValues] = useState({ 
+      email: sessionStorage.getItem('email'),
+      password: sessionStorage.getItem('password'),
       cpf: '' , 
       cep: '', 
       phone_number: '',
@@ -24,6 +26,8 @@ import axios  from "axios";
       ],
       address: '',
       typeuser: ''
+      type_user: 0,
+      rate:0.0
       })
 
   
@@ -55,12 +59,22 @@ import axios  from "axios";
         address: '',
         typeuser: ''
       })
+  const navigate = useNavigate();
+
+  const sendData = event => {
+    event.preventDefault();
+    axios.post('http://localhost:5000/register', {...values})
+    .then(response => {
+      setResult(response.data);
+
     })
     .catch(() => {
       setResult({
         sucess: false,
       })
     })
+
+    navigate('/login');
   };
    
   
@@ -80,6 +94,7 @@ import axios  from "axios";
               <FormGroup style={{paddingLeft:'10px'}}>
                 <Label>
                   Nome completo
+
                 </Label>
                 <Input
                   name="name"
@@ -218,23 +233,28 @@ import axios  from "axios";
                     Selecione a sua finalidade
                   </Label>
                   <Input
-                    name="typeuser"
+                    name="type_user"
                     type="select"
-                  >
-                    <option>
-
-                    </option>
-                    <option  
-                      name="typeuser"
-                     onChange={inputChange}
+                    onChange={inputChange}
+                    value = {values}
+                    placeholder="Selecione uma opção"
                     >
-                      Trabalhador anunciante
-                    </option>
-                    <option 
-                      name="typeuser"
-                      onChange={inputChange}>
+                    <option
+                      value={1}
+                    >
                       Cliente
                     </option>
+                    <option
+                      value={2}
+                    >
+                      Anunciante
+                    </option>
+                    {/* <option
+                      name="typeUser"
+                      value={2}
+                      onChange={inputChange}>
+                      
+                    </option> */}
                   </Input>
                 </FormGroup>
               <Button  style={{background:'#2166C1', borderColor: '#2166C1'}}>

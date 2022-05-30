@@ -66,6 +66,7 @@ function App({updateDataEmail}) {
          <Route path="/User-profile/*" element = {<User_profile/>}/>
          <Route path="/Lista" element = {<Lista/>}/>
          <Route path="/Rent" element = {<Rent/>}/>
+         <Route path="/dadoscadastrais" element = {<DadosCadastro/>}/>
          <Route path="/Worker" element = {<Worker/>}/>
         </Routes>
       </Router>

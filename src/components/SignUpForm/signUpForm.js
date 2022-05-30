@@ -8,6 +8,8 @@ import styled, {
 } from  '../../assets/styles/auth/authstyled';
 
 import {Buttoncad,Divbuttoncad} from './styledForm.js';
+import axios  from "axios";
+import { useNavigate} from 'react-router-dom';
 
 function SignUp (){
 
@@ -17,7 +19,7 @@ function SignUp (){
     password: '', 
     })
 
-
+  const navigate = useNavigate();
     const inputChange = (e) => {
 
       const { name, value } = e.target
@@ -26,10 +28,41 @@ function SignUp (){
         [name]: value
       })
     }
- 
+
       return (
         <div>
           <Formlog inline>
+
+    const [result, setResult] = useState(null);
+
+    const sendData = event => {
+      event.preventDefault();
+  
+      axios.post('http://localhost:5000/verify-email', {...values})
+      .then(response => {
+        setResult(response.data);
+        if(response.data === true){
+          alert('Usuário já cadastrado, Faça Login')
+        }else{
+          sessionStorage.setItem('email', values.email);
+          sessionStorage.setItem('password', values.password);
+           setValues({
+            email: '',
+            password: '',
+          })
+          navigate('/dadoscadastrais');
+        }
+      })
+      .catch(() => {
+        setResult({
+          sucess: false,
+        })
+      })
+    };
+     
+      return (
+        <div>
+          <Formlog inline onSubmit={sendData}>
           <H3>Email</H3>
              <FormGrouplog floating>
              <Inputlog
@@ -38,7 +71,7 @@ function SignUp (){
                  value={values.email}
                  placeholder="Email"
                  type="email"
-                   onChange={inputChange}
+                 onChange={inputChange}
              />
              <Labelog for="exampleEmail">
                  Email
