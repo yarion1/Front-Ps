@@ -4,12 +4,12 @@ import {Form, FormGroup,Input,Label,Button} from 'reactstrap';
 import Navbar from "../../components/Navbar/index";
 
 import '../..';
-import Worker_profile_infos from '../../components/Worker_profile_infos/worker_profile_infos.js';
+import Worker_profile_infos from '../../components/Worker_profile_infos/workerprofileinfos.js';
 
 import styled, {
   Worker_profile_button, 
   
-} from './styledworker_profile.js';
+} from './styledworkerprofile.js';
 
 
  function Worker_profile () {

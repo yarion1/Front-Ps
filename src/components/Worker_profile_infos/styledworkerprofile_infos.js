@@ -115,6 +115,3 @@ left:23px;
 background: #FFFFFF;
 border-radius: 40px;
 `
-
-
-

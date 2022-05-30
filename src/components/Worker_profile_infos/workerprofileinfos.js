@@ -11,9 +11,8 @@ import styled, {
     Worker_profile_phonenumberfield,
     Worker_profile_descriptionfield,
     Worker_profile_descriptionlabel,
-    Worker_profile_button, 
     
-  } from './styledworker_profile_infos.js';
+  } from './styledworkerprofile_infos.js';
 
   class Worker_profile_infos extends Component {
 

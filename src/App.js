@@ -12,7 +12,7 @@ import Lista from './pages/Lista/Lista.js';
 import Rent from './pages/rent/listRent';
 import Worker from './pages/Listworker/Listworker';
 import PreLoader from "./components/PreLoader/PreLoader";
-import Worker_profile from './pages/Worker_profile/worker_profile.js';
+import Worker_profile from './pages/WorkerProfile/workerProfile.js';
 function EmailLogued(){
   this.loading = true;
 
