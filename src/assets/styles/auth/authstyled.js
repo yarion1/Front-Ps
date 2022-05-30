@@ -359,12 +359,12 @@ export const Inputlog = styled(Input) `
        margin-left: 25%;
    }
    @media(max-width: 1400px){
-      top: 20em;
+      top: 19em;
       margin-left: 30%;
    }
    @media(max-width: 950px){
-      top: 21em;
-      right: -55%;
+      top: 22em;
+      right: -50%;
 
       h2{
         margin-top: 1px;
@@ -376,9 +376,9 @@ export const Inputlog = styled(Input) `
       width: 175%;
     }
     @media(max-width: 600px){
-      top: 24em;
+      top: 26em;
       left: -87%;
-      width: 100%;
+      width: 150%;
     }
  
  `;

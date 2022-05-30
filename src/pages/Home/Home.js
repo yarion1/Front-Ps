@@ -7,6 +7,7 @@ import style,{
     CardRowright,
     Infopromo,
     Diagonalbox,
+    Page,
 
 } from './styledhomepage';
 import {
@@ -30,7 +31,7 @@ function Home () {
     {
     id:'2',
     title: 'Britadeiras',
-    images: ['https://www.alfamaxlocacao.com.br/imagens/informacoes/aluguel-britadeira-osasco-06.jpg'],
+    images: ['https://www.inglesgratuito.com.br/wp-content/uploads/2015/08/FERRAMENTAS-EM-INGL%C3%8AS-02.jpg'],
     },
 
     {
@@ -52,12 +53,7 @@ function Home () {
       <Infopromo>
         
       </Infopromo>
-      <div style={{
-        paddingLeft:' 30px',
-        position: 'absolute',
-        top: '40px'
-        }
-        }> 
+      <Page> 
         <CardRowleft>
           <MdOutlineNavigateBefore style={{fontSize:'40px', color:'#fff'}}/>
         </CardRowleft>
@@ -112,7 +108,7 @@ function Home () {
             </div>
         </Cardcategory>
         ))}
-      </div>  
+      </Page>  
     </>
  );
 }

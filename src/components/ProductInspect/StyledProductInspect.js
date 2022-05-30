@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const ButtonDetails = styled.button `
 height: 66px;
-width: 332px;
-
+width: 35%;
 background: #F1F1F1;
 border: 1px solid rgba(0, 0, 0, 0.06);
 
@@ -16,13 +15,13 @@ line-height: 23px;
 color: rgba(0, 0, 0, 0.43);
 
 :hover{
-    background: #52AFCC;
-    border: 1px #solid 080436;
+    background: #618DCE;
+    border: 1px solid #2166C1;
     color: #ffff;
 }
 &.selectedPage {
-    background: #080436;
-    border: 1px #solid 080436;
+    background: #2166c1;
+    border: 1px solid #2166C1;
     color: #ffff;
 }
 

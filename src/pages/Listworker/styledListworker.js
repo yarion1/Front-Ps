@@ -6,8 +6,9 @@ const media = {
 }
 
   export const Container = styled.div `
-    max-width: 80%;
-    margin: 0 auto;
+    max-width: 70%;
+    margin-top: 40px;
+    margin-left: 250px;
     display: block;
     
     
@@ -17,6 +18,7 @@ const media = {
       flex-direction: column;
       justify-content: center;
       align-items: center; 
+      
     }
  `;
   
@@ -52,7 +54,7 @@ const media = {
       
 
       ${media.mobile}{
-        Width: 98%;
+        Width: 100%;
         Height: 100%;
         Top: 243px;
         Left: 59px;
@@ -109,4 +111,24 @@ const media = {
         float: left;
       }
       `;
-    
+      export const Label = styled.p`
+      width: 65%;
+      font-family: 'Nunito Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      color: #000;
+      float: right;    
+      
+      ${media.mobile}{
+        width: 100%;
+        font-family: 'Nunito Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: left;        
+        color: #858585;
+        float: left;
+      }
+      `;

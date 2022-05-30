@@ -1,29 +1,49 @@
-import React from "react";
+import React, {memo, useState} from "react";
 import styled, {
   Navbar,
   Searchform,
   NavItems,
-  IconCart,
   Titlecart,
   Logo,
-  Iconuser,
+  MenuContent,
+  MenuIcon,
+  Input,
+  Lupa,
 } from "../../assets/styles/Navbar/stylednavbar";
-import { Input } from "reactstrap";
-import logo from "../../assets/img/logo-useit.png";
 import { Link } from "react-router-dom";
+import menu from '../../assets/img/menu.svg'
+import {GiMagnifyingGlass} from 'react-icons/gi'
 
 const NavbarPage = () => {
+  const [show, setShow] = useState(false)
+
+  const toggleMenu = () =>{
+    setShow(!show)
+  }
+
   return (
     <>
       <Navbar>
-        {/*{<Logo src={logo} /> }*/}
-        <div>
-          <img
-            style={{ width: "75%", height: "30%" }}
-            src="https://media.discordapp.net/attachments/950791198757511191/969205599336292352/untitled-removebg-preview.png"
-          />
-        </div>
-        <NavItems>
+        <Logo>
+          <a href="/">
+            <img src="https://media.discordapp.net/attachments/950791198757511191/969205599336292352/untitled-removebg-preview.png"
+            width="104px"
+            />
+          </a>
+        </Logo>
+
+        <MenuContent>
+            <MenuIcon onClick={toggleMenu} src={menu} width="36px"/>
+        </MenuContent>
+
+        <NavItems show={show}>
+        <Titlecart>
+            <Link to="/" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
+              <li>
+                Home
+              </li>
+            </Link>
+          </Titlecart>
           <Titlecart>
             <Link to="/Rent" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
               <li>
@@ -38,19 +58,25 @@ const NavbarPage = () => {
             <li style={{ listStyle: "none", fontSize: "20px" }}>Parceiros</li>
           </Titlecart>
           <Titlecart>
-            <li style={{ listStyle: "none", fontSize: "20px" }}>Perfil</li>
+            <Link to="/User-profile" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
+              <li>
+                Perfil
+              </li>
+            </Link>
           </Titlecart>
         </NavItems>
-        <Searchform
-          style={{ display: "flex", flexDirection: "row", width: "30%" }}
-        >
+
+        <Searchform>
           <Input
-            style={{ width: "80%", marginRight: "5%" }}
             name="search"
             placeholder="Pesquisar produtos..."
             type="search"
           />
-        </Searchform>
+          <Lupa>
+            <GiMagnifyingGlass/>
+          </Lupa>          
+          </Searchform>
+          
       </Navbar>
     </>
   );

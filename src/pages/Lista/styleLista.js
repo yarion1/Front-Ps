@@ -9,12 +9,14 @@ const media = {
     max-width: 80%;
     margin: 0 auto;
     display: block;
+  
 
     ${media.mobile}{
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
-      align-items: center;  
+      
     }
  `;
   export const Input = styled.input`
@@ -45,7 +47,6 @@ const media = {
         justify-content: center;  
         float: left;
         display: block;
-        margin-left: 10%;
         margin-bottom: 10%;
         border: 0.1rem solid #000000;
         border-radius: 2%;
@@ -61,7 +62,7 @@ const media = {
       margin: 0.8%;
 
       ${media.mobile}{
-        Width: 100%;
+        Width: 98%;
         Height: 100%;
         Top: 243px;
         Left: 59px;

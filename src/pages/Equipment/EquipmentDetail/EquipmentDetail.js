@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import style, {Globalpage} from '../../../assets/styles/auth/authstyled';
 import ModalPayment from '../../../components/Modal/Modalpayment';
 import Modalinfopayment from '../../../components/Modal/Modalinfopayment';
+import { useNavigate} from 'react-router-dom';
+import ModalAv from '../../../components/Modal/ModalAv';
 import { 
     Carditens, 
     Iitleitem, 
@@ -12,16 +13,17 @@ import {
     CardAviso,
     Text,
     Text2,
-    Info,
     Iconverified,
     Buttonconfirm,
     DivImage,
     Divcoluna,
     Imagemprincipal,
-    ButtonDetails,
+    Globalpage,
+    Avalie
 } from './StyledEquipmentDetail';
 
 import ReactImageZoom from 'react-image-zoom';
+import EquipmentSecurity from '../EquipmentSecurity/EquipmentSecurity';
 
 function EquipmentDetail (/* {equipament} */) {
     const equipament = {
@@ -34,13 +36,14 @@ function EquipmentDetail (/* {equipament} */) {
     const [imagePreview, setImagePreview] = useState(equipament.images[0]);
     const [showModal, setShowModal]= useState(false);
     const [showModalinfo, setShowModalinfo]= useState(false);
+    const [showModalAv, setShowModalAv]= useState(false);
 
     
     const imgProps = {width: 450, zoomHeight: 450, zoomWidth: 450, img: imagePreview, zoomPosition: 'original'}; 
 
     const toggle = () => setShowModal(!showModal);
     const toggleinfo = () => setShowModalinfo(!showModalinfo);
-    
+    const toggleAv = () => setShowModalAv(!showModalAv);
 
     return (
      <>
@@ -80,15 +83,16 @@ function EquipmentDetail (/* {equipament} */) {
                             <Iconverified/>
                             <Text>Para segurança</Text>
                             <Text2>Realize pagamentos verificando antecipadamente as informações do produto.</Text2>
-                            <Info>Veja mais informações aqui.</Info>
                         </CardAviso>
                             <Buttonconfirm onClick={() => {toggle()}}>Alugar agora</Buttonconfirm>
+                            <Avalie onClick={() => {toggleAv()}}>Avalie o produto</Avalie>
                     </Carddetails>
                     </div>
             </Carditens>
         </Globalpage>
         <Modalinfopayment show={showModalinfo} toggleShow={() => {toggleinfo()}}/>
         <ModalPayment show={showModal} toggleShow={() => {toggle()}} />
+        <ModalAv show={showModalAv} toggleShow={() => {toggleAv()}} />
      </>
     );
 }

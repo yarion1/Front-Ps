@@ -2,15 +2,8 @@ import styled from "styled-components";
 import {Card, CardGroup} from 'reactstrap';
 
 export const Page = styled.body `
-    background: linear-gradient(#9198e5, #e66465);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-
+  padding:2%;
+  margin-top: -10%;
 `;
 
 export const Textcategoria = styled.h5 `
@@ -18,18 +11,22 @@ export const Textcategoria = styled.h5 `
     top:10px;
     font-style: normal;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 3vh;
     line-height: 50px;
     color: #fff;
     padding-top: 55%;
     text-align: left;
     padding-left:15px;
+
+    @media (max-width: 768px) {
+      font-size: 4vh;
+    }
     `;
 
 export const Cardcategory = styled(Card) `
   display: inline-block;
   width: 25%;
-  margin-top: 15%;
+  margin-top: 10%;
   text-align: center;
   cursor: pointer;
   transform: scale(0.9);
@@ -43,7 +40,9 @@ export const Cardcategory = styled(Card) `
     transition: all ease 0.3s;
   }
   
-  
+  @media (max-width: 768px) {
+    width: 50%;
+  }
   
 `;
 

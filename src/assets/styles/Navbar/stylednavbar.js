@@ -4,47 +4,56 @@ import "../fonts/index.css";
 
 export const Navbar = styled.nav`
   display: flex;
-  position: sticky;
-  z-index: 100;
   background: #2166c1;
   height: 90px;
   width: 100%;
-  padding-left: 5%;
-  align-items: center;
+  z-index:100;
   justify-items: space-evenly;
   color: white;
-  fontSize: "50px",
-  alignItems: "center",
+  fontSize: 50px;
+  position: fixed;
+  padding:8px;
 `;
 
+export const Searchform = styled.div`
+margin: 12px;
+width: 24%;
+display: flex;
 
-export const Searchform = styled(Form)`
-  display: flex;
-  position: relative;
-  width: 30%;
-  height: 40px;
+@media (max-width: 768px) {
+  width: 60%;
+}
+
 `;
+
+export const Input = styled.input`
+border-radius:8px 0px 0px 8px;
+outline: 0;
+border: none;
+height: 45px;
+width: 85%;
+`;
+
+export const Lupa = styled.button`
+border-radius: 0px 8px 8px 0px;
+outline: 0;
+border: none;
+height: 45px;
+width: 15%;
+background:#FFF;
+`;
+
 
 export const Titlecart = styled.h2`
   color: #fff;
+  margin:2px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 200;
   font-size: 15px;
-  line-height: 25px;
-  z-index: 10;
-  background-color: #2166c1;
-  margin-top: 10px;
-  padding-left: 5px;
-  margin-left: 5px;
   text-align: center;
-  width: 185px;
-  height: 30px;
-  color: #ffffff;
-  border-bottom: 0;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
+  width: 30%;
+  height: 56px;
   cursor: pointer;
   overflow: hidden;
 
@@ -52,22 +61,79 @@ export const Titlecart = styled.h2`
     transition: all ease 0.3s;
     transform: scale(1.1);
   }
+
+  @media (max-width: 768px) {
+    margin-top: 10%;
+    width: 100%;
+    height: 10%;
+
+    :hover {
+      transition: all ease 0.3s;
+      transform: scale(1.3);
+    }
+  }
 `;
 
 export const NavItems = styled.ul`
   padding-top: 15px;
-  width: 60%;
+  margin-left:-25px;
+  width: 68%;
   display: flex;
-  flex-direction: row;
+  flex-direction: collum;
   alig-items: center;
   justify-items: space-evenly;
-  color: "white;
-  alignItems: "center";
+  color: white;
+
+  @media (max-width: 768px) {
+    display: ${({ show }) => show ? 'block' : 'none'};
+    position: fixed;
+    z-index: 4;
+    background: #2166c1;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin-top: 14%;
+    margin-left:0px;
+
+    li {
+    width: 100%;
+    }
+
+    li:hover {
+    cursor: pointer;
+      a {
+          color: #fff;
+      }
+    }
+}
 `;
 
-export const Logo = styled.img`
+export const Logo = styled.div`
   max-heigth: 5px;
   min-width:5px;
   heigth:auto;
   width:auto;
+  margin-left: 12px;
 `;
+
+export const MenuContent = styled.div`
+  width: 10%;
+  padding: 10px;
+  background: none;
+  overflow: hidden;
+  height: 40px;
+  margin: 12px;
+  display: none;
+  
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+  }
+`;
+
+export const MenuIcon = styled.img`
+  cursor: pointer;
+`;
+

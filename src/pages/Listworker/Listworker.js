@@ -1,16 +1,15 @@
-
 import React, {useEffect, useState} from 'react';
 import Pagination  from '../../components/Pagination/Pagination';
 import NavbarPage from '../../components/Navbar';
 import {Container,
+        Label,
         Post,
         Capa,
         Titulo,
-        Subtitulo} from './styledrent';
+        Subtitulo} from './styledListworker';
 
-function Rent() {
+function App() {
   const [nutri, setNutri] = useState([])
-  
   const itensPerPage = 3
   const [offset, setOffset] = useState (0)
   const endIndex = offset + itensPerPage
@@ -33,10 +32,12 @@ function Rent() {
   return (
     <>
       <NavbarPage/>
+      
       <Container>          
-          
+      <Label>Escolha a mao de obra:</Label>
               {currentItens.map((item) =>{
                 return(
+                  
                   <Post key={item.id} onClick="location.href = ">
                       <Capa src={item.capa} alt="item.titulo" className= "capa"/>
                       <Titulo>{item.titulo}</Titulo> 
@@ -53,4 +54,4 @@ function Rent() {
   );
 }
 
-export default Rent;
+export default App;
