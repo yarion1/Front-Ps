@@ -5,7 +5,7 @@ import Home from "./pages/Home/Home";
 import updateDataEmail from './store/user/action.js';
 import {connect} from 'react-redux';
 import SignUp from './pages/SignUp/signUp.js';
-import User_profile from './pages/User_profile/user_profile.js';
+import User_profile from './pages/UserProfile/userprofile.js';
 import GetCookie from './components/auth/GetCookie';
 import ProductInspect from './components/ProductInspect/ProductInspect';
 import Lista from './pages/Lista/Lista.js';
