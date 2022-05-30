@@ -12,14 +12,13 @@ import styled, {
 } from './styleduser_profile';
 import '../..';
 import User_profile_infos from '../../components/user_profile_infos/user_profile_infos.js';
-
-
-
+import SidebarUser from '../../components/Sidebar/SidebarUser';
 
  function User_profile () {
     return(
       <div>
         <NavbarPage/>
+        <SidebarUser/>
         <Userpic/>
         <Botao_editar_perfil> Editar </Botao_editar_perfil>
         <Username>Arthur Fernandes</Username>
