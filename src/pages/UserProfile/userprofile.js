@@ -8,6 +8,7 @@ import Navbar from "../../components/Navbar/index";
 import '../..';
 import styled, { 
   User_profile_button, 
+  User_profile_container
 
 } from './styleduserprofile.js';
 
@@ -16,8 +17,10 @@ import styled, {
     return(
       <div>
         <Navbar/>
+        <User_profile_container> 
         <User_profile_button>Editar perfil</User_profile_button>    
         <User_profile_infos/>
+        </User_profile_container>
       </div>
     ) 
   }

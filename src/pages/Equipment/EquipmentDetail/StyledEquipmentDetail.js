@@ -84,7 +84,7 @@ export const Infopreco =  styled.div `
     max-height: 61px;
     top: 125px;
     border-radius: 0px 50px 50px 0px;
-    background: #2166c1;
+    background: #2D1F3F;
     text-align: center;
 `;
 
@@ -110,7 +110,7 @@ export const Meiospag = styled.button `
     font-size: 14px;
     line-height: 19px;
     text-align: center;
-    color: #3483FA;
+    color: #2D1F3F;
     border: none;
     background: none;
     text-decoration: underline;
@@ -171,8 +171,8 @@ export const Buttonconfirm = styled.button `
     font-family: 'Roboto';
     font-size: 20px;
     border:none;
-    border-color: #2166c1;
-    background: #2166c1;
+    border-color: #2D1F3F;
+    background: #2D1F3F;
     border-radius: 10px;
     transition: 0.3s;
 
@@ -201,7 +201,7 @@ export const Avalie = styled.button `
     background: none;
     border: none;
     cursor: pointer;
-    color: blue;
+    color: #2D1F3F;
     text-decoration: underline;
     text-align: right;
     margin: 10px

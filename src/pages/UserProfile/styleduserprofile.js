@@ -3,6 +3,13 @@ import styled from 'styled-components';
 import {Form, Input, Button, Label} from 'reactstrap';
 import '../../assets/styles/fonts/index.css';
 
+
+
+export const User_profile_container = styled.div `
+padding-top: 98px;
+`
+
+
 export const User_profile_button = styled.button `
 
 position: absolute;

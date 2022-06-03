@@ -9,7 +9,7 @@ const media = {
     max-width: 80%;
     margin: 0 auto;
     display: block;
-    
+    padding-top: 98px;
     
 
     ${media.mobile}{
