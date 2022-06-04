@@ -43,7 +43,7 @@ export const Cardlogin = styled.div `
     position: relative;
     display: flex;
     left: 58%;
-    top: 22%;
+    top: 5%;
     background: #2D1F3F;
     border-radius: 30px;
     text-align: center;
@@ -76,14 +76,39 @@ export const Cardlogin = styled.div `
     }
    
 `;
+export const Imagelogosign = styled.div `
+      display: flex;
+      margin-left: 8%;
+      width: 40%;
+      position: absolute;
+
+      img{
+          margin-top: 19rem;
+          width: 69%;
+          object-fit: contain;
+      }
+      @media(max-width: 950px){
+        img{
+          display:none;
+        }
+      }
+
+      @media(max-height: 700px){
+        img{
+          margin-top: 180px;
+        }
+      }
+
+
+`;
 export const Imageconstructor = styled.div `
     display: flex;
-    margin-left: 7%;
+    margin-left: 8%;
     width: 40%;
     position: absolute;
 
     img{
-        margin-top: 230px;
+        margin-top: 15em;
         width: 69%;
         object-fit: contain;
     }
@@ -143,26 +168,16 @@ export const Titlelog = styled.h2 `
 `;
 
 export const Imagelogo = styled.div `
-  position: absolute;
-  top: 8%;
-  left: 64%;
+  position: relative;
+  top: 2%;
+  left: 62%;
+  width: 25%;
    img{  
-        width: 38%;
+        font-size: 25%;
         object-fit: contain;
    }
 
-   @media(min-width: 1400px){
-    left:60%;
-  }
-   @media(max-width: 1400px){
-    left:63%;
-    top: 9%;
-    
-    img{
-     width: 25%;
-     heigth: 10px;
-    }
-  }
+  
 
    @media(max-width: 950px){
      left: 38%;

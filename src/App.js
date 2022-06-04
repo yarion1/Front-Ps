@@ -2,6 +2,7 @@ import React, {useState}from "react";
 import {BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
+import LandingPage from './pages/LandingPage/LandingPage';
 import updateDataEmail from './store/user/action.js';
 import {connect} from 'react-redux';
 import SignUp from './pages/SignUp/signUp.js';
@@ -62,10 +63,11 @@ function App({updateDataEmail}) {
         <Route path="/login" element = {<Login/>}/>
       )}
       {logueado && (
-        <Route path="/" element = {<Home/>}/>
+        <Route path="/" element = {<LandingPage/>}/>
       )}
 
-         <Route path="/" element = {<Home/>}/>
+         <Route path="/" element = {<LandingPage/>}/>
+         <Route path="/home" element = {<Home/>}/>
          <Route path="/register" element = {<SignUp/>}/>
          <Route path="/PreLoader" element={<PreLoader/>} />
          <Route path="product-inspect/*"  element = {<ProductInspect />}/>
