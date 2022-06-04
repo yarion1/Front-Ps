@@ -16,12 +16,12 @@ color: rgba(0, 0, 0, 0.43);
 
 :hover{
     background: #618DCE;
-    border: 1px solid #2166C1;
+    border: 1px solid #2D1F3F;
     color: #ffff;
 }
 &.selectedPage {
-    background: #2166c1;
-    border: 1px solid #2166C1;
+    background: #2D1F3F;
+    border: 1px solid #2D1F3F;
     color: #ffff;
 }
 

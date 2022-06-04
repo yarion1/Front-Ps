@@ -2,14 +2,16 @@
 import styled from 'styled-components';
 import '../../assets/styles/fonts/index.css';
 
+
 export const User_profile_container = styled.div `
 position:absolute ;
 width: 1054px;
 height: 800px;   
 left: 150px;
-background: #2166c1;
+background: #2D1F3F;
 box-shadow: 20px 20px 4px rgba(0, 0, 0, 0.25);
 border-radius: 80px;
+
 `
 export const User_profile_namelabel = styled.div `
 position: absolute;

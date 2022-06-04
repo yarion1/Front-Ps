@@ -3,7 +3,7 @@ import {Card, CardGroup} from 'reactstrap';
 
 export const Page = styled.body `
   padding:2%;
-  margin-top: -10%;
+  
 `;
 
 export const Textcategoria = styled.h5 `
@@ -52,7 +52,7 @@ export const Cortediv = styled.div `
   right: 0;
   left: 0;
   position: absolute;
-  border-bottom: 260px solid #2166c1B8 ;
+  border-bottom: 260px solid #618DC1B8 ;
   border-left: 0px solid transparent;
   border-right: 200px solid transparent;
   width: 350px;
