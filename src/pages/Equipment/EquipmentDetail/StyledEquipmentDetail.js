@@ -3,28 +3,43 @@ import '../../../assets/styles/fonts/index.css';
 import { Card, CardBody } from 'reactstrap';
 import {GoVerified} from 'react-icons/go';
 
-
-export const Globalpage = styled.body `
+export const Divpage = styled.div `
+    position: relative;
     margin: 0 auto;
-    width: 70vw;
-    height: 60vh;
+    padding-left:20%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    height: 75vh;
+    top: 5em;
+    left:0;
+    right:0;
+
+    @media(max-width: 960px){
+        flex-direction: column;
+    }
+    @media(max-height: 610px){
+        height: 90vh;
+    }
 `;
+
 export const Carditens = styled(Card) `
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-    height: 680px;
-    top: 60px;
     box-sizing: border-box;
     border-radius: 10px;
+    margin-right: 10px;
     border: 1px solid rgba(0, 0, 0, 0.20);
     background-color: rgb(255, 255, 255);
-    flex: 1 1 0px;
+    width: 50%;
+
+    @media(max-width: 960px){
+        width: 85%;
+    }
+
+    li{
+        display: inline-block;
+        margin-right: 35px;
+
+    }
+
 `;
 
 export const DivImage = styled.div`
@@ -48,69 +63,94 @@ export const DivImage = styled.div`
     img{
         object-fit: contain;
     }
+
 `;
 
 export const Divcoluna = styled.div `
-    padding-left: 50px;
-    margin-top: 10px;
-    height: 100px;
     display: flex;
+    padding-left: 5%;
+    flex-grow: 3;
+    margin-top: 2vh;
+    height: 10vh;
     -webkit-box-align: center;
     align-items: center;
+    width: 50vh;
+
+    @media(max-width: 605px){
+        display:none;
+    }
+    
 `;
 
 export const Iitleitem = styled(CardBody) `
     font-family: 'Nunito Sans';
     font-style: normal;
-    font-size: 25px;
+    font-size: 2.2vw;
+    overflow: hidden;
     line-height: 34px;
     padding-left: 21px;
+    flex: 0 0 auto;
     color: #000000;
 `;
 
 export const Carddetails =  styled(Card) `
-    position: absolute;
-    width: 42%;
-    top: 20px;
-    height: 638px;
+    display: flex;
+    position: relative;
     box-sizing: border-box;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.20);
+    background-color: rgb(255, 255, 255);
+    width: 30%;
+
+    @media(max-width: 960px){
+        width: 85%;
+
+    }
+    
 `;
 
 export const Infopreco =  styled.div `
-    position: absolute;
+    position: relative;
+    display:flex;
     width: 52%;
-    max-height: 61px;
-    top: 125px;
+    height: 12%;
+    top: 1rem;
     border-radius: 0px 50px 50px 0px;
-    background: #2D1F3F;
+    background: #2166c1;
     text-align: center;
+    padding-left: 0.5em;
+
+    @media(max-width: 960px){
+        width: 20%;
+        height: 15%;
+    }
+
 `;
 
 export const Preco =  styled.h2 `
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 36px;
-    line-height: 49px;
+    font-size: 1.8vw;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 1rem;
     color: #FFFFFF;
+    overflow: auto;
 `;
 
 export const Meiospag = styled.button `
-    position: absolute;
+    position: relative;
+    display:flex;
     width: 200px;
     height: 39px;
     left: 25px;
-    top: 180px;
+    top: 1.9rem;
     font-family: 'Nunito Sans';
     font-style: normal;
-    font-size: 14px;
+    font-size: 1vw;
     line-height: 19px;
     text-align: center;
-    color: #2D1F3F;
+    color: #3483FA;
     border: none;
     background: none;
     text-decoration: underline;
@@ -124,32 +164,54 @@ export const Meiospag = styled.button `
 
 export const CardAviso = styled(Card) `
     position: relative;
-    width: 319px;
-    height: 150px;
-    margin-bottom: 150px;
-    left: 40px;
+    max-width: 80%;
+    height: 25%;
+    margin-top: 2.5rem;
+    left: 2em;
+    right: 0;
     background: rgba(196, 196, 196, 0.07);
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-sizing: border-box;
     border-radius: 7px;
+
+ 
+    @media(max-width: 950px){
+        max-width:60%;
+        height: 35%;
+        left:22vw;
+        top: -4.5rem;
+    }
+
+ 
 `;
 
 export const Text =  styled.h2 `
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 3vh;
     line-height: 21px;
     padding-left: 80px;
     padding-top: 15px;
     color: #050505;
+
+    @media(max-height: 610px){
+        font-size: 2vh;
+        padding-left: 7em;
+    }
 `;
 
 export const Text2 = styled(Text) `
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 2vh;
     padding-top: 10px;
     color: rgba(5, 5, 5, 0.61);
+    h2{
+         line-height: 14px;
+    }
+    @media(max-height: 610px){
+        font-size: 0.8vw;
+        padding-top: 1px;
+    }
 `;
 
 
@@ -163,17 +225,19 @@ export const Iconverified = styled(GoVerified) `
 
 export const Buttonconfirm = styled.button `
     position: relative;
-    width: 75%;
-    height: 66px;
-    left: 14%;
-    bottom: 55px;
+    width: 50%;
+    height: 9%;
+    left: 20%;
+    top: 2rem;
+    bottom: 25px;
     color: #FFFFFF;
     font-family: 'Roboto';
-    font-size: 20px;
-    border:none;
-    border-color: #2D1F3F;
-    background: #2D1F3F;
+    font-size: 1.3vw;
+    border: none;
+    border-color: #2166c1;
+    background: #2166c1;
     border-radius: 10px;
+    -webkit-transition: 0.3s;
     transition: 0.3s;
 
     :hover{
@@ -181,29 +245,74 @@ export const Buttonconfirm = styled.button `
         border:none;
         color: #fff;
     }
+
+    @media(max-width: 980px){
+        width: 55%;
+        height: 25%;
+        top: -1rem;
+        font-size:2.3vw;
+    }
 `;
 
 export const Imagemprincipal = styled.div `
-    width: 400px;
-    margin-left: 40px;
-    margin-top: 50px;
-    overflow: 'hidden';
+    max-width: 95%;
+    height: 100%;
+    margin-left: 5%;
+    margin-top: 8%;
+    overflow: auto;
     cursor: zoom-in;
+    object-fit: fill;
     &img {
         :hover {
           scale(1.25);
           transition: all 0.3s ease;
       }
     }
+    @media(max-width: 980px){
+       max-width: 80%;
+       overflow: auto;
+       margin-top: 20%;
+       margin-left: 10%;
+       margin-top: 6%;
+
+       img{
+           max-width: 90%;
+           max-height: 250px;
+       }
+    }
+    
 `;
 
 export const Avalie = styled.button `
+    position: relative;
     background: none;
     border: none;
     cursor: pointer;
-    color: #2D1F3F;
+    color: blue;
     text-decoration: underline;
-    text-align: right;
-    margin: 10px
+    top: 2.5em;
+    font-size: 1.2vw;
+
+    @media(max-width: 950px){
+        top: -1em;
+    }
     
+`;
+
+export const H1 = styled.h1 `
+    font-size:18px;
+    
+    @media(max-width: 915px){
+        display:none;
+    }
+
+`;
+export const DivInfo = styled.div `
+
+    position: relative;
+    margin-left:20%;
+    height: 20vh;
+    width: 70%;
+    top:65vh;
+
 `;

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 import EquipmentDetail from '../../pages/Equipment/EquipmentDetail/EquipmentDetail';
 import EquipmentSecurity from '../../pages/Equipment/EquipmentSecurity/EquipmentSecurity';
-import {ButtonDetails} from './StyledProductInspect';
+import {ButtonDetails, Divdetails} from './StyledProductInspect';
 import EquipamentDetaiInfo from '../../pages/Equipment/EquipmentDetail/EquipamentDetailInfo';
 import  Navbar  from '../Navbar/index';
 
@@ -22,7 +22,7 @@ const ProductInspect = () => {
     return(
 
         <>
-        <Navbar/>
+       
             <Routes>
                 <Route path="/detail" element={<EquipamentDetaiInfo />} />
                 <Route path="/security" element={<EquipmentSecurity />} />
