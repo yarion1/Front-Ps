@@ -1,12 +1,16 @@
 import React from 'react';
 import EquipmentDetail from './EquipmentDetail';
+import styled, {H1, DivInfo} from './StyledEquipmentDetail';
+
 
 const EquipamentDetaiInfo = () => {
 
     return(
         <>
             <EquipmentDetail/>
-            <h1 style={{marginLeft:'13%',marginLeft:'15%',fontSize:'18px',top:'250px', position:'relative'}}>Detalhes sobre o produto.</h1>
+             <DivInfo>
+                 <H1>Detalhes sobre o produto.</H1>
+             </DivInfo>
         </>
     );
 }
