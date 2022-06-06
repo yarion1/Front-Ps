@@ -1,18 +1,16 @@
 import styled from 'styled-components';
 import '../../assets/styles/fonts/index.css';
 
-
 export const Fundo = styled.div `
     width: 100%;
     background: #FFF ;
     padding-top: 128px;
 `
-
 export const Userprofilecontainer = styled.div `
     width: 78%;
     max-width: 1030px;
     margin-botton: 2%;
-    height: 82vh;
+    height: 768px;
     margin: 0 auto;
     background: #EEEEEE;
     border-radius: 10px;
@@ -21,7 +19,6 @@ export const Userprofilecontainer = styled.div `
     padding: 5%;
     display: block;
 `
-
 export const Userpic = styled.img `
     width: 130px;
     height: 130px;
@@ -30,7 +27,6 @@ export const Userpic = styled.img `
     background-size: cover; 
     margin: 8% auto;
 `
-
 export const Center = styled.div`
     display: block;
     text-align: center;
@@ -38,14 +34,13 @@ export const Center = styled.div`
 export const Menu = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width:100%
+    width: 100%
 `
 export const Frag = styled.div`
-    width:40%;
+    width: 40%;
     text-align:left;
     margin: 5%;
 `
-
 export const ItemName = styled.h2`
     font-family: 'Roboto';
     font-style: normal;
@@ -63,16 +58,15 @@ export const ItemNameDesc = styled.h2`
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    width:150%;
+    width: 100%;
     font-size: 18px;
     line-height: 21px;
-    margin-left:-98px;
     margin-bottom: -1px;
     color: #FFF;
     padding-left: 5%;
     background: #2D1F3F;
     margin-top: 25px;
-    border-radius:5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
 `
 
 export const UserName = styled.input`
@@ -82,7 +76,7 @@ export const UserName = styled.input`
     width:100%;
     background: #56456B;
     color: rgba(255, 255, 255, 0.5);
-    height:28px;
+    height: 28px;
 `
 export const UserAge = styled.input`
     border:none;
@@ -91,7 +85,7 @@ export const UserAge = styled.input`
     background: #56456B;
     border-radius: 0 0 5px 5px;
     padding-left: 5%;
-    width:100%;
+    width: 100%;
     color: rgba(255, 255, 255, 0.5);
     
 `
@@ -101,13 +95,13 @@ export const UserSelects = styled.select`
     background: #EEEEEE;
     border-radius: 0 0 5px 5px;
     padding-left: 5%;
-    width:100%;
+    width: 100%;
     height: 30px;
     background: #56456B;
     color: rgba(255, 255, 255, 0.5);
 `
 export const UserMail = styled.input`
-    border:none;
+    border: none;
     border-radius: 5px;
     background: #56456B;
     border-radius: 0 0 5px 5px;
@@ -116,32 +110,31 @@ export const UserMail = styled.input`
     color: rgba(255, 255, 255, 0.5);
 `
 export const UserProf = styled.input`
-    border:none;
+    border: none;
     border-radius: 5px;
     background: #56456B;
     border-radius: 0 0 5px 5px;
     padding-left: 5%;
-    width:100%;
+    width: 100%;
     color: rgba(255, 255, 255, 0.5);
 `
 export const UserPhone = styled.input`
-    border:none;
+    border: none;
     border-radius: 5px;
     background: #56456B;
     border-radius: 0 0 5px 5px;
     padding-left: 5%;
-    width:100%;
+    width: 100%;
     color: rgba(255, 255, 255, 0.5);
 `
 export const UserDesc = styled.textarea`
     border:none;
     border-radius: 5px;
-    width: 150%;
+    width: 100%;
     border-radius: 0 0 5px 5px;
     padding-left: 5%;
     height: 14vh;
     min-height: 14vh;
-    margin-left:-98px;
     background: #56456B;
     color: rgba(255, 255, 255, 0.5);
 `
@@ -160,8 +153,7 @@ export const DadosWork = styled.button `
 export const BotaoSenha = styled.button `
     background: #2D1F3F;
     border-radius: 10px;
-    width: 180px;
-    height: 44px;
+    width: 80%;
     font-size: 24px;
     font-family: 'Roboto';
     font-style: normal;
@@ -177,8 +169,6 @@ export const BotaoSenha = styled.button `
         border:none;
     }
 `
-
-
 export const Botao_editar_perfil = styled.button `
     background: #2D1F3F;
     border-radius: 10px;

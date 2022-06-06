@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Form } from "reactstrap";
 import "../fonts/index.css";
 
 export const Navbar = styled.nav`
@@ -23,7 +22,6 @@ display: flex;
 @media (max-width: 768px) {
   width: 60%;
 }
-
 `;
 
 export const Input = styled.input`
@@ -88,8 +86,8 @@ export const NavItems = styled.ul`
     display: ${({ show }) => show ? 'block' : 'none'};
     position: fixed;
     z-index: 4;
-    background: #2166c1;
-    top: 0px;
+    background: #2D1F3F;
+    top: -20px;
     left: 0px;
     overflow: hidden;
     height: 100%;
