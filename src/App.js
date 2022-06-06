@@ -14,6 +14,7 @@ import Worker from './pages/Listworker/Listworker';
 import PreLoader from "./components/PreLoader/PreLoader";
 import Upload from "./pages/upload/up";
 import UpWorker from "./pages/Upworker/UpWorker";
+import Equipment_Register from "./pages/Equipment/Equipment_Register/Equipment_Register";
 
 
 
@@ -77,6 +78,7 @@ function App({updateDataEmail}) {
          <Route path="/upload" element = {<Upload/>}/>
          <Route path="/uploadW" element = {<UpWorker/>}/>
          <Route path="/Worker_profile" element = {<Worker_profile/>}/>
+         <Route path="/Equipment_Register" element = {<Equipment_Register/>}/>
         </Routes>
       </Router>
       
