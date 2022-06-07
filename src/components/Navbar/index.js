@@ -13,13 +13,20 @@ import styled, {
 import { Link } from "react-router-dom";
 import menu from '../../assets/img/menu.svg'
 import {GiMagnifyingGlass} from 'react-icons/gi'
+import logout  from "../../store/logout";
+import { useDispatch, useSelector } from "react-redux";
 
 const NavbarPage = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
+  const { isAuthenticated } = useSelector((state) => state.auth);
+	const dispatch = useDispatch();
 
   const toggleMenu = () =>{
     setShow(!show)
   }
+  function authLogout() {
+		isAuthenticated && dispatch(logout());
+	}
 
   return (
     <>
@@ -76,7 +83,7 @@ const NavbarPage = () => {
             <GiMagnifyingGlass/>
           </Lupa>          
           </Searchform>
-          
+          <button onClick={authLogout}>Sair</button>
       </Navbar>
     </>
   );
