@@ -1,11 +1,10 @@
 import React, {memo, useState} from "react";
 import styled, {
-   Body,
    Box,
    Logo,
    Menu,
    Item,
-   Logout,
+   Login,
    
 } from "../../assets/styles/Navbar/StyledNavbarLanding";
 import { Link } from "react-router-dom";
@@ -18,19 +17,18 @@ const NavbarPage = () => {
     <>
       <Box>
         <Logo>
-            <a href="/">
+            <a href="/inicio">
                 <img src={UseitLogo}
                 />
             </a>
          </Logo>
          <SidebarNav/>
           <Menu>
-              <Item><a href="/home">Home</a></Item>
               <Item><a href="/Serviços">Serviços</a></Item>
               <Item><a href="/sobrenos">Sobre nós</a></Item>
               <Item><a href="/contatos">Contatos</a></Item>
           </Menu>
-            <Logout>Sair</Logout>
+            <Login>Entrar</Login>
       </Box>
     </>
   );

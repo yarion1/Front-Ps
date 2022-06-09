@@ -66,8 +66,8 @@ function App({updateDataEmail}) {
         <Route path="/" element = {<LandingPage/>}/>
       )}
 
-         <Route path="/" element = {<LandingPage/>}/>
-         <Route path="/home" element = {<Home/>}/>
+         <Route path="/inicio" element = {<LandingPage/>}/>
+         <Route path="/" element = {<Home/>}/>
          <Route path="/register" element = {<SignUp/>}/>
          <Route path="/PreLoader" element={<PreLoader/>} />
          <Route path="product-inspect/*"  element = {<ProductInspect />}/>

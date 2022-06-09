@@ -7,8 +7,6 @@ export const Box = styled.header `
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
-
 `;
 
 export const Logo = styled.div`
@@ -36,15 +34,32 @@ export const Menu =  styled.ul `
 export const Item =  styled.li `
     a{
         color: #130A1D;
-        transition: all ease 0.5s;
+        transition: all ease 0.2s;
     }
     a:hover{
         color: #2166C1;
     }
     display: inline-block;
     margin-right: 60px;
+    font-size: 18px;
     font-weight: 500;
 
+`;
+
+export const Login = styled.button `
+  padding-bottom: 20px;
+  background:none;
+  transition: all ease 0.5s;
+  color: #130A1D;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left:auto;
+   :hover{
+        color: #2166C1;
+   }
+   @media(max-width: 929px ){
+    display:none;
+   }
 `;
 
 export const Logout = styled.button `
@@ -52,6 +67,9 @@ export const Logout = styled.button `
   background:none;
   transition: all ease 0.5s;
   color: #130A1D;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
   margin-left:auto;
    :hover{
         color: #2166C1;

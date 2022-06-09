@@ -1,6 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import Bkground1 from '../../img/Ellipse1.svg';
-import Bkground2 from '../../img/Ellipse2.svg';
 
 const globalStyle = createGlobalStyle`
     *{
@@ -9,8 +7,8 @@ const globalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    html, body, #root{
-        height: 100%;
+    html,body, #root{
+        height: 100vh;
     }
     
     button{
@@ -24,10 +22,8 @@ const globalStyle = createGlobalStyle`
         outline:none;
     }
 
-    @media(max-width: 1750px){
+    @media(max-width: 2000px){
         body{
-            background: url(${Bkground2}) no-repeat 670px, url(${Bkground1}) no-repeat 620px;
-            background-size: cover;
             background-color: #FAF8FF;
         }
     }

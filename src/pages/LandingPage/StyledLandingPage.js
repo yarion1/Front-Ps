@@ -4,11 +4,13 @@ import Bkground1 from '../../assets/img/Ellipse1.svg';
 import Bkground2 from '../../assets/img/Ellipse2.svg';
 
 export const Body = styled.body `
-  body {
-    background: url(${Bkground2}) no-repeat 1010px, url(${Bkground1}) no-repeat 931px;
-    background-size:cover;
     background-color: #FAF8FF;
-  }
+    background: url(${Bkground2}) no-repeat 670px, url(${Bkground1}) no-repeat 620px;
+    background-size:cover;
+
+    @media(max-height: 590px){
+      height: auto;
+    }
 `;
 
 export const Container = styled.div `
@@ -18,6 +20,7 @@ export const Container = styled.div `
   margin: auto;
   font-family: 'Poppins', sans-serif;
   height: 100%;
+  
   display: flex;
   flex-direction: column;
 
