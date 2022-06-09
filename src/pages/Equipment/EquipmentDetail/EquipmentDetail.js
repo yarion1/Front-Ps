@@ -75,7 +75,7 @@ function EquipmentDetail (/* {equipament} */) {
                         </Infopreco>
                         <Meiospag onClick={() => {toggleinfo()}}>Ver os meios de pagamento</Meiospag>
                     <CardAviso>
-                        <Iconverified style={{top:'2em', width:'30%', height:'35%'}}/>
+                        <Iconverified style={{top:'3em', maxWidth:'20%', Maxheight:'25%'}}/>
                         <Text>Para segurança</Text>
                         <Text2>Realize pagamentos verificando antecipadamente as informações do produto.</Text2>
                     </CardAviso>

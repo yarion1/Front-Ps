@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const ButtonDetails = styled.button `
+    width: 100%;
     height: 66px;
-    width: 48%;
     background: #FAF8FF;
     border: 1px solid #B5BCFB;
     font-family: 'Roboto';
@@ -24,26 +24,24 @@ export const ButtonDetails = styled.button `
         border: 1px solid #130A1D;
         color: #ffff;
     }
-    @media(max-width:950px){
-        width: 100%;
-    }
+ 
 
 
 `;
 
 export const Divdetails = styled.div `
     display: flex;
+    position: relative;
     flex-direction: inline-block;
-    z-index:99;
     align-items: center;
-    margin-top:30vh;
+    margin-top:10%;
     margin-left: 20%;
-    margin-right: 12.5%;
+    margin-right: 15%;
 
     @media(max-width:950px){
-        left: 15%;
+        left: 1%;
         display: flex;
-        margin-top:-30vh;
+        margin-top:5vh;
         flex-direction: column;
     }
 

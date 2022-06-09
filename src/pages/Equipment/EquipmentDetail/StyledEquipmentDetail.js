@@ -10,12 +10,13 @@ export const Divpage = styled.div `
     display: flex;
     flex-direction: row;
     height: 75vh;
-    top: 5em;
+    top: 9em;
     left:0;
     right:0;
 
     @media(max-width: 960px){
         flex-direction: column;
+        padding-left:5%;
     }
     @media(max-height: 610px){
         height: 90vh;
@@ -31,7 +32,7 @@ export const Carditens = styled(Card) `
     width: 50%;
 
     @media(max-width: 960px){
-        width: 85%;
+        width: 96%;
     }
 
     li{
@@ -85,12 +86,15 @@ export const Divcoluna = styled.div `
 export const Iitleitem = styled(CardBody) `
     font-family: 'Nunito Sans';
     font-style: normal;
-    font-size: 2.2vw;
+    font-size: 2vw;
     overflow: hidden;
     line-height: 34px;
     padding-left: 21px;
     flex: 0 0 auto;
     color: #000000;
+    @media(max-width: 960px){
+        font-size: 30px;
+    }
 `;
 
 export const Carddetails =  styled(Card) `
@@ -103,7 +107,7 @@ export const Carddetails =  styled(Card) `
     width: 30%;
 
     @media(max-width: 960px){
-        width: 85%;
+        width: 96%;
 
     }
     
@@ -112,8 +116,8 @@ export const Carddetails =  styled(Card) `
 export const Infopreco =  styled.div `
     position: relative;
     display:flex;
-    width: 52%;
-    height: 12%;
+    width: 45%;
+    height:6.9vh;
     top: 1rem;
     border-radius: 0px 50px 50px 0px;
     background: #2166c1;
@@ -121,8 +125,8 @@ export const Infopreco =  styled.div `
     padding-left: 0.5em;
 
     @media(max-width: 960px){
-        width: 20%;
-        height: 15%;
+        max-width: 17%;
+        height:5vh;
     }
 
 `;
@@ -131,7 +135,7 @@ export const Preco =  styled.h2 `
     font-family: 'Nunito Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 1.8vw;
+    font-size: 1.7vw;
     text-align: center;
     padding-top: 1rem;
     color: #FFFFFF;
@@ -147,7 +151,7 @@ export const Meiospag = styled.button `
     top: 1.9rem;
     font-family: 'Nunito Sans';
     font-style: normal;
-    font-size: 1vw;
+    font-size: 0.7vw;
     line-height: 19px;
     text-align: center;
     color: #3483FA;
@@ -165,8 +169,9 @@ export const Meiospag = styled.button `
 export const CardAviso = styled(Card) `
     position: relative;
     max-width: 80%;
-    height: 25%;
-    margin-top: 2.5rem;
+    height: 20%;
+    margin-top: 5.5rem;
+    margin-bottom: 3.5em;
     left: 2em;
     right: 0;
     background: rgba(196, 196, 196, 0.07);
@@ -176,10 +181,10 @@ export const CardAviso = styled(Card) `
 
  
     @media(max-width: 950px){
-        max-width:60%;
+        max-width:40%;
         height: 35%;
-        left:22vw;
-        top: -4.5rem;
+        left:55%;
+        top: -7.5rem;
     }
 
  
@@ -189,28 +194,29 @@ export const Text =  styled.h2 `
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 3vh;
+    font-size: 0.9vw;
     line-height: 21px;
     padding-left: 80px;
     padding-top: 15px;
     color: #050505;
 
-    @media(max-height: 610px){
-        font-size: 2vh;
-        padding-left: 7em;
+    @media(max-width: 950px){
+        font-size: 2vw;
+        padding-left: 4em;
     }
 `;
 
 export const Text2 = styled(Text) `
-    font-size: 2vh;
+    font-size: 0.8vw;
     padding-top: 10px;
     color: rgba(5, 5, 5, 0.61);
     h2{
          line-height: 14px;
     }
-    @media(max-height: 610px){
-        font-size: 0.8vw;
+    @media(max-width: 950px){
+        font-size: 1.5vw;
         padding-top: 1px;
+        margin-left: 1.5em;
     }
 `;
 
@@ -225,14 +231,14 @@ export const Iconverified = styled(GoVerified) `
 
 export const Buttonconfirm = styled.button `
     position: relative;
-    width: 50%;
+    max-width: 50%;
     height: 9%;
     left: 20%;
     top: 2rem;
     bottom: 25px;
     color: #FFFFFF;
     font-family: 'Roboto';
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     border: none;
     border-color: #2166c1;
     background: #2166c1;
@@ -247,10 +253,11 @@ export const Buttonconfirm = styled.button `
     }
 
     @media(max-width: 980px){
-        width: 55%;
-        height: 25%;
+        width: 30%;
+        height: 10%;
+        left: 35%;
         top: -1rem;
-        font-size:2.3vw;
+        font-size:1.5vw;
     }
 `;
 
@@ -285,13 +292,15 @@ export const Imagemprincipal = styled.div `
 
 export const Avalie = styled.button `
     position: relative;
-    background: none;
+    color: #3483FA;
     border: none;
+    background: none;
     cursor: pointer;
-    color: blue;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-size: 0.9vw;
     text-decoration: underline;
-    top: 2.5em;
-    font-size: 1.2vw;
+    top: 3.5em;
 
     @media(max-width: 950px){
         top: -1em;
@@ -313,6 +322,6 @@ export const DivInfo = styled.div `
     margin-left:20%;
     height: 20vh;
     width: 70%;
-    top:65vh;
+    top:47vh;
 
 `;

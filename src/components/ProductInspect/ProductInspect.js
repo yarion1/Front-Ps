@@ -22,13 +22,13 @@ const ProductInspect = () => {
     return(
 
         <>
-       
+          <Navbar/>
             <Routes>
                 <Route path="/detail" element={<EquipamentDetaiInfo />} />
                 <Route path="/security" element={<EquipmentSecurity />} />
 
             </Routes>
-            <div style={{display: 'inline-block', position:'relative', marginTop:'10%', marginLeft:'15%', width:'100%'}}>
+            <Divdetails>
             <ButtonDetails 
                 onClick={() => {setSelectedPage('detail')}}
                 className={`${selectedPage === 'detail' 
@@ -42,7 +42,7 @@ const ProductInspect = () => {
                     ? 'selectedPage'
                     : ''}`}>SEGURANÇA
             </ButtonDetails>
-            </div>
+            </Divdetails>
         </>
     );
 };
