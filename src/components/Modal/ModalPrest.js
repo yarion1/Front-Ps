@@ -1,6 +1,7 @@
 import StarRating from '../../assets/StarRating/StarRating'
 import PropTypes from 'prop-types'
 import {Desc, Salvar} from "./styledModalPrest"
+import SignUpF from '../../pages/upload/up'
 
 import 
 { Modal,
@@ -15,11 +16,12 @@ const ModalPrest= ({show, toggleShow})=> {
     <div>
       <Modal isOpen={show} toggle={() => {toggleShow()}}>
                 <ModalHeader toggle={() => {toggleShow()}}>
-                    Dados do trabalhador
+                    Dados do prestador de serviços
                 </ModalHeader>
-                <ModalBody>
+                <ModalBody >
                   <Desc placeholder="Exemplo: Me chamo Arthur Fernandes, trabalho como operador de  pequeno a médio grande porte, com exeperiência real em obras segue abaixo curriculo, CNH e Certificados"/>
-
+                  <hr/>
+                  <SignUpF/>
                 </ModalBody>
                 <ModalFooter>
                     {' '}

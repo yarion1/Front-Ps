@@ -71,17 +71,11 @@ class Up extends Component {
       return ( 
         <DivUppp>
             <div> 
-                 
-                <h3> 
-                Envie seus Documentos para Validacao  
-                </h3> 
-                <div> 
                     <input type="file" onChange={this.onFileChange} /> 
-                    <button onClick={this.onFileUpload}> 
-                    Upload! 
+                    {this.fileData()} 
+                    <button disabled={!this.state.selectedFile} onClick={this.onFileUpload}> 
+                    Enviar
                     </button> 
-                </div> 
-            {this.fileData()} 
             </div> 
         </DivUppp>
       ); 
