@@ -3,6 +3,8 @@ import {Card, CardGroup} from 'reactstrap';
 
 export const Page = styled.body `
   padding:2%;
+  text-align: center;
+  font-size: 3.5rem;
   
 `;
 

@@ -50,65 +50,7 @@ function Home () {
  return(
     <>
       <Navbar/>
-      <Infopromo>
-        
-      </Infopromo>
-      <Page> 
-        <CardRowleft>
-          <MdOutlineNavigateBefore style={{fontSize:'40px', color:'#fff'}}/>
-        </CardRowleft>
-        <CardRowright>
-          <MdOutlineNavigateNext style={{fontSize:'40px', color:'#fff'}}/>
-        </CardRowright>
-        {cards.map((item, index) => (
-        <Cardcategory inverse>
-          <div 
-           key={index}
-          >
-          <CardImg
-          alt="Card image cap"
-          width="100%"
-          src={item.images}
-          style={{height: '250px'}}
-          />
-          <CardImgOverlay>
-            <Cortediv>
-            <Textcategoria tag="h5">
-                {item.title}
-              </Textcategoria>
-            </Cortediv>
-          </CardImgOverlay>
-          </div>
-        </Cardcategory>
-    ))}
-      <CardRowleft>
-          <MdOutlineNavigateBefore style={{fontSize:'40px', color:'#fff'}}/>
-        </CardRowleft>
-        <CardRowright>
-          <MdOutlineNavigateNext style={{fontSize:'40px', color:'#fff'}}/>
-        </CardRowright>
-        {cards.map((item, index) => (
-        <Cardcategory inverse>
-          <div 
-          key={index}
-          >
-          <CardImg
-          alt="Card image cap"
-          width="100%"
-          src={item.images}
-          style={{height: '250px'}}
-          />
-          <CardImgOverlay>
-            <Cortediv>
-            <Textcategoria tag="h5">
-                {item.title}
-              </Textcategoria>
-            </Cortediv>
-          </CardImgOverlay>
-            </div>
-        </Cardcategory>
-        ))}
-      </Page>  
+
     </>
  );
 }

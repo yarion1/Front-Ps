@@ -9,6 +9,7 @@ const globalStyle = createGlobalStyle`
 
     html,body, #root{
         height: 100vh;
+        background-color: #FAF8FF;
     }
     
     button{
@@ -25,6 +26,7 @@ const globalStyle = createGlobalStyle`
     @media(max-width: 2000px){
         body{
             background-color: #FAF8FF;
+            
         }
     }
 `
