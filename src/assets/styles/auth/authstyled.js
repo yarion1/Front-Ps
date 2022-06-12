@@ -7,7 +7,7 @@ export const Globalpage = styled.body `
     margin: 0 auto;
     width: 100vw;
     height: 100vh;
-    background: #618DCE;
+    background: #FAF8FF;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -19,8 +19,8 @@ export const Globalpage = styled.body `
     }
 `;
 export const Cardpage = styled.div `
-        width: 80%;
-        height: 85%;
+        width: 80vw;
+        height: 85vh;
         background: #fff;
         background: #130A1D;
         box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.35);
@@ -39,11 +39,11 @@ export const Cardpage = styled.div `
 `;
 export const Cardlogin = styled.div `    
     width: 35%;
-    height: 70%;
+    height: 545px;
     position: relative;
     display: flex;
     left: 58%;
-    top: 5%;
+    top: 6em;
     background: #2D1F3F;
     border-radius: 30px;
     text-align: center;
@@ -65,8 +65,7 @@ export const Cardlogin = styled.div `
       margin: 0 auto;
     }
 
-    @media(max-height: 700px){
-      top: 17%;
+    @media(max-height: 800px){
       height: 75%;
     }
     @media(max-width: 600px){
@@ -108,8 +107,9 @@ export const Imageconstructor = styled.div `
     position: absolute;
 
     img{
-        margin-top: 15em;
-        width: 69%;
+        margin-top: 10em;
+        width: 26vw;
+        height:58vh;
         object-fit: contain;
     }
     @media(max-width: 950px){
@@ -118,9 +118,9 @@ export const Imageconstructor = styled.div `
       }
     }
 
-    @media(max-height: 700px){
+    @media(max-height: 830px){
       img{
-        margin-top: 180px;
+        margin-top: 12em;
       }
     }
 
@@ -170,7 +170,7 @@ export const Titlelog = styled.h2 `
 export const Imagelogo = styled.div `
   position: relative;
   top: 2%;
-  left: 62%;
+  left: 26%;
   width: 25%;
    img{  
         font-size: 25%;

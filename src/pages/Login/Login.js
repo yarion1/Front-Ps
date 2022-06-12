@@ -22,7 +22,7 @@ import {AiOutlineMail} from 'react-icons/ai';
 import {RiLockPasswordFill} from 'react-icons/ri';
 import constructor from '../../assets/img/constructor.png';
 import {BrowserRouter as Router, Routes, Route, useNavigate} from 'react-router-dom';
-import logo from '../../assets/img/logo.svg';
+import logo from '../../assets/img/logoblue.svg';
 import PreLoader from '../../components/PreLoader/PreLoader';
 /**
  * 
@@ -87,9 +87,7 @@ function SendLogueo(Email,Password){
 
              <Globalpage>
                 <Cardpage>
-                       <Imagelogo>
-                         <img src={logo}/>
-                       </Imagelogo>
+                
                    <Cardlogin>
                         <Titlelog>
                             LOGIN
