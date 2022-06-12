@@ -7,7 +7,7 @@ export const Globalpage = styled.body `
     margin: 0 auto;
     width: 100vw;
     height: 100vh;
-    background: #618DCE;
+    background: #FAF8FF;
     display: flex;
     flex-direction: row;
     justify-content: center;
