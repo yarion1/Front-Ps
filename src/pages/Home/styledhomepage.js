@@ -3,14 +3,7 @@ import {Card, CardGroup, Button} from 'reactstrap';
 import { style } from "@mui/system";
 
 export const Page = styled.body `
-<<<<<<< HEAD
-  padding:2%;
-  text-align: center;
-  font-size: 3.5rem;
-  
-=======
   padding:1.5%;  
->>>>>>> d9b72b1 ( Atualizacao da home page, componentes e pagina)
 `;
 
 export const cardfaixa = styled.div `

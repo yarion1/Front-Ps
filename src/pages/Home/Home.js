@@ -64,10 +64,6 @@ function Home () {
   ];
  return(
     <>
-<<<<<<< HEAD
-      <Navbar/>
-
-=======
       <Navbar/>   
       <Page>
         <Gambi3></Gambi3>
@@ -150,7 +146,6 @@ function Home () {
         </Cardcategory>
     ))}
       </Page>  
->>>>>>> d9b72b1 ( Atualizacao da home page, componentes e pagina)
     </>
  ); 
 }
