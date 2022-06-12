@@ -1,12 +1,15 @@
 import React from 'react';
 import EquipmentDetail from '../EquipmentDetail/EquipmentDetail';
+import styled,{ H1, DivInfo } from '../EquipmentDetail/StyledEquipmentDetail';
 
 const EquipmentSecurity = () => {
 
     return(
         <>
-            <EquipmentDetail/>
-            <h1 style={{marginLeft:'15%',fontSize:'18px',top:'250px', position:'relative'}}>Avisos de segurança sobre o equipamento.</h1>
+                <EquipmentDetail/>
+                <DivInfo>
+                <H1>Avisos de segurança sobre o equipamento.</H1>
+            </DivInfo>
         </>
     );
 }

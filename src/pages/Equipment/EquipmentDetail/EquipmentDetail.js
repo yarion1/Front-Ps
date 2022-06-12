@@ -4,6 +4,7 @@ import Modalinfopayment from '../../../components/Modal/Modalinfopayment';
 import { useNavigate} from 'react-router-dom';
 import ModalAv from '../../../components/Modal/ModalAv';
 import { 
+    Divpage,
     Carditens, 
     Iitleitem, 
     Carddetails, 
@@ -18,7 +19,6 @@ import {
     DivImage,
     Divcoluna,
     Imagemprincipal,
-    Globalpage,
     Avalie
 } from './StyledEquipmentDetail';
 
@@ -46,50 +46,43 @@ function EquipmentDetail (/* {equipament} */) {
     const toggleAv = () => setShowModalAv(!showModalAv);
 
     return (
-     <>
-        <Globalpage>
+        <>
+        <Divpage>
             <Carditens>
                 <Divcoluna>
-                    {equipament.images.map((item, index) => (
-                        <DivImage
-                            key={index}
-                            onMouseMove={() => {setImagePreview(item)}}
-                            onClick={() => {setImagePreview(item)}}
-                            className={`${(String(item) === String(imagePreview)) 
-                                ? "selected" 
-                                : "notSelected" }`}>
-                            <img src={item} alt={`Product Image ${index}`}  style={{width: '90%'}} />
-                        </DivImage>
-                    ))}
+                        {equipament.images.map((item, index) => (
+                            <DivImage
+                                key={index}
+                                onMouseMove={() => {setImagePreview(item)}}
+                                onClick={() => {setImagePreview(item)}}
+                                className={`${(String(item) === String(imagePreview))
+                                    ? "selected"
+                                    : "notSelected" }`}>
+                                <img src={item} alt={`Product Image ${index}`}  style={{width: '90%'}} />
+                            </DivImage>
+                        ))}
                 </Divcoluna>
-                        <Imagemprincipal>
-                            <ReactImageZoom {...imgProps} />
-                            {/* <img
-                                src={imagePreview}
-                                alt='Product Image'
-                                style={{width: '100%', heigth: 'auto', objectFit: 'cover'}}
-                            /> */}
-                        </Imagemprincipal>
-                    <div style={{width: '60%', marginLeft: '56%'}}>
-                    <Carddetails>
-                        <Iitleitem>
-                        {equipament.title}
-                        </Iitleitem>
-                            <Infopreco>
-                                <Preco>R$ {equipament.price}</Preco>
-                            </Infopreco>
-                            <Meiospag onClick={() => {toggleinfo()}}>Ver os meios de pagamento</Meiospag>
-                        <CardAviso>
-                            <Iconverified/>
-                            <Text>Para segurança</Text>
-                            <Text2>Realize pagamentos verificando antecipadamente as informações do produto.</Text2>
-                        </CardAviso>
-                            <Buttonconfirm onClick={() => {toggle()}}>Alugar agora</Buttonconfirm>
-                            <Avalie onClick={() => {toggleAv()}}>Avalie o produto</Avalie>
-                    </Carddetails>
-                    </div>
+                <Imagemprincipal>
+                    <ReactImageZoom {...imgProps} />
+                </Imagemprincipal>
             </Carditens>
-        </Globalpage>
+            <Carddetails>
+              <Iitleitem>
+                    {equipament.title}
+                    </Iitleitem>
+                        <Infopreco>
+                            <Preco>R$ {equipament.price}</Preco>
+                        </Infopreco>
+                        <Meiospag onClick={() => {toggleinfo()}}>Ver os meios de pagamento</Meiospag>
+                    <CardAviso>
+                        <Iconverified style={{top:'3em', maxWidth:'20%', Maxheight:'25%'}}/>
+                        <Text>Para segurança</Text>
+                        <Text2>Realize pagamentos verificando antecipadamente as informações do produto.</Text2>
+                    </CardAviso>
+                        <Buttonconfirm onClick={() => {toggle()}}>Alugar agora</Buttonconfirm>
+                        <Avalie onClick={() => {toggleAv()}}>Avalie o produto</Avalie>
+                </Carddetails>
+        </Divpage>
         <Modalinfopayment show={showModalinfo} toggleShow={() => {toggleinfo()}}/>
         <ModalPayment show={showModal} toggleShow={() => {toggle()}} />
         <ModalAv show={showModalAv} toggleShow={() => {toggleAv()}} />
