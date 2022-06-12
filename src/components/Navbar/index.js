@@ -2,11 +2,22 @@ import React, {useState} from "react";
 import '../../assets/styles/Navbar/stylednavbar.css'
 import { NavLink } from "react-router-dom";
 import logo from '../../assets/img/logo.svg'
+import logout  from "../../store/logout";
+import { useDispatch, useSelector } from "react-redux";
 
 const NavbarPage = () => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
+
+
+  const { isAuthenticated } = useSelector((state) => state.auth);
+	const dispatch = useDispatch();
+
+  function authLogout() {
+		isAuthenticated && dispatch(logout());
+	}
+
 
   return (
     <>
@@ -80,6 +91,7 @@ const NavbarPage = () => {
           </div>
         </div>
       </nav>
+
     </>
   );
 };

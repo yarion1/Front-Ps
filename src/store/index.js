@@ -1,10 +1,8 @@
-import { createStore, combineReducers } from 'redux';
-import setUserData from './user/reducer.js';
+import { configureStore } from '@reduxjs/toolkit'
+import authReducer from './auth'
 
-const reducers = combineReducers({
-    setUserData
-})
-
-const store = createStore(reducers,window._REDUX_DEVTOOLS_EXTENSION_ && window._REDUX_DEVTOOLS_EXTENSION_());
-
-export default store;
+export default configureStore({
+	reducer: {
+		auth: authReducer
+	}
+});
