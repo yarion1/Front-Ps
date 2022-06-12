@@ -62,11 +62,11 @@ import axios  from "axios";
         <Globalpage>
           <div>
             <CardData 
-             style={{borderTopColor: '#2166C1',
-                    borderLeftColor: '#2166C1', 
-                    borderRightColor: '#2166C1',
+             style={{borderTopColor: '#130A1D',
+                    borderLeftColor: '#130A1D', 
+                    borderRightColor: '#130A1D',
              }}>
-              <CardHeader tag="h5" style={{background:'#2166C1', borderColor:'#2166C1'}}>
+              <CardHeader tag="h5" style={{background:'#130A1D', borderColor:'#130A1D', color:'#fff'}}>
                 CADASTRO DE DADOS
               </CardHeader>
               <CardBody>
@@ -237,7 +237,7 @@ import axios  from "axios";
                     </option> */}
                   </Input>
                 </FormGroup>
-              <Button  style={{background:'#2166C1', borderColor: '#2166C1'}}>
+              <Button  style={{background:'#130A1D', borderColor: '#130A1D'}}>
                 CADASTRAR
               </Button>
             </Form>
