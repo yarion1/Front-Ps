@@ -45,10 +45,6 @@ export const CardSignUp = styled(Card)`
   `; 
 
 export const CardRent = styled(Card)`
-<<<<<<< HEAD
-
-=======
->>>>>>> 4de26c011f6646154c6f4add3cfcaac2ca013a80
   display: inline-block;
   width: 27%;
   height: 250px;
@@ -67,10 +63,6 @@ export const CardRent = styled(Card)`
 `; 
 
 export const CardProfile = styled(Card)`
-<<<<<<< HEAD
-  
-=======
->>>>>>> 4de26c011f6646154c6f4add3cfcaac2ca013a80
   display: inline-block;
   width:  27%;
   height: 250px;
