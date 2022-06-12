@@ -9,9 +9,8 @@ export const Avaliar = styled.button `
 font-family: 'Roboto';
 border: none;
 color: #FFFF;
-border-radius: 8px;
-border-color: #2166c1;
-background: #2166c1;
+border-radius: 5px;
+background: #2D1F3F;
 transition: 0.3s;
 width: 18%;
 height: 32px;

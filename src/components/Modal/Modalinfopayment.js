@@ -3,11 +3,16 @@ import {
   Modal,
   ModalBody,
   ModalFooter,
-  Button,
-  ModalHeader
+  ModalHeader,
 } from 'reactstrap';
+import {
+LogoPag,
+Button,
+Caixa,
+Itens1,
+Itens2
 
-
+} from "./Styledmodalinfopayment"
 import PropTypes from 'prop-types';
 
 const Modalinfopayment = ({show, toggleShow}) => {
@@ -16,10 +21,17 @@ const Modalinfopayment = ({show, toggleShow}) => {
         <div>
             <Modal isOpen={show} toggle={() => {toggleShow()}}>
                 <ModalHeader toggle={() => {toggleShow()}}>
-                    Meios de Pagamento
+                    Aceitamos
                 </ModalHeader>
                 <ModalBody>
-                  Aqui estará contida todas as formas de pagamento pro usuário
+                  <Caixa>
+                    <LogoPag src={require("../../assets/img/visa.png")}/>
+                    <LogoPag src={require("../../assets/img/mastercard.png")}/>
+                    <LogoPag src={require("../../assets/img/boleto.png")}/>
+                    <LogoPag src={require("../../assets/img/americanexpress.png")}/>
+                    <LogoPag src={require("../../assets/img/elo.png")}/>
+                    <LogoPag src={require("../../assets/img/pix.png")}/>
+                  </Caixa>
                 </ModalBody>
                 <ModalFooter>
                     {' '}
