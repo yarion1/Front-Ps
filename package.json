@@ -10,6 +10,7 @@
     "@mui/material": "^5.6.4",
     "@react-spring/web": "^9.4.5",
     "@sefailyasoz/react-carousel": "^1.1.1",
+    "@reduxjs/toolkit": "^1.8.2",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
