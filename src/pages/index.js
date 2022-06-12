@@ -14,6 +14,7 @@ import Upload from "./upload/up";
 import UpWorker from "./Upworker/UpWorker";
 import Worker_profile from './WorkerProfile/workerProfile.js';
 import DadosCadastro from "./SignUp/DadosCadastrais/DadosCadastrais";
+import Equipment_Register from "./Equipment/Equipment_Register/Equipment_Register";
 import auth from "../store/auth";
 
 
@@ -95,6 +96,12 @@ export default () =>(
           <Route path="/Worker_profile"  element={
                   <RequireAuth redirectTo={'/login'}>
                     <Worker_profile/>
+                  </RequireAuth>
+              }
+            />
+            <Route path="/Equipment_Register"  element={
+                  <RequireAuth redirectTo={'/login'}>
+                    <Equipment_Register/>
                   </RequireAuth>
               }
             />
