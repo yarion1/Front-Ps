@@ -21,7 +21,6 @@ import style,{
     Textmid,
     Sublinhado,
     BotaoMais,
-    TextCard,
 
 } from './styledhomepage';
 import {
@@ -84,12 +83,12 @@ function Home () {
           <Gamb></Gamb>
           <CardButtons>
             <Link to="/login" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
-             <TextCard>Realizar Cadastro</TextCard>
+             Realizar Cadastro
             </Link>
           </CardButtons>
         </CardSignUp>
         <CardRent>
-        <Gambi2></Gambi2> 
+        <Gambi2></Gambi2>
         <CardImg          
           alt="Card image cap"
           src=   "https://cdn.discordapp.com/attachments/931699948087574538/984495692120719360/assembly_1.png"  
@@ -102,7 +101,7 @@ function Home () {
           <Gamb></Gamb>
           <CardButtons2>
             <Link to="/Rent" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
-            <TextCard> Alugar máquina</TextCard>
+              Alugar máquina
             </Link>
           </CardButtons2>
         </CardRent>
@@ -120,11 +119,12 @@ function Home () {
             <Gamb></Gamb>
           <CardButtons3>
             <Link to="/User_profile" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
-            <TextCard>Acessar meu perfil</TextCard>
+              Acessar meu perfil
             </Link>
           </CardButtons3>
         </CardProfile>
         <Textmid>Escolha a máquina ideal para você!</Textmid>
+        <Sublinhado></Sublinhado>
         {cards.map((item, index) => (
         <Cardcategory inverse>
           <div 
