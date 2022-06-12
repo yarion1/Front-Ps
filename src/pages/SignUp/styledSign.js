@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 export const DivLogin = styled.div `
-   width: 165%;
-   margin-left: 20%;
+   width: 15%;
+   margin-left: 53%;
    position: absolute;
    display: flex;
    flex-diretion: column;
-   top: 22em;
+   margin-top:38rem;
    
    button{
      border: none;
@@ -28,8 +28,7 @@ export const DivLogin = styled.div `
    }
 
    @media(max-width: 1400px){
-      top: 20em;
-      margin-left: 30%;
+     margin-top:34rem;
    }
    @media(max-width: 950px){
       top: 10em;

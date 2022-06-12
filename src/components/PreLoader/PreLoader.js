@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./PreLoader.css";
 import Home from "../../pages/Home/Home";
-import {Routes, Route } from "react-router-dom";
+import {Routes, Route, Navigate } from "react-router-dom";
 import Trail from './trail.tsx';
 import {create} from '@lottiefiles/lottie-interactivity'
 import '@lottiefiles/lottie-player';
@@ -36,7 +36,7 @@ function PreLoader() {
 
   useEffect(() => {
     setTimeout(() => {
-      axios.get("https://jsonplaceholder.typicode.com/posts")
+      axios.get("http://localhost:5000/users")
         .then((response) => {
           console.log(response);
           setData(response.data);
@@ -84,7 +84,10 @@ function PreLoader() {
       ) : (
         <>
             <Routes>
-                <Route path="/" element={<Home />} />
+            <Route
+                path="/"
+                element={<Navigate to="/" replace />}
+            />
             </Routes>
         </>
       )}
