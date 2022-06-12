@@ -1,11 +1,11 @@
 import React from 'react';
 import { useNavigate} from 'react-router-dom';
-import logo from '../../assets/img/logo.jpeg';
+import logo from '../../assets/img/logoblue.svg';
 import styled, {
     Globalpage,
     Cardpage,
     Cardlogin,
-    Imageconstructor,
+    Imagelogosign,
     Textinfo,
     Titlelog,
 } from  '../../assets/styles/auth/authstyled';
@@ -29,12 +29,12 @@ import {DivLogin} from './styledSign.js';
                         <SignUpForm/>
                     </Cardlogin>
                     <Textinfo><h2>Alugue equipamentos, máquinas e ferramentas para o seu trabalho</h2></Textinfo>
-                    <Imageconstructor>
+                    <Imagelogosign>
                          <img src={logo}/>
-                    </Imageconstructor>
-                    <DivLogin style={{top:'24em', marginLeft: '90%'}}> 
+                    </Imagelogosign>
+                    <DivLogin>
                         <h2 style={{marginTop: '6px'}}>Possui login? </h2>
-                        <button onClick={handleClicklogin}>Entre aqui.</button>  
+                        <button onClick={handleClicklogin}> Entre aqui.</button>  
                    </DivLogin>
                 </Cardpage>
         </Globalpage>        

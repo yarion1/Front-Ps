@@ -65,6 +65,7 @@ function Home () {
   ];
  return(
     <>
+
       <Navbar/>   
       <Page>
         <Gambi3></Gambi3>

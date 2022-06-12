@@ -3,6 +3,7 @@ import {Card, CardGroup, Button} from 'reactstrap';
 import { style } from "@mui/system";
 
 export const Page = styled.body `
+
   padding:1.5%;  
 `;
 
@@ -45,7 +46,6 @@ export const CardSignUp = styled(Card)`
   `; 
 
 export const CardRent = styled(Card)`
-
   display: inline-block;
   width: 27%;
   height: 250px;
@@ -64,7 +64,6 @@ export const CardRent = styled(Card)`
 `; 
 
 export const CardProfile = styled(Card)`
-  
   display: inline-block;
   width:  27%;
   height: 250px;
