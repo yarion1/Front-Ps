@@ -148,8 +148,15 @@ hover{
 transition: all ease 0.3s;
 transform: scale(0.9);
 }
-
 `;
+
+export const TextCard = styled.div `
+text-align: center;
+font-size: 3vh;
+font-weight: bold;
+`;
+
+
   
 export const Textcategoria = styled.h5 `
     line-height: 20px;
@@ -278,25 +285,6 @@ export const CardRowright = styled.div `
 
 
 `;
-
-export const BotaoMais = styled(Button) `
-position: absolute;
-left: 44%;
-display: flex;
-background: #2D1F3F;
-border-radius: ;
-transform: scale(1);
-width: 50px;
-height: 8npm0px;
-font-size: 3vh;
-font-weight: bold;
-padding-left: 10%;
-padding-top: 9px;
-hover{
-transition: all ease 0.3s;
-transform: scale(0.9);
-}  
-`
 
 
 /*background: #120F33B8;
