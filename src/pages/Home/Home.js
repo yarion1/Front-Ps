@@ -75,7 +75,7 @@ function Home () {
         <CardImg          
           alt="Card image cap"
           src= "https://cdn.discordapp.com/attachments/931699948087574538/984496160976810014/signup_1.png" 
-          style={{height: '90px'} , {width: '90px'}}
+          style={{height: '90px', width: '90px'}}
           />
           <Gambi></Gambi>
           <Textcategoria>
@@ -93,7 +93,7 @@ function Home () {
         <CardImg          
           alt="Card image cap"
           src=   "https://cdn.discordapp.com/attachments/931699948087574538/984495692120719360/assembly_1.png"  
-          style={{height: '90px'} , {width: '90px'}}
+          style={{height: '90px', width: '90px'}}
         />
           <Gambi></Gambi>
           <Textcategoria>
@@ -111,7 +111,7 @@ function Home () {
         <CardImg            
           alt="Card image cap"
           src=  "https://cdn.discordapp.com/attachments/931699948087574538/984496035051237436/user_1.png" 
-          style={{height: '90px'} , {width: '90px'}}
+          style={{height: '90px' , width: '90px'}}
         />
             <Gambi></Gambi>
             <Textcategoria>

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import '../../assets/styles/Navbar/stylednavbar.css'
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from '../../assets/img/logo.svg'
 import logout  from "../../store/logout";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,67 +23,59 @@ const NavbarPage = () => {
     <>
             <nav className="navbar">
         <div className="nav-container">
-          <NavLink exact to="/" className="nav-logo">
-            <img style={{width:'120px', height:"120px"}} src={logo}/>
-           
-          </NavLink>
-
+            <div  className="nav-logo">
+              <Link  to="/"><img style={{width:'120px', height:"120px"}} src={logo}/></Link>
+            </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <NavLink
-                exact
+              <Link
                 to="/"
-                activeClassName="active"
                 className="nav-links"
-                onClick={handleClick}
+             
               >
                 Home
-              </NavLink>
+              </Link>
             </li>
             <li className="nav-item">
-              <NavLink
-                exact
+              <Link
+       
                 to="/Rent"
-                activeClassName="active"
                 className="nav-links"
-                onClick={handleClick}
+               
               >
                 Meus Alugueis
-              </NavLink>
+              </Link>
             </li>
             
             <li className="nav-item">
-              <NavLink
-                exact
+              <Link
+              
                 to="/parceiros"
-                activeClassName="active"
                 className="nav-links"
-                onClick={handleClick}
+                
               >
                 Parceiros
-              </NavLink>
+              </Link>
             </li>
             <li className="nav-item">
-              <NavLink
+              <Link
                 exact
                 to="/User-profile/*"
-                activeClassName="active"
                 className="nav-links"
-                onClick={handleClick}
+               
               >
                 Meu Perfil
-              </NavLink>
+              </Link>
             </li>
             <li className="nav-item">
-              <NavLink
+              <Link
                 exact
                 to="/logout"
-                activeClassName="active"
                 className="nav-links"
-                onClick={handleClick}
+                onClick={authLogout}
               >
                 Sair
-              </NavLink>
+              </Link>
             </li>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
