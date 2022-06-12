@@ -116,17 +116,19 @@ export const Carddetails =  styled(Card) `
 export const Infopreco =  styled.div `
     position: relative;
     display:flex;
-    width: 45%;
-    height:6.9vh;
+    width: 42%;
+    height:50px;
     top: 1rem;
     border-radius: 0px 50px 50px 0px;
     background: #2166c1;
     text-align: center;
     padding-left: 0.5em;
+    padding-top: 0.9rem;
 
     @media(max-width: 960px){
-        max-width: 17%;
-        height:5vh;
+        max-width: 18%;
+        height:70px;
+        padding-top: 1.3rem;
     }
 
 `;
@@ -137,9 +139,12 @@ export const Preco =  styled.h2 `
     font-weight: 400;
     font-size: 1.7vw;
     text-align: center;
-    padding-top: 1rem;
     color: #FFFFFF;
-    overflow: auto;
+    
+    
+    @media(max-width: 960px){
+        font-size: 2.7vw;
+    }
 `;
 
 export const Meiospag = styled.button `
@@ -151,7 +156,7 @@ export const Meiospag = styled.button `
     top: 1.9rem;
     font-family: 'Nunito Sans';
     font-style: normal;
-    font-size: 0.7vw;
+    font-size: 13px;
     line-height: 19px;
     text-align: center;
     color: #3483FA;
@@ -169,9 +174,9 @@ export const Meiospag = styled.button `
 export const CardAviso = styled(Card) `
     position: relative;
     max-width: 80%;
-    height: 20%;
-    margin-top: 5.5rem;
-    margin-bottom: 3.5em;
+    height: 25%;
+    top: 2rem;
+    margin-bottom: 1.7em;
     left: 2em;
     right: 0;
     background: rgba(196, 196, 196, 0.07);
@@ -180,7 +185,7 @@ export const CardAviso = styled(Card) `
     border-radius: 7px;
 
  
-    @media(max-width: 950px){
+    @media(max-width: 960px){
         max-width:40%;
         height: 35%;
         left:55%;
@@ -200,7 +205,7 @@ export const Text =  styled.h2 `
     padding-top: 15px;
     color: #050505;
 
-    @media(max-width: 950px){
+    @media(max-width: 960px){
         font-size: 2vw;
         padding-left: 4em;
     }
@@ -213,7 +218,7 @@ export const Text2 = styled(Text) `
     h2{
          line-height: 14px;
     }
-    @media(max-width: 950px){
+    @media(max-width: 960px){
         font-size: 1.5vw;
         padding-top: 1px;
         margin-left: 1.5em;
@@ -232,13 +237,13 @@ export const Iconverified = styled(GoVerified) `
 export const Buttonconfirm = styled.button `
     position: relative;
     max-width: 50%;
-    height: 9%;
+    height: 55px;
     left: 20%;
     top: 2rem;
     bottom: 25px;
     color: #FFFFFF;
     font-family: 'Roboto';
-    font-size: 1.2vw;
+    font-size: 18px;
     border: none;
     border-color: #2166c1;
     background: #2166c1;
@@ -252,12 +257,13 @@ export const Buttonconfirm = styled.button `
         color: #fff;
     }
 
-    @media(max-width: 980px){
-        width: 30%;
-        height: 10%;
-        left: 35%;
-        top: -1rem;
-        font-size:1.5vw;
+    @media(max-width: 960px){
+        width: 250px;
+        margin: 0 auto;
+        left: 0;
+        right:0;
+        top: -2rem;
+        font-size:18px;
     }
 `;
 
@@ -298,11 +304,11 @@ export const Avalie = styled.button `
     cursor: pointer;
     font-family: 'Nunito Sans';
     font-style: normal;
-    font-size: 0.9vw;
+    font-size: 13px;
     text-decoration: underline;
     top: 3.5em;
 
-    @media(max-width: 950px){
+    @media(max-width: 960px){
         top: -1em;
     }
     
@@ -312,7 +318,7 @@ export const H1 = styled.h1 `
     font-size:18px;
     
     @media(max-width: 915px){
-        display:none;
+       
     }
 
 `;
@@ -322,6 +328,13 @@ export const DivInfo = styled.div `
     margin-left:20%;
     height: 20vh;
     width: 70%;
-    top:47vh;
+    top:54vh;
+
+    @media(max-width: 960px){
+        display:flex;
+        margin-left: 2%;
+        top:70vh;
+
+    }
 
 `;

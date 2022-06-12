@@ -25,8 +25,6 @@ export const ButtonDetails = styled.button `
         color: #ffff;
     }
  
-
-
 `;
 
 export const Divdetails = styled.div `
@@ -38,11 +36,12 @@ export const Divdetails = styled.div `
     margin-left: 20%;
     margin-right: 15%;
 
-    @media(max-width:950px){
-        left: 1%;
+    @media(max-width:960px){
+        margin-left:1%;
+        margin-right: 1%;
         display: flex;
-        margin-top:5vh;
-        flex-direction: column;
+        top:12rem;
+        flex-direction: inline-block;
     }
 
 `;
