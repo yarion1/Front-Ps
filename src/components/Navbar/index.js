@@ -10,7 +10,6 @@ const NavbarPage = () => {
 
   const handleClick = () => setClick(!click);
 
-
   const { isAuthenticated } = useSelector((state) => state.auth);
 	const dispatch = useDispatch();
 
@@ -70,7 +69,7 @@ const NavbarPage = () => {
             <li className="nav-item">
               <Link
                 exact
-                to="/logout"
+                to="/login"
                 className="nav-links"
                 onClick={authLogout}
               >

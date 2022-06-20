@@ -2,7 +2,6 @@
 import styled from 'styled-components';
 import '../../assets/styles/fonts/index.css';
 
-
 export const User_profile_container = styled.div `
 position:absolute ;
 width: 1054px;

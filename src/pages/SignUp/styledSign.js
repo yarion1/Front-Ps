@@ -31,22 +31,20 @@ export const DivLogin = styled.div `
      margin-top:34rem;
    }
    @media(max-width: 950px){
-      top: 10em;
-      right: -55%;
+      top: 7em;
+      width: 25%;
+      right: 35%;
 
       h2{
         margin-top: 40px;
       }
     }
-    @media(max-width: 630px){
-      top: 22em;
-      left: -80%;
-      width: 175%;
-    }
+  
     @media(max-width: 600px){
-      top: 24em;
-      left: -87%;
-      width: 100%;
+      top: 5em;
+      width: 35%;
+      right: 32%;
+ 
     }
  
  `;
