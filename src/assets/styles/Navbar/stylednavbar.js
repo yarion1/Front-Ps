@@ -4,7 +4,7 @@ import "../fonts/index.css";
 
 export const Navbar = styled.nav`
   display: flex;
-  background: #2D1F3F;
+  background: #2166c1;
   height: 90px;
   width: 100%;
   z-index:100;
@@ -75,7 +75,7 @@ export const Titlecart = styled.h2`
 `;
 
 export const NavItems = styled.ul`
-  padding-top: 20px;
+  padding-top: 15px;
   margin-left:-25px;
   width: 68%;
   display: flex;

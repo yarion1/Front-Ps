@@ -22,55 +22,43 @@ import {AiOutlineMail} from 'react-icons/ai';
 import {RiLockPasswordFill} from 'react-icons/ri';
 import constructor from '../../assets/img/constructor.png';
 import {BrowserRouter as Router, Routes, Route, useNavigate} from 'react-router-dom';
-import logo from '../../assets/img/logo.jpeg';
+import logo from '../../assets/img/logoblue.svg';
 import PreLoader from '../../components/PreLoader/PreLoader';
-/**
- * 
- * @param {*} Email 
- * @param {*} Password 
- */
-function SendLogueo(Email,Password){
-    let dataEmail = {
-        Email: Email,
-        Password: Password
-    }
-    let Options = {
-        method:'POST',
-        headers:{
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dataEmail)
-    }
-    fetch('http://localhost:3000/',Options)
-    .then(response=> response.json())
-    .then(({data,notification})=>{
-        alert(notification.msg);
-        const {Cookie,loggued} = data;
-        if(loggued){
-            document.cookie = "usuarioLogueado= ;expires = Thu, 01 Jan 1970 00:00:00 GMT"
-            let expires = new Date();
-            expires.setTime(expires.getTime() + 86400000);
-            let cookie = `usuarioLogueado=${
-                Cookie
-                };expires=${expires.toUTCString()};path=/`;
-            document.cookie = cookie;
-            window.location.reload();
-        }
-    })
-    .catch(err=>{
-        console.log(err);
-    })
-
-}
-/**
- * 
- */
+import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import { login } from '../../store/auth'
 
  function Login () {
-    const [Email, setEmail] = useState("");
-    const [Password, setPassword] = useState("");
+    const[form, setForm] = useState({email:'', password:''})
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    function changeForm(e){
+        const {name, value} = e.target
+
+        setForm({... form,[name]: value})
+    }
+
+    const authLogin =(user) =>{
+        return(dispatch) =>{
+            axios.post('http://localhost:5000/login', user)
+            .then((res) => {
+				localStorage.setItem('token', res.data.token);
+				dispatch(login());
+
+                navigate('/preloader')
+			})
+            .catch(console.log)
+        }
+    }
+
+    function submitForm(e){
+        e.preventDefault()
+
+        dispatch(authLogin(form))
+
+        setForm({email: '', password: ''})
+    }
 
     function handleClickregister(){
         navigate('/register');
@@ -80,29 +68,26 @@ function SendLogueo(Email,Password){
         navigate('/PreLoader');
     }
 
-  
-    
         return(
             <>
 
              <Globalpage>
                 <Cardpage>
-                       <Imagelogo>
-                         <img src={logo}/>
-                       </Imagelogo>
+                
                    <Cardlogin>
                         <Titlelog>
                             LOGIN
                         </Titlelog>
-                        <Formlog inline>
+                        <Formlog inline onSubmit={submitForm}>
                          <H3>Email</H3>
                             <FormGrouplog floating>
                             <Inputlog
                                 style={{borderRadius: '15px', height: '50px'}}
-                                id="exampleEmail"
                                 name="email"
                                 placeholder="Email"
                                 type="email"
+                                onChange={changeForm}
+                                value={form.email}
                             />
                             <Labelog for="exampleEmail">
                                 Email
@@ -113,10 +98,11 @@ function SendLogueo(Email,Password){
                             <FormGrouplog floating>
                             <Inputlog 
                                 style={{borderRadius: '15px', height: '20%'}}
-                                id="examplePassword"
+                                onChange={changeForm}
                                 name="password"
                                 placeholder="Senha"
                                 type="password"
+                                value={form.password}
                             />
                             <Labelog for="examplePassword">
                                 Password
@@ -128,7 +114,7 @@ function SendLogueo(Email,Password){
                               </DivBtn>
                             <Divbutton>
                                 <Buttonlog
-                                     onClick={handleClickLogin}
+                            
                                      style={{background:'#2166C1',
                                      color:'white',
                                      borderColor:'#2166C1',

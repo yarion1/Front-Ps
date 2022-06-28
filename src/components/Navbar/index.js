@@ -1,83 +1,88 @@
-import React, {memo, useState} from "react";
-import styled, {
-  Navbar,
-  Searchform,
-  NavItems,
-  Titlecart,
-  Logo,
-  MenuContent,
-  MenuIcon,
-  Input,
-  Lupa,
-} from "../../assets/styles/Navbar/stylednavbar";
+import React, {useState} from "react";
+import '../../assets/styles/Navbar/stylednavbar.css'
 import { Link } from "react-router-dom";
-import menu from '../../assets/img/menu.svg'
-import {GiMagnifyingGlass} from 'react-icons/gi'
+import logo from '../../assets/img/logo.svg'
+import logout  from "../../store/logout";
+import { useDispatch, useSelector } from "react-redux";
 
 const NavbarPage = () => {
-  const [show, setShow] = useState(false)
+  const [click, setClick] = useState(false);
 
-  const toggleMenu = () =>{
-    setShow(!show)
-  }
+  const handleClick = () => setClick(!click);
+
+  const { isAuthenticated } = useSelector((state) => state.auth);
+	const dispatch = useDispatch();
+
+  function authLogout() {
+		isAuthenticated && dispatch(logout());
+	}
+
 
   return (
     <>
-      <Navbar>
-        <Logo>
-          <a href="/">
-            <img src="https://media.discordapp.net/attachments/950791198757511191/969205599336292352/untitled-removebg-preview.png"
-            width="104px"
-            />
-          </a>
-        </Logo>
-
-        <MenuContent>
-            <MenuIcon onClick={toggleMenu} src={menu} width="36px"/>
-        </MenuContent>
-
-        <NavItems show={show}>
-        <Titlecart>
-            <Link to="/" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
-              <li>
+            <nav className="navbar">
+        <div className="nav-container">
+            <div  className="nav-logo">
+              <Link  to="/"><img style={{width:'120px', height:"120px"}} src={logo}/></Link>
+            </div>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <Link
+                to="/"
+                className="nav-links"
+             
+              >
                 Home
-              </li>
-            </Link>
-          </Titlecart>
-          <Titlecart>
-            <Link to="/Rent" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
-              <li>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+       
+                to="/Rent"
+                className="nav-links"
+               
+              >
                 Meus Alugueis
-              </li>
-            </Link>
-          </Titlecart>
-          <Titlecart>
-            <li style={{ listStyle: "none", fontSize: "20px" }}>Ofertas</li>
-          </Titlecart>
-          <Titlecart>
-            <li style={{ listStyle: "none", fontSize: "20px" }}>Parceiros</li>
-          </Titlecart>
-          <Titlecart>
-            <Link to="/User-profile" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
-              <li>
-                Perfil
-              </li>
-            </Link>
-          </Titlecart>
-        </NavItems>
+              </Link>
+            </li>
+            
+            <li className="nav-item">
+              <Link
+              
+                to="/parceiros"
+                className="nav-links"
+                
+              >
+                Parceiros
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                exact
+                to="/User-profile/*"
+                className="nav-links"
+               
+              >
+                Meu Perfil
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                exact
+                to="/login"
+                className="nav-links"
+                onClick={authLogout}
+              >
+                Sair
+              </Link>
+            </li>
+          </ul>
+          <div className="nav-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"}></i>
+          </div>
+        </div>
+      </nav>
 
-        <Searchform>
-          <Input
-            name="search"
-            placeholder="Pesquisar produtos..."
-            type="search"
-          />
-          <Lupa>
-            <GiMagnifyingGlass/>
-          </Lupa>          
-          </Searchform>
-          
-      </Navbar>
     </>
   );
 };

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 import EquipmentDetail from '../../pages/Equipment/EquipmentDetail/EquipmentDetail';
 import EquipmentSecurity from '../../pages/Equipment/EquipmentSecurity/EquipmentSecurity';
-import {ButtonDetails} from './StyledProductInspect';
+import {ButtonDetails, Divdetails} from './StyledProductInspect';
 import EquipamentDetaiInfo from '../../pages/Equipment/EquipmentDetail/EquipamentDetailInfo';
 import  Navbar  from '../Navbar/index';
 
@@ -22,13 +22,13 @@ const ProductInspect = () => {
     return(
 
         <>
-        <Navbar/>
+          <Navbar/>
             <Routes>
                 <Route path="/detail" element={<EquipamentDetaiInfo />} />
                 <Route path="/security" element={<EquipmentSecurity />} />
 
             </Routes>
-            <div style={{display: 'inline-block', position:'relative', marginTop:'10%', marginLeft:'15%', width:'100%'}}>
+            <Divdetails>
             <ButtonDetails 
                 onClick={() => {setSelectedPage('detail')}}
                 className={`${selectedPage === 'detail' 
@@ -42,7 +42,7 @@ const ProductInspect = () => {
                     ? 'selectedPage'
                     : ''}`}>SEGURANÇA
             </ButtonDetails>
-            </div>
+            </Divdetails>
         </>
     );
 };
