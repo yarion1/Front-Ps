@@ -10,7 +10,7 @@ export const Navbar = styled.nav`
   z-index:100;
   justify-items: space-evenly;
   color: white;
-  fontSize: 50px;
+  font-size: 50px;
   position: fixed;
   padding:8px;
 `;
