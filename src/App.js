@@ -1,11 +1,8 @@
-import React, {useState}from "react";
-import Pages from './pages'
+import React from "react";
+import Pages from "./pages";
 
 function App() {
-  
-  return (
-    <Pages/>
-  );
+  return <Pages />;
 }
 
 export default App;

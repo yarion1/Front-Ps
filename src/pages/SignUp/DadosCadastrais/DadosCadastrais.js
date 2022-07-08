@@ -1,80 +1,92 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate} from 'react-router-dom';
-import styled, {
-    Globalpage,
-} from  '../../../assets/styles/auth/authstyled';
-import {CardBody,CardHeader, Button,
-Form, FormGroup,Label,Input, Row, Col, Select} from 'reactstrap';
-import {CardData, Container, Item} from './StyledDadosCadastrais';
-import  {cpfMask, phoneMask}  from '../../../components/Mask/mask';
-import axios  from "axios";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Globalpage } from "../../../assets/styles/auth/authstyled";
 
- function DadosCadastro () {
+import {
+  CardBody,
+  CardHeader,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Row,
+  Col,
+} from "reactstrap";
 
-    const [values, setValues] = useState({ 
-      email: sessionStorage.getItem('email'),
-      password: sessionStorage.getItem('password'),
-      cpf: '' , 
-      cep: '', 
-      phone_number: '',
-      name: '',
-      birthdate:'',
-      genre: [
-        {id:1, name:'Feminino'},
-        {id:2, name:'Masculino'},
-        {id:3, name:'Outros'},
-      ],
-      address: '',
-      type_user: 0,
-      rate:0.0
-      })
+import { CardData, Container, Item } from "./StyledDadosCadastrais";
+import { cpfMask, phoneMask } from "../../../components/Mask/mask";
+import api from "../../../services/api";
 
-  
+function DadosCadastro() {
+  const [values, setValues] = useState({
+    email: sessionStorage.getItem("email"),
+    password: sessionStorage.getItem("password"),
+    cpf: "",
+    cep: "",
+    phone_number: "",
+    name: "",
+    birthdate: "",
+    genre: [
+      { id: 1, name: "Feminino" },
+      { id: 2, name: "Masculino" },
+      { id: 3, name: "Outros" },
+    ],
+    address: "",
+    type_user: 0,
+    rate: 0.0,
+  });
 
-    const inputChange = (e) => {
+  const inputChange = (e) => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
 
-      const { name, value } = e.target
-      setValues({
-        ...values,
-        [name]: value
-      })
-    }
- 
   const [result, setResult] = useState(null);
   const navigate = useNavigate();
 
-  const sendData = event => {
+  const sendData = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:5000/register', {...values})
-    .then(response => {
-      setResult(response.data);
-    })
-    .catch(() => {
-      setResult({
-        sucess: false,
+    api
+      .post("http://localhost:5000/register", { ...values })
+      .then((response) => {
+        setResult(response.data);
       })
-    })
-    navigate('/login');
+      .catch(() => {
+        setResult({
+          sucess: false,
+        });
+      });
+    navigate("/login");
   };
-   
-  
-    return(
-        <Globalpage>
-          <div>
-            <CardData 
-             style={{borderTopColor: '#130A1D',
-                    borderLeftColor: '#130A1D', 
-                    borderRightColor: '#130A1D',
-             }}>
-              <CardHeader tag="h5" style={{background:'#130A1D', borderColor:'#130A1D', color:'#fff'}}>
-                CADASTRO DE DADOS
-              </CardHeader>
-              <CardBody>
-              <Form onSubmit={sendData}>
-              <FormGroup style={{paddingLeft:'10px'}}>
-                <Label>
-                  Nome completo
-                </Label> 
+
+  return (
+    <Globalpage>
+      <div>
+        <CardData
+          style={{
+            borderTopColor: "#130A1D",
+            borderLeftColor: "#130A1D",
+            borderRightColor: "#130A1D",
+          }}
+        >
+          <CardHeader
+            tag="h5"
+            style={{
+              background: "#130A1D",
+              borderColor: "#130A1D",
+              color: "#fff",
+            }}
+          >
+            CADASTRO DE DADOS
+          </CardHeader>
+          <CardBody>
+            <Form onSubmit={sendData}>
+              <FormGroup style={{ paddingLeft: "10px" }}>
+                <Label>Nome completo</Label>
                 <Input
                   name="name"
                   type="text"
@@ -82,170 +94,136 @@ import axios  from "axios";
                   onChange={inputChange}
                 />
               </FormGroup>
-              <FormGroup style={{paddingLeft:'10px'}}>
+              <FormGroup style={{ paddingLeft: "10px" }}>
                 <Container>
                   <Item>
-                    <Label>
-                      CPF
-                    </Label>
+                    <Label>CPF</Label>
                     <Input
                       name="cpf"
                       value={cpfMask(values.cpf)}
                       onChange={inputChange}
                     />
                   </Item>
-                   <Item>
-                     <Label>
-                      Data de nascimento
-                   </Label>
-                     <Input
+                  <Item>
+                    <Label>Data de nascimento</Label>
+                    <Input
                       name="birthdate"
                       type="date"
                       value={values.date}
                       onChange={inputChange}
-                     />
-                   </Item>
-                   <FormGroup tag="fieldset">
-                         Gênero
-                      <Row style={{marginTop:'5px'}} >
-                        <Col>
-                          <FormGroup check>
-                            <Item>
-                              <Input
-                               id='1'
-                               name='genre'
-                                type="radio"
-                                value='Feminino'
-                                checked={values.genre === 'Feminino'}
-                                onChange={inputChange}
-                               
-                              />
-                              {' '}
-                              <Label check>
-                                Feminino
-                              </Label>
-                            </Item>
-                          </FormGroup>
-                        </Col>
-                        <Col>
-                          <FormGroup check>
-                            <Item>
-                              <Input
-                                name="genre"
-                                id='2'
-                                type="radio"
-                                value='Masculino'
-                                checked={values.genre === 'Masculino'}
-                                onChange={inputChange}
-
-                              />
-                              {' '}
-                              <Label check>
-                               Masculino
-                              </Label>
-                            </Item>
-                          </FormGroup>
-                        </Col>
-                        <Col>
-                          <FormGroup check>
-                            <Item>
-                              <Input
-                                name="genre"
-                                id='2'
-                                type="radio"
-                                value='Outros'
-                                checked={values.genre === 'Outros'}
-                                onChange={inputChange}
-                             
-                              />
-                              {' '}
-                              <Label check>
-                               Outros
-                              </Label>
-                            </Item>
-                          </FormGroup>
-                        </Col>
-                      </Row>
-                    
-                    </FormGroup>
+                    />
+                  </Item>
+                  <FormGroup tag="fieldset">
+                    Gênero
+                    <Row style={{ marginTop: "5px" }}>
+                      <Col>
+                        <FormGroup check>
+                          <Item>
+                            <Input
+                              id="1"
+                              name="genre"
+                              type="radio"
+                              value="Feminino"
+                              checked={values.genre === "Feminino"}
+                              onChange={inputChange}
+                            />{" "}
+                            <Label check>Feminino</Label>
+                          </Item>
+                        </FormGroup>
+                      </Col>
+                      <Col>
+                        <FormGroup check>
+                          <Item>
+                            <Input
+                              name="genre"
+                              id="2"
+                              type="radio"
+                              value="Masculino"
+                              checked={values.genre === "Masculino"}
+                              onChange={inputChange}
+                            />{" "}
+                            <Label check>Masculino</Label>
+                          </Item>
+                        </FormGroup>
+                      </Col>
+                      <Col>
+                        <FormGroup check>
+                          <Item>
+                            <Input
+                              name="genre"
+                              id="2"
+                              type="radio"
+                              value="Outros"
+                              checked={values.genre === "Outros"}
+                              onChange={inputChange}
+                            />{" "}
+                            <Label check>Outros</Label>
+                          </Item>
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                  </FormGroup>
                 </Container>
               </FormGroup>
-              <FormGroup style={{paddingLeft:'10px'}}>
+              <FormGroup style={{ paddingLeft: "10px" }}>
                 <Container>
                   <Item>
-                    <Label>
-                      Endereço
-                    </Label>
+                    <Label>Endereço</Label>
                     <Input
                       name="address"
-                      type='text'
+                      type="text"
                       value={values.address}
                       onChange={inputChange}
                     />
                   </Item>
                   <Item>
-                    
-                    <Label>
-                      CEP
-                    </Label>
+                    <Label>CEP</Label>
                     <Input
                       name="cep"
-                      type='number'
+                      type="number"
                       value={values.cep}
                       onChange={inputChange}
                     />
                   </Item>
                   <Item>
-                    <Label>
-                      Telefone
-                    </Label>
+                    <Label>Telefone</Label>
                     <Input
                       name="phone_number"
-                      placeholder='( ) xxxxx-xxxx'
+                      placeholder="( ) xxxxx-xxxx"
                       value={phoneMask(values.phone_number)}
                       onChange={inputChange}
                     />
                   </Item>
                 </Container>
               </FormGroup>
-              <FormGroup style={{paddingLeft:'10px'}}>
-                  <Label for="exampleSelect">
-                    Selecione a sua finalidade
-                  </Label>
-                  <Input
-                    name="type_user"
-                    type="select"
-                    onChange={inputChange}
-                    value = {values}
-                    placeholder="Selecione uma opção"
-                    >
-                    <option
-                      value={1}
-                    >
-                      Cliente
-                    </option>
-                    <option
-                      value={2}
-                    >
-                      Anunciante
-                    </option>
-                    {/* <option
+              <FormGroup style={{ paddingLeft: "10px" }}>
+                <Label for="exampleSelect">Selecione a sua finalidade</Label>
+                <Input
+                  name="type_user"
+                  type="select"
+                  onChange={inputChange}
+                  value={values}
+                  placeholder="Selecione uma opção"
+                >
+                  <option value={1}>Cliente</option>
+                  <option value={2}>Anunciante</option>
+                  {/* <option
                       name="typeUser"
                       value={2}
                       onChange={inputChange}>
                       
                     </option> */}
-                  </Input>
-                </FormGroup>
-              <Button  style={{background:'#130A1D', borderColor: '#130A1D'}}>
+                </Input>
+              </FormGroup>
+              <Button style={{ background: "#130A1D", borderColor: "#130A1D" }}>
                 CADASTRAR
               </Button>
             </Form>
-              </CardBody>
-            </CardData>
-          </div>
-        </Globalpage>        
-    )  
-  }
+          </CardBody>
+        </CardData>
+      </div>
+    </Globalpage>
+  );
+}
 
 export default DadosCadastro;

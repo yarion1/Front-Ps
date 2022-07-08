@@ -1,53 +1,67 @@
-
-import React, {useEffect, useState} from 'react';
-import Pagination  from '../../components/Pagination/Pagination';
-import NavbarPage from '../../components/Navbar';
-import {Container,
-        Post,
-        Capa,
-        Titulo,
-        Subtitulo} from './styledrent';
+import React, { useEffect, useState } from "react";
+import Pagination from "../../components/Pagination/Pagination";
+import NavbarPage from "../../components/Navbar";
+import { Container, Post, Capa, Titulo, Subtitulo } from "./styledrent";
+import api from "../../services/api";
+import ProductInspect from "../../components/ProductInspect/ProductInspect";
 
 function Rent() {
-  const [nutri, setNutri] = useState([])
-  
-  const itensPerPage = 3
-  const [offset, setOffset] = useState (0)
-  const endIndex = offset + itensPerPage
-  const currentItens = nutri.slice (offset, endIndex)
+  const [products, setProducts] = useState([]);
 
-  useEffect(()=>{
+  const itensPerPage = 3;
+  const [offset, setOffset] = useState(0);
+  const endIndex = offset + itensPerPage;
+  const currentItens = products.slice(offset, endIndex);
 
-    const loadApi = async ()=> {
-      let url = 'https://sujeitoprogramador.com/rn-api/?api=posts';
-      await fetch(url)
-      .then((r)=>r.json())
-      .then((json)=>{
-        console.log(json);
-        setNutri(json);
+  useEffect(() => {
+    api
+      .get("/products")
+      .then((res) => {
+        if (res.data) {
+          setProducts(res.data);
+          console.log(res.data);
+        }
       })
-    }
-    loadApi();
-  },[]);
+      .catch((err) => {
+        console.log(err);
+        alert("Erro ao listar produtos!");
+      });
+  }, []);
 
   return (
     <>
-      <NavbarPage/>
-      <Container>          
-          
-              {currentItens.map((item) =>{
-                return(
-                  <Post key={item.id} onClick="location.href = ">
-                      <Capa src={item.capa} alt="item.titulo" className= "capa"/>
-                      <Titulo>{item.titulo}</Titulo> 
-                
-                      <Subtitulo>
-                      {item.subtitulo}
-                      </Subtitulo>          
-                  </Post>
-                )
-              })}
-         <Pagination limit={itensPerPage} total={nutri.length} offset={offset} setOffset={setOffset}/>
+      <NavbarPage />
+      <Container>
+        {currentItens.length > 0 ? (
+          <>
+            {currentItens.map((item) => {
+              return (
+                <Post
+                  key={item.id}
+                  onClick={() => {
+                    return <ProductInspect />;
+                  }}
+                >
+                  <Capa
+                    src={item.product_name}
+                    alt="item.titulo"
+                    className="capa"
+                  />
+                  <Titulo>{item.product_name}</Titulo>
+                  <Subtitulo>{item.description}</Subtitulo>
+                </Post>
+              );
+            })}
+            <Pagination
+              limit={itensPerPage}
+              total={products.length}
+              offset={offset}
+              setOffset={setOffset}
+            />
+          </>
+        ) : (
+          "Nenhum produto encontrado"
+        )}
       </Container>
     </>
   );

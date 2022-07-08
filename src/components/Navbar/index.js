@@ -1,8 +1,8 @@
-import React, {useState} from "react";
-import '../../assets/styles/Navbar/stylednavbar.css'
+import React, { useState } from "react";
+import "../../assets/styles/Navbar/stylednavbar.css";
 import { Link } from "react-router-dom";
-import logo from '../../assets/img/logo.svg'
-import logout  from "../../store/logout";
+import logo from "../../assets/img/logo.svg";
+import logout from "../../store/logout";
 import { useDispatch, useSelector } from "react-redux";
 
 const NavbarPage = () => {
@@ -11,58 +11,45 @@ const NavbarPage = () => {
   const handleClick = () => setClick(!click);
 
   const { isAuthenticated } = useSelector((state) => state.auth);
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   function authLogout() {
-		isAuthenticated && dispatch(logout());
-	}
-
+    isAuthenticated && dispatch(logout());
+  }
 
   return (
     <>
-            <nav className="navbar">
+      <nav className="navbar">
         <div className="nav-container">
-            <div  className="nav-logo">
-              <Link  to="/"><img style={{width:'120px', height:"120px"}} src={logo}/></Link>
-            </div>
+          <div className="nav-logo">
+            <Link to="/">
+              <img
+                style={{ width: "120px", height: "120px" }}
+                src={logo}
+                alt=""
+              />
+            </Link>
+          </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li></li>
             <li className="nav-item">
-              <Link
-                to="/"
-                className="nav-links"
-             
-              >
+              <Link to="/" className="nav-links">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link
-       
-                to="/Rent"
-                className="nav-links"
-               
-              >
+              <Link to="/Rent" className="nav-links">
                 Meus Alugueis
               </Link>
             </li>
-            
-            <li className="nav-item">
-              <Link
-              
-                to="/parceiros"
-                className="nav-links"
-                
-              >
+
+            {/* <li className="nav-item">
+              <Link to="/parceiros" className="nav-links">
                 Parceiros
               </Link>
-            </li>
+            </li> */}
             <li className="nav-item">
-              <Link
-                exact
-                to="/User-profile/*"
-                className="nav-links"
-               
-              >
+              <Link exact to="/User-profile/*" className="nav-links">
                 Meu Perfil
               </Link>
             </li>
@@ -82,7 +69,6 @@ const NavbarPage = () => {
           </div>
         </div>
       </nav>
-
     </>
   );
 };
