@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import '../../assets/styles/Navbar/stylednavbar.css'
 import { Link } from "react-router-dom";
 import logo from '../../assets/img/logo.svg'
-import logout  from "../../store/logout";
+import { logoutAction } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 const NavbarPage = () => {
@@ -14,7 +14,7 @@ const NavbarPage = () => {
 	const dispatch = useDispatch();
 
   function authLogout() {
-		isAuthenticated && dispatch(logout());
+		 dispatch(logoutAction());
 	}
 
 
@@ -42,18 +42,47 @@ const NavbarPage = () => {
                 className="nav-links"
                
               >
-                Meus Alugueis
+                Meus Anúncios
               </Link>
             </li>
-            
+            <li className="nav-item">
+              <Link
+       
+                to="/MyRent"
+                className="nav-links"
+               
+              >
+                Meus Aluguéis
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+       
+                to="/alugados"
+                className="nav-links"
+               
+              >
+                Alugados
+              </Link>
+            </li>
+            <li className="nav-item">
+            <Link
+                  
+                  to="/equipamentos"
+                  className="nav-links"
+                  
+                >
+                  Anúncios
+                </Link>
+            </li>
             <li className="nav-item">
               <Link
               
-                to="/parceiros"
+                to="/Equipment_Register"
                 className="nav-links"
                 
               >
-                Parceiros
+                Anunciar
               </Link>
             </li>
             <li className="nav-item">

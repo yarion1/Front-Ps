@@ -23,7 +23,7 @@ export const Userpic = styled.img `
     width: 130px;
     height: 130px;
     border-radius: 50%;
-    background: #56456B;
+    background: #fff;
     background-size: cover; 
     margin: 8% auto;
 `
@@ -74,19 +74,19 @@ export const UserName = styled.input`
     border-radius: 0 0 5px 5px;
     padding-left: 5%;
     width:100%;
-    background: #56456B;
-    color: rgba(255, 255, 255, 0.5);
+    background: #fff;
+    color: black;
     height: 28px;
 `
 export const UserAge = styled.input`
     border:none;
     border-radius: 5px;
     height: 32px;
-    background: #56456B;
+    background: #fff;
     border-radius: 0 0 5px 5px;
     padding-left: 5%;
     width: 100%;
-    color: rgba(255, 255, 255, 0.5);
+    color: black;
     
 `
 export const UserSelects = styled.select`
@@ -97,35 +97,35 @@ export const UserSelects = styled.select`
     padding-left: 5%;
     width: 100%;
     height: 30px;
-    background: #56456B;
-    color: rgba(255, 255, 255, 0.5);
+    background: #fff;
+    color: black;
 `
 export const UserMail = styled.input`
     border: none;
     border-radius: 5px;
-    background: #56456B;
+    background: #fff;
     border-radius: 0 0 5px 5px;
     padding-left: 5%;
     width:100%;
-    color: rgba(255, 255, 255, 0.5);
+    color: black;
 `
 export const UserProf = styled.input`
     border: none;
     border-radius: 5px;
-    background: #56456B;
+    background: #fff;
     border-radius: 0 0 5px 5px;
     padding-left: 5%;
     width: 100%;
-    color: rgba(255, 255, 255, 0.5);
+    color: black;
 `
 export const UserPhone = styled.input`
     border: none;
     border-radius: 5px;
-    background: #56456B;
+    background: #fff;
     border-radius: 0 0 5px 5px;
     padding-left: 5%;
     width: 100%;
-    color: rgba(255, 255, 255, 0.5);
+    color: black;
 `
 export const UserDesc = styled.textarea`
     border:none;
@@ -135,8 +135,8 @@ export const UserDesc = styled.textarea`
     padding-left: 5%;
     height: 14vh;
     min-height: 14vh;
-    background: #56456B;
-    color: rgba(255, 255, 255, 0.5);
+    background: #fff;
+    color: black;
 `
 export const DadosWork = styled.button `
     background: none;

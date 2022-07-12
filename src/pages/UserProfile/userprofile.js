@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-pascal-case */
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import NavbarPage from "../../components/Navbar/index";
 import ModalSenha from '../../components/Modal/ModalPassword';
 import ModalPrest from '../../components/Modal/ModalPrest';
+import jwtDecode from "jwt-decode";
+import setAuthToken from "../../services/setAuthToken";
 
 import {
   Userprofilecontainer,
@@ -23,6 +25,7 @@ import {
   Fundo,
   ItemNameDesc
 } from "./styleduserprofile";
+import axios from "axios";
 
 const Valores = {
   nome: "Arthur Fernandes",
@@ -37,7 +40,7 @@ const Valores = {
 
 }
 
-export default () => {
+const Userprofie = () => {
   const [Name, setName] = useState(Valores.nome)
   const [phone, setPhone] = useState(Valores.telefone)
   const [email, setEmail] = useState(Valores.email)
@@ -55,10 +58,56 @@ export default () => {
   const toggleSenha = () => setShowModalSenha(!showModalSenha);
 
 
-const clickEditar = () => {
-  setEdit(current => !current)
-}
+    const clickEditar = () => {
+      setEdit(current => !current)
+    }
 
+    const jwtToken =  localStorage.getItem("x-access-token")
+
+
+      const userData = jwtDecode(jwtToken)
+      const id = userData.user_id;
+      const [user, setUser] = useState([''])
+      const [loading, setIsLoading] = useState(true);
+    
+       let dataBanco=  user.birthdate;
+
+          function dataFormatada(dataBanco){
+            let data = new Date(dataBanco),
+                dia  = data.getDate().toString(),
+                diaF = (dia.length == 0) ? '0'+dia : dia,
+                mes  = (data.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+                mesF = (mes.length == 1) ? '0'+mes : mes,
+                anoF = data.getFullYear();
+            
+            // return diaF+"/"+mesF+"/"+anoF;
+
+            console.log(diaF+"/"+mesF+"/"+anoF);
+          }
+
+          /* ###### data vindo do banco exemplo com PHP
+            dataBanco="<?php echo $dataBanco ?>";
+          ########################################### */
+
+          
+
+          //chamada da função
+          dataFormatada(dataBanco)
+      
+            useEffect(()=>{
+              if(loading){
+                setIsLoading(true)
+                axios.get(`http://localhost:5000/users/${id}`)
+                .then(response=>{
+                  setUser(response.data)
+                  setIsLoading(false)
+              }).catch(error=>{
+                  alert(error)
+              })
+              }
+            },[])
+    
+  
 return(
   <>
         <NavbarPage />        
@@ -71,24 +120,30 @@ return(
                 <UserMail
                   type="email"
                   name="email"
-                  value={email}
-                  disabled={Edit}
-                  onChange={e => setEmail(e.target.value)}
+                  value={user.email}
                 />
+
 
               <ItemName>Nome:</ItemName>
               <UserName
                 name="nome"
-                value={Name}
                 disabled={Edit}
-                onChange={e => setName(e.target.value)}
+                value={user.name}
               />
+              <ItemName>cpf:</ItemName>
+                <UserProf
+                  type="text"
+                  name="address"
+                  value={user.cpf}
+                  disabled={Edit}
+                
+                />
                 <ItemName>Gênero:</ItemName>
                        <UserSelects
                        name="genero"
                        disabled={Edit}
-                       value={Gen}
-                       onChange={e => setGen(e.target.value)}
+                       value={user.genre}
+                      
                      >
                        <option>Masculino</option>
                        <option>Feminino</option>
@@ -97,8 +152,8 @@ return(
                  <ItemName>Prestador de serviços?</ItemName>               
                  <UserSelects
                   name="prestador"
-                  value={Prest}
-                  onChange={e => setPres(e.target.value)}
+                  
+                  
                   disabled={Edit}
                 >
                   <option>Não</option>
@@ -111,37 +166,43 @@ return(
               <UserDesc
                 name="descricao"
                 disabled={Edit}
-                value={Desc}
-                onChange={e => setDesc(e.target.value)}
+                
+               
               />
               <BotaoSenha onClick={() => {toggleSenha()}}>Alterar senha</BotaoSenha>
               <ItemName>Data de nascimento:</ItemName>
                 <UserAge
-                  value={Nasc}
-                  min="1900-01-01"
-                  max="2022-01-01"
-                  type="date"
+                  type="text"
                   disabled={Edit}
                   name="dataNasc"
-                  onChange={e => setNasc(e.target.value)}
+                
+               
                 />
 
                 <ItemName>Telefone:</ItemName>
                 <UserPhone
-                  value={phone}
+                 
                   type="tel"
                   disabled={Edit}
                   name="telefone"
-                  onChange={e => setPhone(e.target.value)}
+                  value={user.phone_number}
                 />
 
-                <ItemName>Profissão:</ItemName>
+                <ItemName>Endereço:</ItemName>
                 <UserProf
                   type="text"
-                  name="profissao"
-                  value={Prof}
+                  name="address"
+                  value={user.address}
                   disabled={Edit}
-                  onChange={e => setProf(e.target.value)}
+                
+                />
+                <ItemName>cep:</ItemName>
+                <UserProf
+                  type="text"
+                  name="cep"
+                  value={user.cep}
+                  disabled={Edit}
+                
                 />
               </Frag>
               </Menu>    
@@ -160,3 +221,5 @@ return(
       </>
   )
 }
+
+export default Userprofie;

@@ -7,7 +7,7 @@ import ProductInspect from "../../components/ProductInspect/ProductInspect";
 import { useNavigate, Navigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 
-function Rent() {
+function MyRent() {
   const [products, setProducts] = useState([]);
 const navigate= useNavigate();
   const itensPerPage = 3;
@@ -21,7 +21,7 @@ const navigate= useNavigate();
 
   useEffect(() => {
     api
-      .get(`/productsuser/${id}`)
+      .get(`/rent_product/${id}`)
       .then((res) => {
         if (res.data) {
           setProducts(res.data);
@@ -29,9 +29,11 @@ const navigate= useNavigate();
       })
       .catch((err) => {
         console.log(err);
-        alert("Erro ao listar os alugueis!");
       });
   }, []);
+
+
+
 
   return (
     <>
@@ -46,22 +48,16 @@ const navigate= useNavigate();
                   value={item.id}
                 >
                   <Capa
-                    src={item.product_name}
+                    src={item.name_quipament}
                     alt="item.imagem"
                     className="capa"
                   />
-                  <Titulo>{item.product_name}</Titulo>
+                  <Titulo>{item.name_equipament}</Titulo>
                   <Subtitulo>{item.description}</Subtitulo>
-                  <Price>
-                    <h2>{item.price}</h2>
-                  </Price>
-                 
+                  <Price><h2>{item.price}</h2></Price>
                 </Post>
-                
               );
-              
             })}
-
             <Pagination
               limit={itensPerPage}
               total={products.length}
@@ -70,11 +66,11 @@ const navigate= useNavigate();
             />
           </>
         ) : (
-          "Nenhum produto encontrado"
+          "Você ainda não alugou um item"
         )}
       </Container>
     </>
   );
 }
 
-export default Rent;
+export default MyRent;

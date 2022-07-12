@@ -38,7 +38,6 @@ function PreLoader() {
     setTimeout(() => {
       axios.get("http://localhost:5000/users")
         .then((response) => {
-          console.log(response);
           setData(response.data);
           setloading(true);
 

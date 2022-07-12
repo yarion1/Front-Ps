@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style,{
     Textcategoria,
     Cardcategory,
@@ -34,35 +34,45 @@ import Navbar from '../../components/Navbar';
 import DemoCarousel from  '../../components/Carousel/Carousel';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import { Carousel } from 'react-carousel-minimal';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import api from "../../services/api";
 
 function Home () {
+
+ const [ categories , setCategories] = useState(['']);
+
+  useEffect(() => {
+    api
+      .get("/categories")
+      .then((res) => {
+        if (res.data) {
+          setCategories(res.data);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Erro ao listar categorias!");
+      });
+  }, []);
+
+
+  const [idcategorie, setIdcategorie] = useState(['']);
+  const navigate= useNavigate();
+  const [isloading, setIsloading] = useState(false);
+
+
+  const send = (value)=>{
+    if(isloading ===false){
+      setIsloading(true) 
+       sessionStorage.setItem('categoria', value.id);
+       setIsloading(false);
+       navigate(`/equipamentos/${value.title}`);
+       
+    }  
+    
+  }
+
   
-  const cards = [
-    {
-      id: '1',
-      title: 'Escavadeiras',
-      images: ['https://cdn.discordapp.com/attachments/931699948087574538/984492129525055518/pexels-anamul-rezwan-1078884.jpg'],
-    },
-
-    {
-    id:'2',
-    title: 'Furadeiras',
-    images: ['https://cdn.discordapp.com/attachments/931699948087574538/984492220226875423/pexels-bidvine-1249611.jpg'],
-    },
-
-    {
-    id:'3',
-    title: 'Máquinas de costura',
-    images: ['https://cdn.discordapp.com/attachments/931699948087574538/984492283971911690/pexels-leticia-ribeiro-2249290.jpg'],
-    },
-
-    {
-    id:'4',
-    title: 'Ferramentas',
-    images: ['https://cdn.discordapp.com/attachments/931699948087574538/984492202392694814/pexels-pixabay-162553.jpg'],
-    },
-  ];
  return(
     <>
       <Navbar/>   
@@ -101,7 +111,7 @@ function Home () {
           </Textcategoria>
           <Gamb></Gamb>
           <CardButtons2>
-            <Link to="/Rent" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
+            <Link to="/equipamentos" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
             <TextCard> Alugar máquina</TextCard>
             </Link>
           </CardButtons2>
@@ -114,26 +124,30 @@ function Home () {
           style={{height: '90px' , width: '90px'}}
         />
             <Gambi></Gambi>
-            <Textcategoria>
-            Atualize seu perfil para que todos possam conhecê-lo.
+            <Textcategoria style={{paddingLeft:'100px'}}>
+              Veja os itens alugados.
             </Textcategoria>
             <Gamb></Gamb>
           <CardButtons3>
-            <Link to="/User_profile" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
-            <TextCard>Acessar meu perfil</TextCard>
+            <Link to="/alugados" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
+            <TextCard style={{paddingLeft:'25px'}}>Itens alugados</TextCard>
             </Link>
           </CardButtons3>
         </CardProfile>
         <Textmid>Escolha a máquina ideal para você!</Textmid>
-        {cards.map((item, index) => (
+       <div> 
+        {(categories).map((item) => {
+          return(
         <Cardcategory inverse>
           <div 
-           key={index}
+          value={item.id}
+           key={item.id}
+           onClick={e => send(item)}
           >
            <CardImg
           alt="Card image cap"
           width="100%"
-          src={item.images}
+          src={'https://cdn.discordapp.com/attachments/931699948087574538/984492129525055518/pexels-anamul-rezwan-1078884.jpg'}
           style={{height: '250px'}}
           />
           <CardImgOverlay>
@@ -144,7 +158,10 @@ function Home () {
           </CardImgOverlay>
           </div>
         </Cardcategory>
-    ))}
+
+        );
+})}
+</div>
       </Page>  
     </>
  ); 

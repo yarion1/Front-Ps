@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ModalPayment from '../../../components/Modal/Modalpayment';
 import Modalinfopayment from '../../../components/Modal/Modalinfopayment';
 import { useNavigate} from 'react-router-dom';
@@ -24,6 +24,7 @@ import {
 
 import ReactImageZoom from 'react-image-zoom';
 import EquipmentSecurity from '../EquipmentSecurity/EquipmentSecurity';
+import axios from 'axios';
 
 function EquipmentDetail (/* {equipament} */) {
     const equipament = {
@@ -37,14 +38,29 @@ function EquipmentDetail (/* {equipament} */) {
     const [showModal, setShowModal]= useState(false);
     const [showModalinfo, setShowModalinfo]= useState(false);
     const [showModalAv, setShowModalAv]= useState(false);
-
-    
+    const [idproduct, setIdproduct] = useState(sessionStorage.getItem('produto'));
     const imgProps = {width: 450, zoomHeight: 450, zoomWidth: 450, img: imagePreview, zoomPosition: 'original'}; 
 
     const toggle = () => setShowModal(!showModal);
     const toggleinfo = () => setShowModalinfo(!showModalinfo);
     const toggleAv = () => setShowModalAv(!showModalAv);
+    const [loading, setIsLoading] = useState(true);
+    const [product, setProduct] = useState(['']);
 
+    useEffect(()=>{
+        if(loading){
+          setIsLoading(true)
+          axios.get(`http://localhost:5000/products/${idproduct}`)
+          .then(response=>{
+            setProduct(response.data)
+            setIsLoading(false)
+        }).catch(error=>{
+            alert(error)
+        })
+        }
+      },[])
+    
+      
     return (
         <>
         <Divpage>
@@ -68,10 +84,10 @@ function EquipmentDetail (/* {equipament} */) {
             </Carditens>
             <Carddetails>
               <Iitleitem>
-                    {equipament.title}
+                    {product.product_name}
                     </Iitleitem>
                         <Infopreco>
-                            <Preco>R$ {equipament.price}</Preco>
+                            <Preco>{product.price}</Preco>
                         </Infopreco>
                         <Meiospag onClick={() => {toggleinfo()}}>Ver os meios de pagamento</Meiospag>
                     <CardAviso>

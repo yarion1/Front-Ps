@@ -8,6 +8,8 @@ import User_profile from './UserProfile/userprofile.js';
 import ProductInspect from '../components/ProductInspect/ProductInspect';
 import Lista from './Lista/Lista.js';
 import Rent from './rent/listRent';
+import Alugados from './rent/alugados';
+import MyRent from './rent/MyRent';
 import Worker from './Listworker/Listworker';
 import PreLoader from "../components/PreLoader/PreLoader";
 import Upload from "./upload/up";
@@ -15,12 +17,16 @@ import UpWorker from "./Upworker/UpWorker";
 import Worker_profile from './WorkerProfile/workerProfile.js';
 import DadosCadastro from "./SignUp/DadosCadastrais/DadosCadastrais";
 import Equipment_Register from "./Equipment/Equipment_Register/Equipment_Register";
-import auth from "../store/auth";
-
+import Landing_page from './LandingPage/LandingPage'
+import Equipamentsbycatg from "./Equipment/Equipaments/Equipamentsbycateg";
+import Equipaments from "./Equipment/Equipaments/Equipaments";
 
 function RequireAuth({ children, redirectTo }) {
-  let {isAuthenticated} = useSelector((state) => state.auth);
-  return isAuthenticated ? children : <Navigate to={redirectTo} />;
+  const isAuthenticated = useSelector((state) => state.isLoggedIn);
+
+     const token = localStorage.getItem('x-access-token')
+  
+  return token ? children : <Navigate to={redirectTo} />;
 }
 
 export default () =>(
@@ -29,6 +35,7 @@ export default () =>(
      <Route path="/register" element = {<SignUp/>}/>
      <Route path="/login" element = {<Login/>}/>
       <Route path="/dadoscadastrais" element = {<DadosCadastro/>}/>
+      <Route path="/landing_page" element = {<Landing_page/>}/>
          <Route
               path="/"
               element={
@@ -54,6 +61,19 @@ export default () =>(
             }
            />
            <Route
+              path="equipamentos/:name"
+              element={ <RequireAuth redirectTo={'/login'}>
+              <Equipamentsbycatg/>
+            </RequireAuth>}
+           />
+           <Route
+              path="/equipamentos"
+              element={ <RequireAuth redirectTo={'/login'}>
+              <Equipaments/>
+            </RequireAuth>}
+           />
+           
+           <Route
               path="/User-profile/*"
               element={
                 <RequireAuth redirectTo={'/login'}>
@@ -72,6 +92,18 @@ export default () =>(
           <Route path="/Rent"  element={
                   <RequireAuth redirectTo={'/login'}>
                     <Rent/>
+                  </RequireAuth>
+              }
+           />
+             <Route path="/alugados"  element={
+                  <RequireAuth redirectTo={'/login'}>
+                    <Alugados/>
+                  </RequireAuth>
+              }
+           />
+            <Route path="/MyRent"  element={
+                  <RequireAuth redirectTo={'/login'}>
+                    <MyRent/>
                   </RequireAuth>
               }
            />
