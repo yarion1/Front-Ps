@@ -1,71 +1,55 @@
-import React, {useState} from 'react';
-import styled, {
-    Globalpage,
-    Cardpage,
-    Cardlogin,
-    Imageconstructor,
-    Textinfo,
-    Imagelogo,
-    Titlelog,
-    Formlog,
-    Labelog,
-    Buttonlog,
-    Inputlog,
-    FormGrouplog,
-    Divbutton,
-    H3,
-    DivBtn,
-    Divregister
+import React, { useState } from "react";
+import {
+  Globalpage,
+  Cardpage,
+  Cardlogin,
+  Imageconstructor,
+  Textinfo,
+  Titlelog,
+  Formlog,
+  Labelog,
+  Buttonlog,
+  Inputlog,
+  FormGrouplog,
+  Divbutton,
+  H3,
+  DivBtn,
+  Divregister,
+} from "../../assets/styles/auth/authstyled";
 
-} from  '../../assets/styles/auth/authstyled';
-import {AiOutlineMail} from 'react-icons/ai';
-import {RiLockPasswordFill} from 'react-icons/ri';
+
 import constructor from '../../assets/img/constructor.png';
 import {BrowserRouter as Router, Routes, Route, useNavigate} from 'react-router-dom';
-import logo from '../../assets/img/logoblue.svg';
-import PreLoader from '../../components/PreLoader/PreLoader';
 import axios from 'axios';
-import {useDispatch} from 'react-redux';
-import { login } from '../../store/auth'
+import { useDispatch, useStore } from 'react-redux';
+import { loginAction  } from '../../store/actions';
 
  function Login () {
-    const[form, setForm] = useState({email:'', password:''})
-    const dispatch = useDispatch();
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [errorMessage, setError] = useState("")
+    const dispatch = useDispatch()
+    const store = useStore()
     const navigate = useNavigate();
 
-    function changeForm(e){
-        const {name, value} = e.target
+    const handleSubmit = (event) =>{
+        event.preventDefault();
 
-        setForm({... form,[name]: value})
-    }
-
-    const authLogin =(user) =>{
-        return(dispatch) =>{
-            axios.post('http://localhost:5000/login', user)
-            .then((res) => {
-				localStorage.setItem('token', res.data.token);
-				dispatch(login());
-
-                navigate('/preloader')
-			})
-            .catch(console.log)
+        const userCredential = {
+            email,
+            password
         }
+        const login = dispatch(loginAction(userCredential))
+        login
+            .then((res) => {
+                navigate('/preloader')
+            })
+            .catch(error => setError(error.err))
     }
 
-    function submitForm(e){
-        e.preventDefault()
-
-        dispatch(authLogin(form))
-
-        setForm({email: '', password: ''})
-    }
-
+  
     function handleClickregister(){
         navigate('/register');
-    }
-
-    function handleClickLogin(){
-        navigate('/PreLoader');
     }
 
         return(
@@ -78,7 +62,7 @@ import { login } from '../../store/auth'
                         <Titlelog>
                             LOGIN
                         </Titlelog>
-                        <Formlog inline onSubmit={submitForm}>
+                        <Formlog inline onSubmit={handleSubmit}>
                          <H3>Email</H3>
                             <FormGrouplog floating>
                             <Inputlog
@@ -86,8 +70,8 @@ import { login } from '../../store/auth'
                                 name="email"
                                 placeholder="Email"
                                 type="email"
-                                onChange={changeForm}
-                                value={form.email}
+                                onChange={e=>setEmail(e.target.value)}
+                                value={email}
                             />
                             <Labelog for="exampleEmail">
                                 Email
@@ -98,11 +82,11 @@ import { login } from '../../store/auth'
                             <FormGrouplog floating>
                             <Inputlog 
                                 style={{borderRadius: '15px', height: '20%'}}
-                                onChange={changeForm}
+                                onChange={e=>setPassword(e.target.value)}
                                 name="password"
                                 placeholder="Senha"
                                 type="password"
-                                value={form.password}
+                                value={password}
                             />
                             <Labelog for="examplePassword">
                                 Password

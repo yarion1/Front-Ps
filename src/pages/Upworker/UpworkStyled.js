@@ -5,7 +5,7 @@ export const DivLogin = styled.div `
    margin-left: 20%;
    position: absolute;
    display: flex;
-   flex-diretion: column;
+   flex-direction: column;
    top: 22em;
    
    button{

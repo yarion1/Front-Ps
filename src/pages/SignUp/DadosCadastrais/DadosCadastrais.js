@@ -8,55 +8,73 @@ Form, FormGroup,Label,Input, Row, Col, Select} from 'reactstrap';
 import {CardData, Container, Item} from './StyledDadosCadastrais';
 import  {cpfMask, phoneMask}  from '../../../components/Mask/mask';
 import axios  from "axios";
+import { useDispatch } from 'react-redux';
+import { registerAction } from '../../../store/actions';
 
- function DadosCadastro () {
+import {
+  CardBody,
+  CardHeader,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Row,
+  Col,
+} from "reactstrap";
 
-    const [values, setValues] = useState({ 
-      email: sessionStorage.getItem('email'),
-      password: sessionStorage.getItem('password'),
-      cpf: '' , 
-      cep: '', 
-      phone_number: '',
-      name: '',
-      birthdate:'',
-      genre: [
-        {id:1, name:'Feminino'},
-        {id:2, name:'Masculino'},
-        {id:3, name:'Outros'},
-      ],
-      address: '',
-      type_user: 0,
-      rate:0.0
-      })
+function DadosCadastro () {
 
-  
 
-    const inputChange = (e) => {
+  const [email, setEmail] = useState(sessionStorage.getItem('email'));
+  const [password, setPassword] = useState(sessionStorage.getItem('password'));
+  const [cpf, setCpf] = useState('');
+  const [cep, setCep] = useState('');
+  const [phone_number, setPhone_number] = useState('');
+  const [name, setName] = useState('');
+  const [birthdate, setBirthdate] = useState('');
+  const [genre, setGenre] = useState([
+    {id:1, name:'Feminino'},
+    {id:2, name:'Masculino'},
+    {id:3, name:'Outros'},
+  ]);
 
-      const { name, value } = e.target
-      setValues({
-        ...values,
-        [name]: value
-      })
-    }
+  const [address, setAddress] = useState('');
+  const [type_user, setType_user] = useState(0);
+  const [rate, setRate] = useState(0.0);
+   
+  const [errorMessage, setError] = useState("")
+
+  const dispatch = useDispatch()
  
-  const [result, setResult] = useState(null);
   const navigate = useNavigate();
-
-  const sendData = event => {
+  
+  const sendData = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:5000/register', {...values})
-    .then(response => {
-      setResult(response.data);
+
+    const newUser = {
+      email,
+      password,
+      cpf, 
+      cep, 
+      phone_number,
+      name,
+      birthdate,
+      genre,
+      address,
+      type_user,
+      rate,
+    }
+    const validate = dispatch(registerAction(newUser));
+    validate.then(response => {
+      navigate('/login');
     })
-    .catch(() => {
-      setResult({
-        sucess: false,
-      })
-    })
+    .catch(error => setError(error.data.err))
     navigate('/login');
+  
   };
    
+
   
     return(
         <Globalpage>
@@ -77,32 +95,28 @@ import axios  from "axios";
                 </Label> 
                 <Input
                   name="name"
+                  value={name}
                   type="text"
-                  value={values.name}
-                  onChange={inputChange}
+                  onChange={e => setName(e.target.value)}
                 />
               </FormGroup>
-              <FormGroup style={{paddingLeft:'10px'}}>
+              <FormGroup style={{ paddingLeft: "10px" }}>
                 <Container>
                   <Item>
-                    <Label>
-                      CPF
-                    </Label>
+                    <Label>CPF</Label>
                     <Input
                       name="cpf"
-                      value={cpfMask(values.cpf)}
-                      onChange={inputChange}
+                      value={cpfMask(cpf)}
+                      onChange={e => setCpf(e.target.value)}
                     />
                   </Item>
-                   <Item>
-                     <Label>
-                      Data de nascimento
-                   </Label>
-                     <Input
+                  <Item>
+                    <Label>Data de nascimento</Label>
+                    <Input
                       name="birthdate"
+                      value={birthdate}
                       type="date"
-                      value={values.date}
-                      onChange={inputChange}
+                      onChange={e => setBirthdate(e.target.value)}
                      />
                    </Item>
                    <FormGroup tag="fieldset">
@@ -116,8 +130,8 @@ import axios  from "axios";
                                name='genre'
                                 type="radio"
                                 value='Feminino'
-                                checked={values.genre === 'Feminino'}
-                                onChange={inputChange}
+                                checked={genre === 'Feminino'}
+                                onChange={e => setGenre(e.target.value)}
                                
                               />
                               {' '}
@@ -135,8 +149,8 @@ import axios  from "axios";
                                 id='2'
                                 type="radio"
                                 value='Masculino'
-                                checked={values.genre === 'Masculino'}
-                                onChange={inputChange}
+                                checked={genre === 'Masculino'}
+                                onChange={e => setGenre(e.target.value)}
 
                               />
                               {' '}
@@ -154,8 +168,8 @@ import axios  from "axios";
                                 id='2'
                                 type="radio"
                                 value='Outros'
-                                checked={values.genre === 'Outros'}
-                                onChange={inputChange}
+                                checked={genre === 'Outros'}
+                                onChange={e => setGenre(e.target.value)}
                              
                               />
                               {' '}
@@ -170,40 +184,33 @@ import axios  from "axios";
                     </FormGroup>
                 </Container>
               </FormGroup>
-              <FormGroup style={{paddingLeft:'10px'}}>
+              <FormGroup style={{ paddingLeft: "10px" }}>
                 <Container>
                   <Item>
-                    <Label>
-                      Endereço
-                    </Label>
+                    <Label>Endereço</Label>
                     <Input
                       name="address"
                       type='text'
-                      value={values.address}
-                      onChange={inputChange}
+                      value={address}
+                      onChange={e => setAddress(e.target.value)}
                     />
                   </Item>
                   <Item>
-                    
-                    <Label>
-                      CEP
-                    </Label>
+                    <Label>CEP</Label>
                     <Input
                       name="cep"
                       type='number'
-                      value={values.cep}
-                      onChange={inputChange}
+                      value={cep}
+                      onChange={e => setCep(e.target.value)}
                     />
                   </Item>
                   <Item>
-                    <Label>
-                      Telefone
-                    </Label>
+                    <Label>Telefone</Label>
                     <Input
                       name="phone_number"
                       placeholder='( ) xxxxx-xxxx'
-                      value={phoneMask(values.phone_number)}
-                      onChange={inputChange}
+                      value={phoneMask(phone_number)}
+                      onChange={e => setPhone_number(e.target.value)}
                     />
                   </Item>
                 </Container>
@@ -215,8 +222,9 @@ import axios  from "axios";
                   <Input
                     name="type_user"
                     type="select"
-                    onChange={inputChange}
-                    value = {values}
+                    onChange={e => setType_user(e.target.value)}
+                    value = {type_user}
+  
                     placeholder="Selecione uma opção"
                     >
                     <option
@@ -235,17 +243,17 @@ import axios  from "axios";
                       onChange={inputChange}>
                       
                     </option> */}
-                  </Input>
-                </FormGroup>
-              <Button  style={{background:'#130A1D', borderColor: '#130A1D'}}>
+                </Input>
+              </FormGroup>
+              <Button style={{ background: "#130A1D", borderColor: "#130A1D" }}>
                 CADASTRAR
               </Button>
             </Form>
-              </CardBody>
-            </CardData>
-          </div>
-        </Globalpage>        
-    )  
-  }
+          </CardBody>
+        </CardData>
+      </div>
+    </Globalpage>
+  );
+}
 
 export default DadosCadastro;

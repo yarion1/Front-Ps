@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-pascal-case */
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import NavbarPage from "../../components/Navbar/index";
 import ModalSenha from '../../components/Modal/ModalPassword';
 import ModalPrest from '../../components/Modal/ModalPrest';
+import jwtDecode from "jwt-decode";
+import setAuthToken from "../../services/setAuthToken";
 
 import {
   Userprofilecontainer,
@@ -21,8 +23,9 @@ import {
   DadosWork,
   BotaoSenha,
   Fundo,
-  ItemNameDesc
+  ItemNameDesc,
 } from "./styleduserprofile";
+import axios from "axios";
 
 const Valores = {
   nome: "Arthur Fernandes",
@@ -34,10 +37,9 @@ const Valores = {
     "Estudante de Ciencia da Computação na Universidade Federal do Tocantins",
   genero: "Masculino",
   prestador: "Não",
+};
 
-}
-
-export default () => {
+const Userprofie = () => {
   const [Name, setName] = useState(Valores.nome)
   const [phone, setPhone] = useState(Valores.telefone)
   const [email, setEmail] = useState(Valores.email)
@@ -51,44 +53,97 @@ export default () => {
   const [showModalPrest, setShowModalPrest]= useState(false);
   const togglePrest = () => setShowModalPrest(!showModalPrest);
 
-  const [showModalSenha, setShowModalSenha]= useState(false);
+  const [showModalSenha, setShowModalSenha] = useState(false);
   const toggleSenha = () => setShowModalSenha(!showModalSenha);
 
+  const clickEditar = () => {
+    setEdit((current) => !current);
+  };
 
-const clickEditar = () => {
-  setEdit(current => !current)
-}
 
+
+    const jwtToken =  localStorage.getItem("x-access-token")
+
+
+      const userData = jwtDecode(jwtToken)
+      const id = userData.user_id;
+      const [user, setUser] = useState([''])
+      const [loading, setIsLoading] = useState(true);
+    
+       let dataBanco=  user.birthdate;
+
+          function dataFormatada(dataBanco){
+            let data = new Date(dataBanco),
+                dia  = data.getDate().toString(),
+                diaF = (dia.length == 0) ? '0'+dia : dia,
+                mes  = (data.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+                mesF = (mes.length == 1) ? '0'+mes : mes,
+                anoF = data.getFullYear();
+            
+            // return diaF+"/"+mesF+"/"+anoF;
+
+            console.log(diaF+"/"+mesF+"/"+anoF);
+          }
+
+          /* ###### data vindo do banco exemplo com PHP
+            dataBanco="<?php echo $dataBanco ?>";
+          ########################################### */
+
+          
+
+          //chamada da função
+          dataFormatada(dataBanco)
+      
+            useEffect(()=>{
+              if(loading){
+                setIsLoading(true)
+                axios.get(`http://localhost:5000/users/${id}`)
+                .then(response=>{
+                  setUser(response.data)
+                  setIsLoading(false)
+              }).catch(error=>{
+                  alert(error)
+              })
+              }
+            },[])
+    
+  
 return(
   <>
         <NavbarPage />        
         <Fundo>
         <Userprofilecontainer>
-        <Menu>
+          <Menu>
             <Frag>
-            <Userpic src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png"/>
+              <Userpic src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" />
               <ItemName>Email:</ItemName>
                 <UserMail
                   type="email"
                   name="email"
-                  value={email}
-                  disabled={Edit}
-                  onChange={e => setEmail(e.target.value)}
+                  value={user.email}
                 />
+
 
               <ItemName>Nome:</ItemName>
               <UserName
                 name="nome"
-                value={Name}
                 disabled={Edit}
-                onChange={e => setName(e.target.value)}
+                value={user.name}
               />
+              <ItemName>cpf:</ItemName>
+                <UserProf
+                  type="text"
+                  name="address"
+                  value={user.cpf}
+                  disabled={Edit}
+                
+                />
                 <ItemName>Gênero:</ItemName>
                        <UserSelects
                        name="genero"
                        disabled={Edit}
-                       value={Gen}
-                       onChange={e => setGen(e.target.value)}
+                       value={user.genre}
+                      
                      >
                        <option>Masculino</option>
                        <option>Feminino</option>
@@ -97,8 +152,8 @@ return(
                  <ItemName>Prestador de serviços?</ItemName>               
                  <UserSelects
                   name="prestador"
-                  value={Prest}
-                  onChange={e => setPres(e.target.value)}
+                  
+                  
                   disabled={Edit}
                 >
                   <option>Não</option>
@@ -106,42 +161,54 @@ return(
                 </UserSelects>
               </Frag>
 
-              <Frag>
+            <Frag>
               <ItemNameDesc>Descrição:</ItemNameDesc>
               <UserDesc
                 name="descricao"
                 disabled={Edit}
-                value={Desc}
-                onChange={e => setDesc(e.target.value)}
+                
+               
               />
-              <BotaoSenha onClick={() => {toggleSenha()}}>Alterar senha</BotaoSenha>
+              <BotaoSenha
+                onClick={() => {
+                  toggleSenha();
+                }}
+              >
+                Alterar senha
+              </BotaoSenha>
               <ItemName>Data de nascimento:</ItemName>
                 <UserAge
-                  value={Nasc}
-                  min="1900-01-01"
-                  max="2022-01-01"
-                  type="date"
+                  type="text"
                   disabled={Edit}
                   name="dataNasc"
-                  onChange={e => setNasc(e.target.value)}
+                
+               
                 />
 
                 <ItemName>Telefone:</ItemName>
                 <UserPhone
-                  value={phone}
+                 
                   type="tel"
                   disabled={Edit}
                   name="telefone"
-                  onChange={e => setPhone(e.target.value)}
+                  value={user.phone_number}
                 />
 
-                <ItemName>Profissão:</ItemName>
+                <ItemName>Endereço:</ItemName>
                 <UserProf
                   type="text"
-                  name="profissao"
-                  value={Prof}
+                  name="address"
+                  value={user.address}
                   disabled={Edit}
-                  onChange={e => setProf(e.target.value)}
+                
+                />
+                <ItemName>cep:</ItemName>
+                <UserProf
+                  type="text"
+                  name="cep"
+                  value={user.cep}
+                  disabled={Edit}
+                
                 />
               </Frag>
               </Menu>    
@@ -149,10 +216,10 @@ return(
           <DadosWork onClick={() => {togglePrest()}} >Dados do prestador</DadosWork>
           ):(<p>{}</p>)}         
 
-          <Botao_editar_perfil onClick={clickEditar} >{Edit ? "Editar" : "Salvar"}
-          </Botao_editar_perfil>     
+          <Botao_editar_perfil onClick={clickEditar}>
+            {Edit ? "Editar" : "Salvar"}
+          </Botao_editar_perfil>
         </Userprofilecontainer>
-        
 
   <ModalPrest show={showModalPrest} toggleShow={() => {togglePrest()}} />
   <ModalSenha show={showModalSenha} toggleShow={() => {toggleSenha()}} />
@@ -160,3 +227,5 @@ return(
       </>
   )
 }
+
+export default Userprofie;

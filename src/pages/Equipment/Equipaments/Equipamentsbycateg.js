@@ -1,37 +1,45 @@
 import React, { useEffect, useState } from "react";
-import Pagination from "../../components/Pagination/Pagination";
-import NavbarPage from "../../components/Navbar";
-import { Container, Post, Capa, Titulo, Subtitulo, Price } from "./styledrent";
-import api from "../../services/api";
-import ProductInspect from "../../components/ProductInspect/ProductInspect";
+import Pagination from "../../../components/Pagination/Pagination";
+import NavbarPage from "../../../components/Navbar";
+import { Container, Post, Capa, Titulo, Subtitulo, Price } from "../../rent/styledrent";
+import api from "../../../services/api";
 import { useNavigate, Navigate } from "react-router-dom";
-import jwtDecode from "jwt-decode";
 
-function Rent() {
-  const [products, setProducts] = useState([]);
+function Equipamentsbycateg() {
+  const [products, setProducts] = useState(['']);
 const navigate= useNavigate();
   const itensPerPage = 3;
   const [offset, setOffset] = useState(0);
   const endIndex = offset + itensPerPage;
   const currentItens = products.slice(offset, endIndex);
-
-  const jwtToken =  localStorage.getItem("x-access-token")
-  const userData = jwtDecode(jwtToken)
-  const id = userData.user_id;
+  const [idcategoria, setIdcategoria] = useState(sessionStorage.getItem('categoria'));
 
   useEffect(() => {
     api
-      .get(`/productsuser/${id}`)
+      .get(`/productscategory/${idcategoria}`)
       .then((res) => {
         if (res.data) {
           setProducts(res.data);
+          console.log(res.data);
         }
       })
       .catch((err) => {
         console.log(err);
-        alert("Erro ao listar os alugueis!");
+        alert("Erro ao listar produtos!");
       });
   }, []);
+
+  const [isloading, setIsloading] = useState(false);
+
+  const send = (value) =>{
+    if(isloading ===false){
+      setIsloading(true);
+      sessionStorage.setItem('produto', value.id);
+      setIsloading(false)
+      navigate(`/product-inspect/*/`);
+    }
+
+  }
 
   return (
     <>
@@ -44,6 +52,7 @@ const navigate= useNavigate();
                 <Post
                   key={item.id}
                   value={item.id}
+                  onClick={(e) => send(item)}
                 >
                   <Capa
                     src={item.product_name}
@@ -52,16 +61,13 @@ const navigate= useNavigate();
                   />
                   <Titulo>{item.product_name}</Titulo>
                   <Subtitulo>{item.description}</Subtitulo>
-                  <Price>
-                    <h2>{item.price}</h2>
-                  </Price>
-                 
+                  <div>
+                    <Subtitulo><b>Proprietário:</b> {item.users_name}</Subtitulo>
+                  </div>
+                  <Price> <h2>{item.price}</h2></Price>
                 </Post>
-                
               );
-              
             })}
-
             <Pagination
               limit={itensPerPage}
               total={products.length}
@@ -77,4 +83,4 @@ const navigate= useNavigate();
   );
 }
 
-export default Rent;
+export default Equipamentsbycateg;
