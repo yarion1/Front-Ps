@@ -14,7 +14,7 @@ import {Equipment_RegisterForm,
 from "./StyledEquipment_Register";
 import jwtDecode from "jwt-decode";
 
-const Equipment_Register = () =>{  
+const Equipment_Register = () => { 
 
   const [product_name, setProduct_name] = useState('');
   const [description, setDescription] = useState('');
@@ -215,7 +215,6 @@ const Equipment_Register = () =>{
           </div>
         </>
     )
-
-}
+   }
 
 export default Equipment_Register;

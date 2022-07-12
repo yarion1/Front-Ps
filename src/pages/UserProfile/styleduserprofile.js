@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import '../../assets/styles/fonts/index.css';
+import styled from "styled-components";
+import "../../assets/styles/fonts/index.css";
 
 export const Fundo = styled.div `
     width: 100%;
@@ -28,46 +28,46 @@ export const Userpic = styled.img `
     margin: 8% auto;
 `
 export const Center = styled.div`
-    display: block;
-    text-align: center;
-`
+  display: block;
+  text-align: center;
+`;
 export const Menu = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%
-`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+`;
 export const Frag = styled.div`
-    width: 40%;
-    text-align:left;
-    margin: 5%;
-`
+  width: 40%;
+  text-align: left;
+  margin: 5%;
+`;
 export const ItemName = styled.h2`
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    color: #FFF;
-    padding-left: 5%;
-    background: #2D1F3F;
-    margin-top: 25px;
-    margin-bottom: -1px;
-    border-radius:5px 5px 0 0;
-`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  color: #fff;
+  padding-left: 5%;
+  background: #2d1f3f;
+  margin-top: 25px;
+  margin-bottom: -1px;
+  border-radius: 5px 5px 0 0;
+`;
 export const ItemNameDesc = styled.h2`
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    width: 100%;
-    font-size: 18px;
-    line-height: 21px;
-    margin-bottom: -1px;
-    color: #FFF;
-    padding-left: 5%;
-    background: #2D1F3F;
-    margin-top: 25px;
-    border-radius: 5px 5px 0 0;
-`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  width: 100%;
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: -1px;
+  color: #fff;
+  padding-left: 5%;
+  background: #2d1f3f;
+  margin-top: 25px;
+  border-radius: 5px 5px 0 0;
+`;
 
 export const UserName = styled.input`
     border:none;
@@ -150,45 +150,45 @@ export const DadosWork = styled.button `
     font-weight: bold;  
 `;
 
-export const BotaoSenha = styled.button `
-    background: #2D1F3F;
-    border-radius: 10px;
-    width: 80%;
-    font-size: 24px;
-    font-family: 'Roboto';
-    font-style: normal;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    margin-top: 12px;
+export const BotaoSenha = styled.button`
+  background: #2d1f3f;
+  border-radius: 10px;
+  width: 80%;
+  font-size: 24px;
+  font-family: "Roboto";
+  font-style: normal;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
 
-    :hover {
-        transition: all ease 0.3s;
-        transform: scale(1.1);
-        background: #618DCE;
-        border:none;
-    }
-`
-export const Botao_editar_perfil = styled.button `
-    background: #2D1F3F;
-    border-radius: 10px;
-    width: 95px;
-    height: 40px;
-    font-size: 24px;
-    font-family: 'Roboto';
-    font-style: normal;
-    color: #ffffff;
+  :hover {
+    transition: all ease 0.3s;
+    transform: scale(1.1);
+    background: #618dce;
     border: none;
-    cursor: pointer;
-    margin: 5%;
-    float: right;
+  }
+`;
+export const Botao_editar_perfil = styled.button`
+  background: #2d1f3f;
+  border-radius: 10px;
+  width: 95px;
+  height: 40px;
+  font-size: 24px;
+  font-family: "Roboto";
+  font-style: normal;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  margin: 5%;
+  float: right;
 
-    :hover {
-        transition: all ease 0.3s;
-        transform: scale(1.1);
-        color: #ffffff;
-        background: #618DCE;
-        border:none;
-        color: #fff;
-    }
-`
+  :hover {
+    transition: all ease 0.3s;
+    transform: scale(1.1);
+    color: #ffffff;
+    background: #618dce;
+    border: none;
+    color: #fff;
+  }
+`;

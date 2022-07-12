@@ -1,5 +1,5 @@
-import React, {useState}from "react";
-import {BrowserRouter as Router, Routes, Route, Navigate , Outlet, useLocation } from 'react-router-dom';
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./Login/Login";
 import Home from "./Home/Home";
 import {connect, useSelector} from 'react-redux';
@@ -14,7 +14,7 @@ import Worker from './Listworker/Listworker';
 import PreLoader from "../components/PreLoader/PreLoader";
 import Upload from "./upload/up";
 import UpWorker from "./Upworker/UpWorker";
-import Worker_profile from './WorkerProfile/workerProfile.js';
+import Worker_profile from "./WorkerProfile/workerProfile.js";
 import DadosCadastro from "./SignUp/DadosCadastrais/DadosCadastrais";
 import Equipment_Register from "./Equipment/Equipment_Register/Equipment_Register";
 import Landing_page from './LandingPage/LandingPage'

@@ -1,12 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./PreLoader.css";
-import Home from "../../pages/Home/Home";
-import {Routes, Route, Navigate } from "react-router-dom";
-import Trail from './trail.tsx';
-import {create} from '@lottiefiles/lottie-interactivity'
-import '@lottiefiles/lottie-player';
-
+import { Routes, Route, Navigate } from "react-router-dom";
+import Trail from "./trail.tsx";
+import { create } from "@lottiefiles/lottie-interactivity";
+import "@lottiefiles/lottie-player";
 
 function PreLoader() {
   const [data, setData] = useState([]);
@@ -21,76 +19,74 @@ function PreLoader() {
         mode: "chain",
         player: "#fourthLottie",
         actions: [
-        {
-            visibility:[0.45,1.0],
-            state: 'autoplay',
-            transition: 'repeat',
+          {
+            visibility: [0.45, 1.0],
+            state: "autoplay",
+            transition: "repeat",
             type: "loop",
             repeat: 2,
-            frames: [105, 210]
-        }
-        ]
+            frames: [105, 210],
+          },
+        ],
       });
     });
   }, [lottiee]);
 
   useEffect(() => {
     setTimeout(() => {
+<<<<<<< HEAD
       axios.get("http://localhost:5000/users")
         .then((response) => {
           setData(response.data);
           setloading(true);
+=======
+      axios.get("http://localhost:5000/users").then((response) => {
+        console.log(response);
+        setData(response.data);
+        setloading(true);
+>>>>>>> 309ba9e6bafcd2b51401a95f0f82d4f0f54be1ba
 
-          setTimeout(() => {
-            setcompleted(true);
-          }, 7000);
-        });
+        setTimeout(() => {
+          setcompleted(true);
+        }, 7000);
+      });
     }, 3000);
   }, []);
 
-  
-
   return (
     <>
-    
       {!completed ? (
-        <>  
-        <div className="preloader">
-          {!loading ? (
-       
-            <div>
-              <lottie-player
-                ref={lottiee} 
-                id="fourthLottie"
-                src="https://assets8.lottiefiles.com/packages/lf20_byuzwmds.json"
-                style={{width:'350px'}}
-               ></lottie-player>
-              <div style={{marginRight:'45px'}} className="loading">
-                <span ></span>
-                <span></span>
-                <span ></span>
-                <span></span>
-                <span></span>
-                <span></span>
+        <>
+          <div className="preloader">
+            {!loading ? (
+              <div>
+                <lottie-player
+                  ref={lottiee}
+                  id="fourthLottie"
+                  src="https://assets8.lottiefiles.com/packages/lf20_byuzwmds.json"
+                  style={{ width: "350px" }}
+                ></lottie-player>
+                <div style={{ marginRight: "45px" }} className="loading">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
-            </div>
-          ) : (
-            <Trail/>
-          )
-        }
-           </div>
+            ) : (
+              <Trail />
+            )}
+          </div>
         </>
       ) : (
         <>
-            <Routes>
-            <Route
-                path="/"
-                element={<Navigate to="/" replace />}
-            />
-            </Routes>
+          <Routes>
+            <Route path="/" element={<Navigate to="/" replace />} />
+          </Routes>
         </>
       )}
-      
     </>
   );
 }

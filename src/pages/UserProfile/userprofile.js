@@ -23,7 +23,7 @@ import {
   DadosWork,
   BotaoSenha,
   Fundo,
-  ItemNameDesc
+  ItemNameDesc,
 } from "./styleduserprofile";
 import axios from "axios";
 
@@ -37,8 +37,7 @@ const Valores = {
     "Estudante de Ciencia da Computação na Universidade Federal do Tocantins",
   genero: "Masculino",
   prestador: "Não",
-
-}
+};
 
 const Userprofie = () => {
   const [Name, setName] = useState(Valores.nome)
@@ -54,13 +53,14 @@ const Userprofie = () => {
   const [showModalPrest, setShowModalPrest]= useState(false);
   const togglePrest = () => setShowModalPrest(!showModalPrest);
 
-  const [showModalSenha, setShowModalSenha]= useState(false);
+  const [showModalSenha, setShowModalSenha] = useState(false);
   const toggleSenha = () => setShowModalSenha(!showModalSenha);
 
+  const clickEditar = () => {
+    setEdit((current) => !current);
+  };
 
-    const clickEditar = () => {
-      setEdit(current => !current)
-    }
+
 
     const jwtToken =  localStorage.getItem("x-access-token")
 
@@ -113,9 +113,9 @@ return(
         <NavbarPage />        
         <Fundo>
         <Userprofilecontainer>
-        <Menu>
+          <Menu>
             <Frag>
-            <Userpic src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png"/>
+              <Userpic src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" />
               <ItemName>Email:</ItemName>
                 <UserMail
                   type="email"
@@ -161,7 +161,7 @@ return(
                 </UserSelects>
               </Frag>
 
-              <Frag>
+            <Frag>
               <ItemNameDesc>Descrição:</ItemNameDesc>
               <UserDesc
                 name="descricao"
@@ -169,7 +169,13 @@ return(
                 
                
               />
-              <BotaoSenha onClick={() => {toggleSenha()}}>Alterar senha</BotaoSenha>
+              <BotaoSenha
+                onClick={() => {
+                  toggleSenha();
+                }}
+              >
+                Alterar senha
+              </BotaoSenha>
               <ItemName>Data de nascimento:</ItemName>
                 <UserAge
                   type="text"
@@ -210,10 +216,10 @@ return(
           <DadosWork onClick={() => {togglePrest()}} >Dados do prestador</DadosWork>
           ):(<p>{}</p>)}         
 
-          <Botao_editar_perfil onClick={clickEditar} >{Edit ? "Editar" : "Salvar"}
-          </Botao_editar_perfil>     
+          <Botao_editar_perfil onClick={clickEditar}>
+            {Edit ? "Editar" : "Salvar"}
+          </Botao_editar_perfil>
         </Userprofilecontainer>
-        
 
   <ModalPrest show={showModalPrest} toggleShow={() => {togglePrest()}} />
   <ModalSenha show={showModalSenha} toggleShow={() => {toggleSenha()}} />

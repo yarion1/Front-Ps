@@ -26,13 +26,18 @@ import ReactImageZoom from 'react-image-zoom';
 import EquipmentSecurity from '../EquipmentSecurity/EquipmentSecurity';
 import axios from 'axios';
 
-function EquipmentDetail (/* {equipament} */) {
-    const equipament = {
-        id: '1',
-        title: 'Escavadeira Rc completa',
-        price: '307,00',
-        images: ['https://www.deere.com.br/assets/images/region-3/products/excavators/180g-lc/escavadeira_180g_estudio_1_large_f5bf43c97d57e86b8d13d816cde23b1667ee3117.jpg', 'https://www.deere.com.br/assets/images/region-3/products/excavators/180g-lc/escavadeira_180g_overview_large_3973913922a290152a5af17e32508cc7fedadba3.jpg', 'https://www.deere.com.br/assets/images/region-3/products/excavators/180g-lc/escavadeira_180g_estudio_2_large_57337f7748a0d620fb2a3962b10fd3edf315e641.jpg', 'https://www.deere.com.br/assets/images/region-3/products/excavators/180g-lc/escavadeira_180g_obra_1_large_6a3e82f5b514240c74c9801937071f91707f0aa9.jpg']
-    }
+function EquipmentDetail(/* {equipament} */) {
+  const equipament = {
+    id: "1",
+    title: "Escavadeira Rc completa",
+    price: "307,00",
+    images: [
+      "https://www.deere.com.br/assets/images/region-3/products/excavators/180g-lc/escavadeira_180g_estudio_1_large_f5bf43c97d57e86b8d13d816cde23b1667ee3117.jpg",
+      "https://www.deere.com.br/assets/images/region-3/products/excavators/180g-lc/escavadeira_180g_overview_large_3973913922a290152a5af17e32508cc7fedadba3.jpg",
+      "https://www.deere.com.br/assets/images/region-3/products/excavators/180g-lc/escavadeira_180g_estudio_2_large_57337f7748a0d620fb2a3962b10fd3edf315e641.jpg",
+      "https://www.deere.com.br/assets/images/region-3/products/excavators/180g-lc/escavadeira_180g_obra_1_large_6a3e82f5b514240c74c9801937071f91707f0aa9.jpg",
+    ],
+  };
 
     const [imagePreview, setImagePreview] = useState(equipament.images[0]);
     const [showModal, setShowModal]= useState(false);

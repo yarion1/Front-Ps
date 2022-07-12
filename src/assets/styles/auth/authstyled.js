@@ -191,7 +191,7 @@ export const Imagelogo = styled.div `
   }
 `;
 
-export const Formlog = styled(Form) `
+export const Formlog = styled.div `
       position: absolute;
       top: 11em;
       right: 50%;

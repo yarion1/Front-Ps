@@ -11,7 +11,19 @@ import axios  from "axios";
 import { useDispatch } from 'react-redux';
 import { registerAction } from '../../../store/actions';
 
- function DadosCadastro () {
+import {
+  CardBody,
+  CardHeader,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Row,
+  Col,
+} from "reactstrap";
+
+function DadosCadastro () {
 
 
   const [email, setEmail] = useState(sessionStorage.getItem('email'));
@@ -88,23 +100,19 @@ import { registerAction } from '../../../store/actions';
                   onChange={e => setName(e.target.value)}
                 />
               </FormGroup>
-              <FormGroup style={{paddingLeft:'10px'}}>
+              <FormGroup style={{ paddingLeft: "10px" }}>
                 <Container>
                   <Item>
-                    <Label>
-                      CPF
-                    </Label>
+                    <Label>CPF</Label>
                     <Input
                       name="cpf"
                       value={cpfMask(cpf)}
                       onChange={e => setCpf(e.target.value)}
                     />
                   </Item>
-                   <Item>
-                     <Label>
-                      Data de nascimento
-                   </Label>
-                     <Input
+                  <Item>
+                    <Label>Data de nascimento</Label>
+                    <Input
                       name="birthdate"
                       value={birthdate}
                       type="date"
@@ -176,12 +184,10 @@ import { registerAction } from '../../../store/actions';
                     </FormGroup>
                 </Container>
               </FormGroup>
-              <FormGroup style={{paddingLeft:'10px'}}>
+              <FormGroup style={{ paddingLeft: "10px" }}>
                 <Container>
                   <Item>
-                    <Label>
-                      Endereço
-                    </Label>
+                    <Label>Endereço</Label>
                     <Input
                       name="address"
                       type='text'
@@ -190,10 +196,7 @@ import { registerAction } from '../../../store/actions';
                     />
                   </Item>
                   <Item>
-                    
-                    <Label>
-                      CEP
-                    </Label>
+                    <Label>CEP</Label>
                     <Input
                       name="cep"
                       type='number'
@@ -202,9 +205,7 @@ import { registerAction } from '../../../store/actions';
                     />
                   </Item>
                   <Item>
-                    <Label>
-                      Telefone
-                    </Label>
+                    <Label>Telefone</Label>
                     <Input
                       name="phone_number"
                       placeholder='( ) xxxxx-xxxx'
@@ -242,17 +243,17 @@ import { registerAction } from '../../../store/actions';
                       onChange={inputChange}>
                       
                     </option> */}
-                  </Input>
-                </FormGroup>
-              <Button  style={{background:'#130A1D', borderColor: '#130A1D'}}>
+                </Input>
+              </FormGroup>
+              <Button style={{ background: "#130A1D", borderColor: "#130A1D" }}>
                 CADASTRAR
               </Button>
             </Form>
-              </CardBody>
-            </CardData>
-          </div>
-        </Globalpage>        
-    )  
-  }
+          </CardBody>
+        </CardData>
+      </div>
+    </Globalpage>
+  );
+}
 
 export default DadosCadastro;

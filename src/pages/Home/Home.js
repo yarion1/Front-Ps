@@ -75,46 +75,53 @@ function Home () {
   
  return(
     <>
-      <Navbar/>   
+      <Navbar />
       <Page>
         <Gambi3></Gambi3>
-        <DemoCarousel></DemoCarousel>
+        <DemoCarousel />
 
         <CardSignUp>
-        <Gambi2></Gambi2>
-        <CardImg          
-          alt="Card image cap"
-          src= "https://cdn.discordapp.com/attachments/931699948087574538/984496160976810014/signup_1.png" 
-          style={{height: '90px', width: '90px'}}
+          <Gambi2></Gambi2>
+          <CardImg
+            alt="Card image cap"
+            src="https://cdn.discordapp.com/attachments/931699948087574538/984496160976810014/signup_1.png"
+            style={{ height: "90px", width: "90px" }}
           />
           <Gambi></Gambi>
           <Textcategoria>
-          Cadastre-se e tenha acesso a todos os recursos da plataforma.
+            Cadastre-se e tenha acesso a todos os recursos da plataforma.
           </Textcategoria>
           <Gamb></Gamb>
           <CardButtons>
-            <Link to="/login" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
-             <TextCard>Realizar Cadastro</TextCard>
+            <Link
+              to="/login"
+              style={{
+                textDecoration: "none",
+                fontSize: "20px",
+                color: "#fff",
+              }}
+            >
+              Realizar Cadastro
             </Link>
           </CardButtons>
         </CardSignUp>
         <CardRent>
-        <Gambi2></Gambi2> 
-        <CardImg          
-          alt="Card image cap"
-          src=   "https://cdn.discordapp.com/attachments/931699948087574538/984495692120719360/assembly_1.png"  
-          style={{height: '90px', width: '90px'}}
-        />
+          <Gambi2></Gambi2>
+          <CardImg
+            alt="Card image cap"
+            src="https://cdn.discordapp.com/attachments/931699948087574538/984495692120719360/assembly_1.png"
+            style={{ height: "90px", width: "90px" }}
+          />
           <Gambi></Gambi>
           <Textcategoria>
-          Alugue a máquina ideal para realizar suas atividades.
+            Alugue a máquina ideal para realizar suas atividades.
           </Textcategoria>
           <Gamb></Gamb>
-          <CardButtons2>
+          <CardButtons>
             <Link to="/equipamentos" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
             <TextCard> Alugar máquina</TextCard>
             </Link>
-          </CardButtons2>
+          </CardButtons>
         </CardRent>
         <CardProfile>
         <Gambi2></Gambi2>
@@ -128,11 +135,11 @@ function Home () {
               Veja os itens alugados.
             </Textcategoria>
             <Gamb></Gamb>
-          <CardButtons3>
+          <CardButtons>
             <Link to="/alugados" style={{ textDecoration: "none", fontSize: "20px", color:'#fff'}}>
             <TextCard style={{paddingLeft:'25px'}}>Itens alugados</TextCard>
             </Link>
-          </CardButtons3>
+          </CardButtons>
         </CardProfile>
         <Textmid>Escolha a máquina ideal para você!</Textmid>
        <div> 
@@ -164,7 +171,7 @@ function Home () {
 </div>
       </Page>  
     </>
- ); 
+  );
 }
 
 export default Home;

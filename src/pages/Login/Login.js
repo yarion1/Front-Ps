@@ -1,23 +1,23 @@
-import React, {useState} from 'react';
-import styled, {
-    Globalpage,
-    Cardpage,
-    Cardlogin,
-    Imageconstructor,
-    Textinfo,
-    Imagelogo,
-    Titlelog,
-    Formlog,
-    Labelog,
-    Buttonlog,
-    Inputlog,
-    FormGrouplog,
-    Divbutton,
-    H3,
-    DivBtn,
-    Divregister
+import React, { useState } from "react";
+import {
+  Globalpage,
+  Cardpage,
+  Cardlogin,
+  Imageconstructor,
+  Textinfo,
+  Titlelog,
+  Formlog,
+  Labelog,
+  Buttonlog,
+  Inputlog,
+  FormGrouplog,
+  Divbutton,
+  H3,
+  DivBtn,
+  Divregister,
+} from "../../assets/styles/auth/authstyled";
 
-} from  '../../assets/styles/auth/authstyled';
+
 import constructor from '../../assets/img/constructor.png';
 import {BrowserRouter as Router, Routes, Route, useNavigate} from 'react-router-dom';
 import axios from 'axios';
